@@ -203,6 +203,7 @@ all = [
 
 [project.scripts]
 Titan = "Titan_cli.main:main"
+titan = "Titan_cli.main:main"
 titan-agent = "run_agent:main"
 Titan-acp = "acp_adapter.entry:main"
 
