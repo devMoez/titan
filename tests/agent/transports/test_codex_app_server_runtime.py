@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import pytest
 
-from hermes_cli.runtime_provider import (
+from Titan_cli.runtime_provider import (
     _VALID_API_MODES,
     _maybe_apply_codex_app_server_runtime,
 )
@@ -241,3 +241,4 @@ class TestSpawnEnvIsolation:
         assert captured["env"].get("CODEX_HOME") == "/tmp/profile/codex"
         # And HOME still passes through unchanged
         assert captured["env"].get("HOME") == "/users/alice"
+

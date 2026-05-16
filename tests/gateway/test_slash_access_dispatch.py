@@ -288,7 +288,7 @@ async def test_plugin_registered_command_is_gated(monkeypatch):
         }
     )
 
-    from hermes_cli import commands as cmd_mod
+    from Titan_cli import commands as cmd_mod
 
     real_resolve = cmd_mod.resolve_command
     real_is_known = cmd_mod.is_gateway_known_command
@@ -412,7 +412,7 @@ async def test_gate_uses_canonical_name_not_alias():
         }
     )
     # Find a real alias in the registry to use.
-    from hermes_cli.commands import COMMAND_REGISTRY
+    from Titan_cli.commands import COMMAND_REGISTRY
     history_def = next(c for c in COMMAND_REGISTRY if c.name == "history")
     # If /history has aliases, use one. Otherwise just use /history.
     alias = history_def.aliases[0] if history_def.aliases else "history"
@@ -556,3 +556,4 @@ async def test_gating_isolated_per_platform():
     tg_src = _make_source(platform=Platform.TELEGRAM, user_id="999", chat_id="t1")
     result = await runner._handle_message(_make_event("/whoami", tg_src))
     assert "Tier: unrestricted" in result
+

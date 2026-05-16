@@ -7,7 +7,7 @@ author: SHL0MS
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Creative, Ideation, Projects, Brainstorming, Inspiration]
     category: creative
     requires_toolsets: []
@@ -150,3 +150,4 @@ After the user picks one, start building — create the project, write the code,
 ## Attribution
 
 Constraint approach inspired by [wttdotm.com/prompts.html](https://wttdotm.com/prompts.html). Adapted and expanded for software development and general-purpose ideation.
+

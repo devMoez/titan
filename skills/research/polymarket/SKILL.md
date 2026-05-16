@@ -2,7 +2,7 @@
 name: polymarket
 description: "Query Polymarket: markets, prices, orderbooks, history."
 version: 1.0.0
-author: Hermes Agent + Teknium
+author: Titan Agent + Teknium
 tags: [polymarket, prediction-markets, market-data, trading]
 platforms: [linux, macos, windows]
 ---
@@ -75,3 +75,4 @@ Generous — unlikely to hit for normal usage:
 - Trading requires wallet-based crypto authentication (EIP-712 signatures)
 - Some new markets may have empty price history
 - Geographic restrictions apply to trading but read-only data is globally accessible
+

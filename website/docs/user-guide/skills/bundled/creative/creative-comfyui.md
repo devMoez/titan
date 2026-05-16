@@ -26,7 +26,7 @@ Generate images, video, and audio with ComfyUI — install, launch, manage nodes
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # ComfyUI
@@ -614,3 +614,4 @@ Use `python3 scripts/health_check.py` to run the whole list at once. Manual:
 - [ ] `check_deps.py` reports `is_ready: true` (or only `node_check_skipped`
       on cloud free tier)
 - [ ] Test run with a small workflow completes; outputs land in `--output-dir`
+

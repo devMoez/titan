@@ -1,7 +1,7 @@
 # Design System: Sanity
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Space Grotesk` | **Mono:** `IBM Plex Mono`
@@ -368,3 +368,4 @@ Light Surface:   #ededed / #ffffff (inverted sections)
 5. **Refine spacing**: 8px base unit, 24-32px within sections, 64-120px between sections
 6. **Technical details**: Add IBM Plex Mono uppercase labels for tags and metadata
 7. **Polish**: Ensure all interactive elements hover to `#0052ef`, all buttons are pills or subtle 5px radius, borders are hairline (1px)
+

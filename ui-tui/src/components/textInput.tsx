@@ -1,5 +1,5 @@
-import type { InputEvent, Key } from '@hermes/ink'
-import * as Ink from '@hermes/ink'
+import type { InputEvent, Key } from '@Titan/ink'
+import * as Ink from '@Titan/ink'
 import { type MutableRefObject, useEffect, useMemo, useRef, useState } from 'react'
 
 import { setInputSelection } from '../app/inputSelectionStore.js'
@@ -1213,3 +1213,4 @@ export interface TextInputMouseApi {
   end: () => void
   startAtBeginning: () => void
 }
+

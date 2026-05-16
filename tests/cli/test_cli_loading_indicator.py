@@ -2,12 +2,12 @@
 
 from unittest.mock import patch
 
-from cli import HermesCLI
+from cli import TitanCLI
 
 
 class TestCLILoadingIndicator:
     def _make_cli(self):
-        cli_obj = HermesCLI.__new__(HermesCLI)
+        cli_obj = TitanCLI.__new__(TitanCLI)
         cli_obj._app = None
         cli_obj._last_invalidate = 0.0
         cli_obj._command_running = False
@@ -70,3 +70,4 @@ class TestCLILoadingIndicator:
         assert cli_obj._command_running is False
         assert cli_obj._command_status == ""
         assert invalidate_mock.call_count == 2
+

@@ -13,7 +13,7 @@ def clean_env(monkeypatch):
         "GEMINI_API_KEY",
         "GOOGLE_API_KEY",
         "GEMINI_BASE_URL",
-        "HERMES_SESSION_PLATFORM",
+        "Titan_SESSION_PLATFORM",
     ):
         monkeypatch.delenv(key, raising=False)
 
@@ -285,3 +285,4 @@ class TestGeminiInCheckRequirements:
 
         with patch("builtins.__import__", side_effect=fake_import):
             assert check_tts_requirements() is True
+

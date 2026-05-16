@@ -6,7 +6,7 @@ author: Omni @ Comelse
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [qa, ux, testing, adversarial, dogfood, personas, user-testing]
     related_skills: [dogfood]
 ---
@@ -189,3 +189,4 @@ These are starting points — customize for your specific product:
 - Max 10 tickets per session
 - Test on staging/deployed app, not local dev
 - One persona, one session, one report
+

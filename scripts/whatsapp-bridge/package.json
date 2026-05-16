@@ -1,7 +1,7 @@
 {
-  "name": "hermes-whatsapp-bridge",
+  "name": "Titan-whatsapp-bridge",
   "version": "1.0.0",
-  "description": "WhatsApp bridge for Hermes Agent using Baileys",
+  "description": "WhatsApp bridge for Titan Agent using Baileys",
   "private": true,
   "type": "module",
   "scripts": {
@@ -17,3 +17,4 @@
     "protobufjs": "^7.5.5"
   }
 }
+

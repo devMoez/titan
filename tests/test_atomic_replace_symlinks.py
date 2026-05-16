@@ -2,7 +2,7 @@
 
 ``os.replace(tmp, target)`` replaces whatever exists at ``target`` — including
 symlinks, which it swaps for a regular file.  Managed deployments that
-symlink ``~/.hermes/config.yaml`` (and other state files) to a git-tracked
+symlink ``~/.Titan/config.yaml`` (and other state files) to a git-tracked
 profile package were silently detached on every config write.
 
 The fix: a shared ``atomic_replace`` helper in ``utils.py`` that resolves the
@@ -158,3 +158,4 @@ def test_atomic_replace_broken_symlink_creates_target(tmp_path: Path) -> None:
     assert link.is_symlink(), "symlink must be preserved"
     assert missing.exists(), "real target should now exist"
     assert missing.read_text(encoding="utf-8") == "created-through-link\n"
+

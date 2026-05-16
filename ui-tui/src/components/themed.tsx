@@ -1,4 +1,4 @@
-import { Text } from '@hermes/ink'
+import { Text } from '@Titan/ink'
 import { useStore } from '@nanostores/react'
 import type { ReactNode } from 'react'
 
@@ -28,3 +28,4 @@ export interface FgProps {
   underline?: boolean
   wrap?: 'end' | 'middle' | 'truncate' | 'truncate-end' | 'truncate-middle' | 'truncate-start' | 'wrap' | 'wrap-trim'
 }
+

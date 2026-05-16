@@ -7,10 +7,10 @@ import pytest
 
 
 def _make_cli_stub():
-    """Create a minimal HermesCLI-like object with stream state."""
-    from cli import HermesCLI
+    """Create a minimal TitanCLI-like object with stream state."""
+    from cli import TitanCLI
 
-    cli = HermesCLI.__new__(HermesCLI)
+    cli = TitanCLI.__new__(TitanCLI)
     cli.show_reasoning = False
     cli._stream_buf = ""
     cli._stream_started = False
@@ -136,3 +136,4 @@ class TestFlushRecovery:
         assert not cli._in_reasoning_block
         full = "".join(cli._emitted)
         assert "Launch production" in full
+

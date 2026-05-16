@@ -258,67 +258,68 @@ class TestExchangeAuthCode:
         assert not setup_module.PENDING_AUTH_PATH.exists()
 
 
-class TestHermesConstantsFallback:
-    """Tests for _hermes_home.py fallback when hermes_constants is unavailable."""
+class TestTitanConstantsFallback:
+    """Tests for _Titan_home.py fallback when Titan_constants is unavailable."""
 
     HELPER_PATH = (
         Path(__file__).resolve().parents[2]
-        / "skills/productivity/google-workspace/scripts/_hermes_home.py"
+        / "skills/productivity/google-workspace/scripts/_Titan_home.py"
     )
 
     def _load_helper(self, monkeypatch):
-        """Load _hermes_home.py with hermes_constants blocked."""
-        monkeypatch.setitem(sys.modules, "hermes_constants", None)
-        spec = importlib.util.spec_from_file_location("_hermes_home_test", self.HELPER_PATH)
+        """Load _Titan_home.py with Titan_constants blocked."""
+        monkeypatch.setitem(sys.modules, "Titan_constants", None)
+        spec = importlib.util.spec_from_file_location("_Titan_home_test", self.HELPER_PATH)
         module = importlib.util.module_from_spec(spec)
         assert spec.loader is not None
         spec.loader.exec_module(module)
         return module
 
-    def test_fallback_uses_hermes_home_env_var(self, monkeypatch, tmp_path):
-        """When hermes_constants is missing, HERMES_HOME comes from env var."""
-        monkeypatch.setenv("HERMES_HOME", str(tmp_path / "custom-hermes"))
+    def test_fallback_uses_Titan_home_env_var(self, monkeypatch, tmp_path):
+        """When Titan_constants is missing, Titan_HOME comes from env var."""
+        monkeypatch.setenv("Titan_HOME", str(tmp_path / "custom-Titan"))
         module = self._load_helper(monkeypatch)
-        assert module.get_hermes_home() == tmp_path / "custom-hermes"
+        assert module.get_Titan_home() == tmp_path / "custom-Titan"
 
-    def test_fallback_defaults_to_dot_hermes(self, monkeypatch):
-        """When hermes_constants is missing and HERMES_HOME unset, default to ~/.hermes."""
-        monkeypatch.delenv("HERMES_HOME", raising=False)
+    def test_fallback_defaults_to_dot_Titan(self, monkeypatch):
+        """When Titan_constants is missing and Titan_HOME unset, default to ~/.Titan."""
+        monkeypatch.delenv("Titan_HOME", raising=False)
         module = self._load_helper(monkeypatch)
-        assert module.get_hermes_home() == Path.home() / ".hermes"
+        assert module.get_Titan_home() == Path.home() / ".Titan"
 
-    def test_fallback_ignores_empty_hermes_home(self, monkeypatch):
-        """Empty/whitespace HERMES_HOME is treated as unset."""
-        monkeypatch.setenv("HERMES_HOME", "  ")
+    def test_fallback_ignores_empty_Titan_home(self, monkeypatch):
+        """Empty/whitespace Titan_HOME is treated as unset."""
+        monkeypatch.setenv("Titan_HOME", "  ")
         module = self._load_helper(monkeypatch)
-        assert module.get_hermes_home() == Path.home() / ".hermes"
+        assert module.get_Titan_home() == Path.home() / ".Titan"
 
-    def test_fallback_display_hermes_home_shortens_path(self, monkeypatch):
-        """Fallback display_hermes_home() uses ~/ shorthand like the real one."""
-        monkeypatch.delenv("HERMES_HOME", raising=False)
+    def test_fallback_display_Titan_home_shortens_path(self, monkeypatch):
+        """Fallback display_Titan_home() uses ~/ shorthand like the real one."""
+        monkeypatch.delenv("Titan_HOME", raising=False)
         module = self._load_helper(monkeypatch)
-        assert module.display_hermes_home() == "~/.hermes"
+        assert module.display_Titan_home() == "~/.Titan"
 
-    def test_fallback_display_hermes_home_profile_path(self, monkeypatch):
-        """Fallback display_hermes_home() handles profile paths under ~/."""
-        monkeypatch.setenv("HERMES_HOME", str(Path.home() / ".hermes/profiles/coder"))
+    def test_fallback_display_Titan_home_profile_path(self, monkeypatch):
+        """Fallback display_Titan_home() handles profile paths under ~/."""
+        monkeypatch.setenv("Titan_HOME", str(Path.home() / ".Titan/profiles/coder"))
         module = self._load_helper(monkeypatch)
-        assert module.display_hermes_home() == "~/.hermes/profiles/coder"
+        assert module.display_Titan_home() == "~/.Titan/profiles/coder"
 
-    def test_fallback_display_hermes_home_custom_path(self, monkeypatch):
-        """Fallback display_hermes_home() returns full path for non-home locations."""
-        monkeypatch.setenv("HERMES_HOME", "/opt/hermes-custom")
+    def test_fallback_display_Titan_home_custom_path(self, monkeypatch):
+        """Fallback display_Titan_home() returns full path for non-home locations."""
+        monkeypatch.setenv("Titan_HOME", "/opt/Titan-custom")
         module = self._load_helper(monkeypatch)
-        assert module.display_hermes_home() == "/opt/hermes-custom"
+        assert module.display_Titan_home() == "/opt/Titan-custom"
 
-    def test_delegates_to_hermes_constants_when_available(self):
-        """When hermes_constants IS importable, _hermes_home delegates to it."""
+    def test_delegates_to_Titan_constants_when_available(self):
+        """When Titan_constants IS importable, _Titan_home delegates to it."""
         spec = importlib.util.spec_from_file_location(
-            "_hermes_home_happy", self.HELPER_PATH
+            "_Titan_home_happy", self.HELPER_PATH
         )
         module = importlib.util.module_from_spec(spec)
         assert spec.loader is not None
         spec.loader.exec_module(module)
-        import hermes_constants
-        assert module.get_hermes_home is hermes_constants.get_hermes_home
-        assert module.display_hermes_home is hermes_constants.display_hermes_home
+        import Titan_constants
+        assert module.get_Titan_home is Titan_constants.get_Titan_home
+        assert module.display_Titan_home is Titan_constants.display_Titan_home
+

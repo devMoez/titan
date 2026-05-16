@@ -3,7 +3,7 @@
 **Target:** {target_url}
 **Date:** {date}
 **Scope:** {scope_description}
-**Tester:** Hermes Agent (automated exploratory QA)
+**Tester:** Titan Agent (automated exploratory QA)
 
 ---
 
@@ -84,3 +84,4 @@ MEDIA:{screenshot_path}
 ## Notes
 
 {any_additional_observations_or_recommendations}
+

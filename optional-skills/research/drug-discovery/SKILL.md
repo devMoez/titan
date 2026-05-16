@@ -12,7 +12,7 @@ version: 1.0.0
 author: bennytimz
 license: MIT
 metadata:
-  hermes:
+  Titan:
     tags: [science, chemistry, pharmacology, research, health]
 prerequisites:
   commands: [curl, python3]
@@ -225,3 +225,4 @@ For ADMET questions, reason through Absorption, Distribution, Metabolism, Excret
 | Drug interactions | OpenFDA | `/drug/label.json?search=drug_interactions:` |
 | Adverse events | OpenFDA | `/drug/event.json?search=...&count=reaction` |
 | Gene-disease | OpenTargets | GraphQL POST `/api/v4/graphql` |
+

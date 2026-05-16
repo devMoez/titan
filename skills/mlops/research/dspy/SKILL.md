@@ -7,7 +7,7 @@ license: MIT
 dependencies: [dspy, openai, anthropic]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Prompt Engineering, DSPy, Declarative Programming, RAG, Agents, Prompt Optimization, LM Programming, Stanford NLP, Automatic Optimization, Modular AI]
 
 ---
@@ -590,5 +590,6 @@ for call in dspy.settings.trace:
 - `references/modules.md` - Detailed module guide (Predict, ChainOfThought, ReAct, ProgramOfThought)
 - `references/optimizers.md` - Optimization algorithms (BootstrapFewShot, MIPRO, BootstrapFinetune)
 - `references/examples.md` - Real-world examples (RAG, agents, classifiers)
+
 
 

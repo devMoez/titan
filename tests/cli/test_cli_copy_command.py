@@ -2,11 +2,11 @@
 
 from unittest.mock import MagicMock, patch
 
-from cli import HermesCLI
+from cli import TitanCLI
 
 
-def _make_cli() -> HermesCLI:
-    cli_obj = HermesCLI.__new__(HermesCLI)
+def _make_cli() -> TitanCLI:
+    cli_obj = TitanCLI.__new__(TitanCLI)
     cli_obj.config = {}
     cli_obj.console = MagicMock()
     cli_obj.agent = None
@@ -69,3 +69,4 @@ def test_copy_invalid_index_does_not_copy():
 
     mock_copy.assert_not_called()
     assert any("Invalid response number" in str(call) for call in mock_print.call_args_list)
+

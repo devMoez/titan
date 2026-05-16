@@ -14,7 +14,7 @@ Gym workout planner and nutrition tracker. Search 690+ exercises by muscle, equi
 
 | | |
 |---|---|
-| Source | Optional — install with `hermes skills install official/health/fitness-nutrition` |
+| Source | Optional — install with `Titan skills install official/health/fitness-nutrition` |
 | Path | `optional-skills/health/fitness-nutrition` |
 | Version | `1.0.0` |
 | License | MIT |
@@ -24,7 +24,7 @@ Gym workout planner and nutrition tracker. Search 690+ exercises by muscle, equi
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Fitness & Nutrition
@@ -256,3 +256,4 @@ After calculators: sanity-check outputs (e.g. TDEE should be 1500-3500 for most 
 | Search foods | USDA | `GET /fdc/v1/foods/search?query=&dataType=Foundation,SR Legacy` |
 | Food details | USDA | `GET /fdc/v1/food/{fdcId}` |
 | BMI / TDEE / 1RM / macros | offline | `python3 scripts/body_calc.py` |
+

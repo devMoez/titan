@@ -21,7 +21,7 @@ YouTube transcripts to summaries, threads, blogs.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # YouTube Content Tool
@@ -91,3 +91,4 @@ After fetching the transcript, format it based on what the user asks for:
 - **Private/unavailable video**: relay the error and ask the user to verify the URL.
 - **No matching language**: retry without `--language` to fetch any available transcript, then note the actual language to the user.
 - **Dependency missing**: run `pip install youtube-transcript-api` and retry.
+

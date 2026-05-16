@@ -14,7 +14,7 @@ Outlines: structured JSON/regex/Pydantic LLM generation.
 
 | | |
 |---|---|
-| Source | Optional — install with `hermes skills install official/mlops/outlines` |
+| Source | Optional — install with `Titan skills install official/mlops/outlines` |
 | Path | `optional-skills/mlops/inference/outlines` |
 | Version | `1.0.0` |
 | Author | Orchestra Research |
@@ -26,7 +26,7 @@ Outlines: structured JSON/regex/Pydantic LLM generation.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Outlines: Structured Text Generation
@@ -669,3 +669,4 @@ class Article(BaseModel):
 - `references/json_generation.md` - Comprehensive JSON and Pydantic patterns
 - `references/backends.md` - Backend-specific configuration
 - `references/examples.md` - Production-ready examples
+

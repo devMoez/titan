@@ -9,7 +9,7 @@ class CloudBrowserProvider(ABC):
 
     Implementations live in sibling modules and are registered in
     ``browser_tool._PROVIDER_REGISTRY``.  The user selects a provider via
-    ``hermes setup`` / ``hermes tools``; the choice is persisted as
+    ``Titan setup`` / ``Titan tools``; the choice is persisted as
     ``config["browser"]["cloud_provider"]``.
     """
 
@@ -57,3 +57,4 @@ class CloudBrowserProvider(ABC):
         Called from atexit / signal handlers.  Must tolerate missing
         credentials, network errors, etc. — log and move on.
         """
+

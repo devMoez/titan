@@ -279,7 +279,7 @@ class TestSendNotification:
             assert result.success is True
             assert len(server.received_notifications) == 1
             notif = server.received_notifications[0]
-            assert notif["title"] == "Hermes Agent"
+            assert notif["title"] == "Titan Agent"
             assert notif["message"] == "Test notification from agent"
 
     @pytest.mark.asyncio
@@ -339,3 +339,4 @@ class TestAuthAndErrors:
             with pytest.raises(_aiohttp.ClientResponseError) as exc_info:
                 await _async_list_entities()
             assert exc_info.value.status == 500
+

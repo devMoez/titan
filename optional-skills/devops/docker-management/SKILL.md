@@ -6,7 +6,7 @@ author: sprmn24
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [docker, containers, devops, infrastructure, compose, images, volumes, networks, debugging]
     category: devops
     requires_toolsets: [terminal]
@@ -279,3 +279,4 @@ When reviewing or creating a Dockerfile, suggest these improvements:
 5. **Pin base image versions** — `node:20-alpine` not `node:latest`
 6. **Run as non-root** — add `USER` instruction for security
 7. **Use slim/alpine bases** — `python:3.12-slim` not `python:3.12`
+

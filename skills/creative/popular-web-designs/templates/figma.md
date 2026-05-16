@@ -1,7 +1,7 @@
 # Design System: Figma
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `JetBrains Mono`
@@ -231,3 +231,4 @@ What makes Figma distinctive beyond the variable font is its circle-and-pill geo
 3. Dashed focus outlines, not solid
 4. Letter-spacing is always negative on body, always positive on mono labels
 5. Pill (50px) for buttons/tabs, circle (50%) for icon buttons
+

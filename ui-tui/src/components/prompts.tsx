@@ -1,4 +1,4 @@
-import { Box, Text, useInput } from '@hermes/ink'
+import { Box, Text, useInput } from '@Titan/ink'
 import { useState } from 'react'
 
 import { isMac } from '../lib/platform.js'
@@ -274,3 +274,4 @@ interface ConfirmPromptProps {
   req: ConfirmReq
   t: Theme
 }
+

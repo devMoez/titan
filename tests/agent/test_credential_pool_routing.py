@@ -32,8 +32,8 @@ class TestCliTurnRoutePool:
             service_tier=None,
         )
 
-        from cli import HermesCLI
-        bound = HermesCLI._resolve_turn_agent_config.__get__(shell)
+        from cli import TitanCLI
+        bound = TitanCLI._resolve_turn_agent_config.__get__(shell)
         route = bound("test message")
 
         assert route["runtime"]["credential_pool"] is fake_pool
@@ -232,3 +232,4 @@ class TestPoolRotationCycle:
         )
         assert recovered is False
         assert has_retried is False
+

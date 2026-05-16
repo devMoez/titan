@@ -39,7 +39,7 @@ T8  reviewer         final QA                                 (parent: T7)
 **Key choices:**
 - Local ComfyUI via `comfyui` skill is preferred over external API for
   cost/control — but external APIs are fine if ComfyUI isn't installed
-- `editor` profile is ffmpeg-only, no Hermes skill required beyond
+- `editor` profile is ffmpeg-only, no Titan skill required beyond
   `kanban-worker`
 - Storyboarder produces `storyboard.excalidraw` alongside the markdown
 
@@ -225,3 +225,4 @@ When the user describes a video, look for these signals to map to an example:
 
 The actual team should be derived from the specific brief — these examples are
 starting points, not endpoints.
+

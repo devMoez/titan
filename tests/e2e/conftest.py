@@ -303,7 +303,7 @@ def adapter(platform, runner):
 # ═══════════════════════════════════════════════════════════════════════════
 
 BOT_USER_ID = 99999
-BOT_USER_NAME = "HermesBot"
+BOT_USER_NAME = "TitanBot"
 CHANNEL_ID = 22222
 GUILD_ID = 44444
 THREAD_ID = 33333
@@ -434,3 +434,4 @@ def discord_runner(discord_setup):
 @pytest.fixture()
 def bot_user():
     return make_fake_bot_user()
+

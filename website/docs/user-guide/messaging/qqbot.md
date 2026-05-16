@@ -1,6 +1,6 @@
 # QQ Bot
 
-Connect Hermes to QQ via the **Official QQ Bot API (v2)** — supporting private (C2C), group @-mentions, guild, and direct messages with voice transcription.
+Connect Titan to QQ via the **Official QQ Bot API (v2)** — supporting private (C2C), group @-mentions, guild, and direct messages with voice transcription.
 
 ## Overview
 
@@ -28,14 +28,14 @@ The QQ Bot adapter uses the [Official QQ Bot API](https://bot.q.qq.com/wiki/deve
 ### Interactive setup
 
 ```bash
-hermes gateway setup
+Titan gateway setup
 ```
 
 Select **QQ Bot** from the platform list and follow the prompts.
 
 ### Manual configuration
 
-Set the required environment variables in `~/.hermes/.env`:
+Set the required environment variables in `~/.Titan/.env`:
 
 ```bash
 QQ_APP_ID=your-app-id
@@ -60,7 +60,7 @@ QQ_CLIENT_SECRET=your-app-secret
 
 ## Advanced Configuration
 
-For fine-grained control, add platform settings to `~/.hermes/config.yaml`:
+For fine-grained control, add platform settings to `~/.Titan/config.yaml`:
 
 ```yaml
 platforms:
@@ -121,3 +121,4 @@ This usually means:
 - Ensure `aiohttp` and `httpx` are installed: `pip install aiohttp httpx`
 - Check network connectivity to `api.sgroup.qq.com` and the WebSocket gateway
 - Review gateway logs for detailed error messages and reconnect behavior
+

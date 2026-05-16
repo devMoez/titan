@@ -1,16 +1,17 @@
 {
-  "id": "hermes-agent",
-  "name": "Hermes Agent",
+  "id": "titan-agent",
+  "name": "Titan Agent",
   "version": "0.13.0",
   "description": "Self-improving open-source AI agent by Nous Research with ACP editor integration, persistent memory, skills, and rich tool support.",
-  "repository": "https://github.com/NousResearch/hermes-agent",
-  "website": "https://hermes-agent.nousresearch.com/docs/user-guide/features/acp",
+  "repository": "https://github.com/NousResearch/titan-agent",
+  "website": "https://titan-agent.nousresearch.com/docs/user-guide/features/acp",
   "authors": ["Nous Research"],
   "license": "MIT",
   "distribution": {
     "uvx": {
-      "package": "hermes-agent[acp]==0.13.0",
-      "args": ["hermes-acp"]
+      "package": "titan-agent[acp]==0.13.0",
+      "args": ["Titan-acp"]
     }
   }
 }
+

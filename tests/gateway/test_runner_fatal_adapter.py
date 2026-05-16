@@ -14,7 +14,7 @@ class _FatalAdapter(BasePlatformAdapter):
     async def connect(self) -> bool:
         self._set_fatal_error(
             "telegram_token_lock",
-            "Another local Hermes gateway is already using this Telegram bot token.",
+            "Another local Titan gateway is already using this Telegram bot token.",
             retryable=False,
         )
         return False
@@ -98,3 +98,4 @@ async def test_runner_queues_retryable_runtime_fatal_for_reconnection(monkeypatc
     assert runner._exit_with_failure is False
     assert Platform.WHATSAPP in runner._failed_platforms
     assert runner._failed_platforms[Platform.WHATSAPP]["attempts"] == 0
+

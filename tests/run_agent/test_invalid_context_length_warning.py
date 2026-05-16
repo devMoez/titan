@@ -12,7 +12,7 @@ def _build_agent(model_cfg, custom_providers=None, model="anthropic/claude-opus-
     base_url = model_cfg.get("base_url", "")
 
     with (
-        patch("hermes_cli.config.load_config", return_value=cfg),
+        patch("Titan_cli.config.load_config", return_value=cfg),
         patch("agent.model_metadata.get_model_context_length", return_value=128_000),
         patch("run_agent.get_tool_definitions", return_value=[]),
         patch("run_agent.check_toolset_requirements", return_value={}),
@@ -112,3 +112,4 @@ def test_custom_providers_valid_context_length():
         )
     for c in mock_logger.warning.call_args_list:
         assert "Invalid" not in str(c)
+

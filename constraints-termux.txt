@@ -1,4 +1,4 @@
-# Termux / Android dependency constraints for Hermes Agent.
+# Termux / Android dependency constraints for Titan Agent.
 #
 # Usage:
 #   python -m pip install -e '.[termux]' -c constraints-termux.txt
@@ -13,3 +13,4 @@ stack-data>=0.6,<0.7
 pexpect>4.3,<5
 matplotlib-inline>=0.1.7,<0.2
 asttokens>=2.1,<3
+

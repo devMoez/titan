@@ -28,7 +28,7 @@
 // already returns its own column Box, so its single-child case was never
 // affected.
 
-import { Box } from '@hermes/ink'
+import { Box } from '@Titan/ink'
 import { memo, useRef } from 'react'
 
 import type { Theme } from '../theme.js'
@@ -172,3 +172,4 @@ interface StreamingMdProps {
   t: Theme
   text: string
 }
+

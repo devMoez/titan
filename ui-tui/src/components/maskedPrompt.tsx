@@ -1,4 +1,4 @@
-import { Box, Text } from '@hermes/ink'
+import { Box, Text } from '@Titan/ink'
 import { useState } from 'react'
 
 import type { Theme } from '../theme.js'
@@ -32,3 +32,4 @@ interface MaskedPromptProps {
   sub?: string
   t: Theme
 }
+

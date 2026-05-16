@@ -1,12 +1,12 @@
 ---
 sidebar_position: 14
 title: "WeCom (Enterprise WeChat)"
-description: "Connect Hermes Agent to WeCom via the AI Bot WebSocket gateway"
+description: "Connect Titan Agent to WeCom via the AI Bot WebSocket gateway"
 ---
 
 # WeCom (Enterprise WeChat)
 
-Connect Hermes to [WeCom](https://work.weixin.qq.com/) (企业微信), Tencent's enterprise messaging platform. The adapter uses WeCom's AI Bot WebSocket gateway for real-time bidirectional communication — no public endpoint or webhook needed.
+Connect Titan to [WeCom](https://work.weixin.qq.com/) (企业微信), Tencent's enterprise messaging platform. The adapter uses WeCom's AI Bot WebSocket gateway for real-time bidirectional communication — no public endpoint or webhook needed.
 
 ## Prerequisites
 
@@ -22,10 +22,10 @@ Connect Hermes to [WeCom](https://work.weixin.qq.com/) (企业微信), Tencent's
 #### Recommended: Scan-to-Create (one command)
 
 ```bash
-hermes gateway setup
+Titan gateway setup
 ```
 
-Select **WeCom** and scan the QR code with your WeCom mobile app. Hermes will automatically create a bot application with the correct permissions and save the credentials.
+Select **WeCom** and scan the QR code with your WeCom mobile app. Titan will automatically create a bot application with the correct permissions and save the credentials.
 
 The setup wizard will:
 1. Display a QR code in your terminal
@@ -41,18 +41,18 @@ If scan-to-create is not available, the wizard falls back to manual input:
 2. Navigate to **Applications** → **Create Application** → **AI Bot**
 3. Configure the bot name and description
 4. Copy the **Bot ID** and **Secret** from the credentials page
-5. Run `hermes gateway setup`, select **WeCom**, and enter the credentials when prompted
+5. Run `Titan gateway setup`, select **WeCom**, and enter the credentials when prompted
 
 :::warning
 Keep the Bot Secret private. Anyone with it can impersonate your bot.
 :::
 
-### Step 2: Configure Hermes
+### Step 2: Configure Titan
 
 #### Option A: Interactive Setup (Recommended)
 
 ```bash
-hermes gateway setup
+Titan gateway setup
 ```
 
 Select **WeCom** and follow the prompts. The wizard will guide you through:
@@ -62,7 +62,7 @@ Select **WeCom** and follow the prompts. The wizard will guide you through:
 
 #### Option B: Manual Configuration
 
-Add the following to `~/.hermes/.env`:
+Add the following to `~/.Titan/.env`:
 
 ```bash
 WECOM_BOT_ID=your-bot-id
@@ -78,7 +78,7 @@ WECOM_HOME_CHANNEL=chat_id
 ### Step 3: Start the gateway
 
 ```bash
-hermes gateway
+Titan gateway
 ```
 
 ## Features
@@ -290,3 +290,4 @@ Inbound messages are deduplicated using message IDs with a 5-minute window and a
 | Images sent as files | Images > 10 MB exceed the native image limit and are auto-downgraded to file attachments. |
 | `Timeout sending message to WeCom` | The WebSocket may have disconnected. Check logs for reconnection messages. |
 | `WeCom websocket closed during authentication` | Network issue or incorrect credentials. Verify bot_id and secret. |
+

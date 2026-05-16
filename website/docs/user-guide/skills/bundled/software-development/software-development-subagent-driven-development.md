@@ -17,7 +17,7 @@ Execute plans via delegate_task subagents (2-stage review).
 | Source | Bundled (installed by default) |
 | Path | `skills/software-development/subagent-driven-development` |
 | Version | `1.1.0` |
-| Author | Hermes Agent (adapted from obra/superpowers) |
+| Author | Titan Agent (adapted from obra/superpowers) |
 | License | MIT |
 | Platforms | linux, macos, windows |
 | Tags | `delegation`, `subagent`, `implementation`, `workflow`, `parallel` |
@@ -26,7 +26,7 @@ Execute plans via delegate_task subagents (2-stage review).
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Subagent-Driven Development
@@ -368,3 +368,4 @@ When the orchestration involves significant context usage, long review loops, or
 - **`references/gates-taxonomy.md`** — The four canonical gate types (Pre-flight, Revision, Escalation, Abort) with behavior, recovery, and examples. Load when designing or reviewing any workflow that has validation checkpoints — use the vocabulary explicitly so each gate has defined entry, failure behavior, and resumption rules.
 
 Both references adapted from gsd-build/get-shit-done (MIT © 2025 Lex Christopherson).
+

@@ -7,7 +7,7 @@ license: MIT
 dependencies: [qdrant-client>=1.12.0]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [RAG, Vector Search, Qdrant, Semantic Search, Embeddings, Similarity Search, HNSW, Production, Distributed]
 
 ---
@@ -495,3 +495,4 @@ client = QdrantClient(
 - **Cloud**: https://cloud.qdrant.io
 - **Version**: 1.12.0+
 - **License**: Apache 2.0
+

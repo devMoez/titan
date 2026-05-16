@@ -538,13 +538,13 @@ class MemoryManager:
     def initialize_all(self, session_id: str, **kwargs) -> None:
         """Initialize all providers.
 
-        Automatically injects ``hermes_home`` into *kwargs* so that every
+        Automatically injects ``Titan_home`` into *kwargs* so that every
         provider can resolve profile-scoped storage paths without importing
-        ``get_hermes_home()`` themselves.
+        ``get_Titan_home()`` themselves.
         """
-        if "hermes_home" not in kwargs:
-            from hermes_constants import get_hermes_home
-            kwargs["hermes_home"] = str(get_hermes_home())
+        if "Titan_home" not in kwargs:
+            from Titan_constants import get_Titan_home
+            kwargs["Titan_home"] = str(get_Titan_home())
         for provider in self._providers:
             try:
                 provider.initialize(session_id=session_id, **kwargs)
@@ -553,3 +553,4 @@ class MemoryManager:
                     "Memory provider '%s' initialize failed: %s",
                     provider.name, e,
                 )
+

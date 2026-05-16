@@ -1,1 +1,2 @@
-# Hermes plugins package
+# Titan plugins package
+

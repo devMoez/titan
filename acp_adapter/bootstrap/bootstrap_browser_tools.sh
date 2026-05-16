@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 #
 # bootstrap_browser_tools.sh — install agent-browser + Playwright Chromium
-# into ~/.hermes/node/ for use by Hermes Agent's browser tools.
+# into ~/.Titan/node/ for use by Titan Agent's browser tools.
 #
-# Targets the registry-install path: users who got Hermes via
-# `uvx --from 'hermes-agent[acp]==X' hermes-acp` don't have a repo clone,
+# Targets the registry-install path: users who got Titan via
+# `uvx --from 'titan-agent[acp]==X' Titan-acp` don't have a repo clone,
 # so the install.sh `npm install`-in-repo flow doesn't apply. This script
 # is a self-contained, idempotent slice of install.sh's browser block —
-# safe to run from `hermes-acp --setup-browser`, from a fresh terminal,
+# safe to run from `Titan-acp --setup-browser`, from a fresh terminal,
 # or from install.sh itself (it's a no-op when everything is already in place).
 #
 # Usage:
 #   bootstrap_browser_tools.sh           # use defaults
 #   bootstrap_browser_tools.sh --yes     # accept the ~400MB Chromium download
 #   bootstrap_browser_tools.sh --skip-chromium    # only install Node + agent-browser
-#   HERMES_HOME=/custom/path bootstrap_browser_tools.sh
+#   Titan_HOME=/custom/path bootstrap_browser_tools.sh
 #
 # Idempotent: re-running this is safe and fast. Each step checks whether
 # the work is already done.
@@ -26,8 +26,8 @@ set -euo pipefail
 # ─────────────────────────────────────────────────────────────────────────
 
 NODE_VERSION="22"
-HERMES_HOME="${HERMES_HOME:-$HOME/.hermes}"
-NODE_PREFIX="$HERMES_HOME/node"
+Titan_HOME="${Titan_HOME:-$HOME/.Titan}"
+NODE_PREFIX="$Titan_HOME/node"
 
 SKIP_CHROMIUM=false
 ASSUME_YES=false
@@ -61,9 +61,9 @@ while [ $# -gt 0 ]; do
         --yes|-y)        ASSUME_YES=true ;;
         -h|--help)
             cat <<EOF
-Bootstrap Hermes Agent browser tools.
+Bootstrap Titan Agent browser tools.
 
-Installs Node.js (into ~/.hermes/node/), the agent-browser npm package,
+Installs Node.js (into ~/.Titan/node/), the agent-browser npm package,
 and the Playwright Chromium browser engine.
 
 Options:
@@ -72,7 +72,7 @@ Options:
   -h, --help        Show this help
 
 Environment:
-  HERMES_HOME       Override Hermes data dir (default: \$HOME/.hermes)
+  Titan_HOME       Override Titan data dir (default: \$HOME/.Titan)
 EOF
             exit 0
             ;;
@@ -144,7 +144,7 @@ ensure_node() {
         local found_ver
         found_ver=$("$NODE_PREFIX/bin/node" --version 2>/dev/null || echo "?")
         export PATH="$NODE_PREFIX/bin:$PATH"
-        log_success "Node.js $found_ver found (Hermes-managed at $NODE_PREFIX)"
+        log_success "Node.js $found_ver found (Titan-managed at $NODE_PREFIX)"
         return 0
     fi
 
@@ -191,7 +191,7 @@ ensure_node() {
         return 1
     fi
 
-    mkdir -p "$HERMES_HOME"
+    mkdir -p "$Titan_HOME"
     rm -rf "$NODE_PREFIX"
     mv "$extracted_dir" "$NODE_PREFIX"
 
@@ -212,7 +212,7 @@ ensure_agent_browser() {
         return 1
     fi
 
-    # _find_agent_browser() in tools/browser_tool.py walks ~/.hermes/node/bin
+    # _find_agent_browser() in tools/browser_tool.py walks ~/.Titan/node/bin
     # plus a few standard prefixes, so installing globally into the managed
     # Node prefix is enough — no PATH manipulation needed from the agent side.
     if [ -x "$NODE_PREFIX/bin/agent-browser" ] || command -v agent-browser >/dev/null 2>&1; then
@@ -222,7 +222,7 @@ ensure_agent_browser() {
 
     # When the system's `npm` resolves to a root-owned prefix (e.g.
     # /usr/lib/node_modules), `npm install -g` fails with EACCES without
-    # sudo. Force the prefix to the user-writable Hermes-managed Node
+    # sudo. Force the prefix to the user-writable Titan-managed Node
     # directory so we never need sudo and the agent can always find the
     # result. If we installed Node ourselves above, this is a no-op
     # (managed Node already uses $NODE_PREFIX). If the user has system
@@ -292,14 +292,14 @@ find_system_browser() {
 
 write_browser_env() {
     local browser_path="$1"
-    local env_file="$HERMES_HOME/.env"
-    mkdir -p "$HERMES_HOME"
+    local env_file="$Titan_HOME/.env"
+    mkdir -p "$Titan_HOME"
     if [ -f "$env_file" ] && grep -q "^AGENT_BROWSER_EXECUTABLE_PATH=" "$env_file"; then
         return 0
     fi
     {
         echo ""
-        echo "# Hermes Agent browser tools — use the system Chrome/Chromium binary."
+        echo "# Titan Agent browser tools — use the system Chrome/Chromium binary."
         echo "AGENT_BROWSER_EXECUTABLE_PATH=$browser_path"
     } >> "$env_file"
     log_success "Configured browser tools to use $browser_path"
@@ -384,8 +384,8 @@ ensure_chromium() {
 # ─────────────────────────────────────────────────────────────────────────
 
 main() {
-    log_info "Hermes Agent: bootstrapping browser tools"
-    log_info "  HERMES_HOME = $HERMES_HOME"
+    log_info "Titan Agent: bootstrapping browser tools"
+    log_info "  Titan_HOME = $Titan_HOME"
     log_info "  OS / arch   = $NODE_OS-$NODE_ARCH ${DISTRO:+($DISTRO)}"
 
     ensure_node
@@ -393,7 +393,8 @@ main() {
     ensure_chromium
 
     log_success "Browser tools setup complete."
-    log_info "Hermes Agent will pick up agent-browser from $NODE_PREFIX/bin/ on next launch."
+    log_info "Titan Agent will pick up agent-browser from $NODE_PREFIX/bin/ on next launch."
 }
 
 main
+

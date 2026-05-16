@@ -2,11 +2,11 @@
 name: requesting-code-review
 description: "Pre-commit review: security scan, quality gates, auto-fix."
 version: 2.0.0
-author: Hermes Agent (adapted from obra/superpowers + MorAlekss)
+author: Titan Agent (adapted from obra/superpowers + MorAlekss)
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [code-review, security, verification, quality, pre-commit, auto-fix]
     related_skills: [subagent-driven-development, writing-plans, test-driven-development, github-code-review]
 ---
@@ -278,3 +278,4 @@ tests exist, tests pass, no regressions.
 - **No test framework found** — skip regression check, reviewer verdict still runs
 - **Lint tools not installed** — skip that check silently, don't fail
 - **Auto-fix introduces new issues** — counts as a new failure, cycle continues
+

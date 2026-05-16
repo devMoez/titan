@@ -46,7 +46,7 @@ def clean_registry():
 
 
 class _MockPluginContext:
-    """Minimal mock of hermes_cli.plugins.PluginContext.
+    """Minimal mock of Titan_cli.plugins.PluginContext.
 
     Only implements register_platform so we can exercise the plugin's
     register() entrypoint without importing the real plugin system.
@@ -228,3 +228,4 @@ def test_is_connected_if_present(platform_name: str, clean_registry):
     mock_config.extra = {}
     result = entry.is_connected(mock_config)
     assert isinstance(result, bool)
+

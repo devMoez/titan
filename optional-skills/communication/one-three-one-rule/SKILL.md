@@ -14,7 +14,7 @@ author: Willard Moore
 license: MIT
 category: communication
 metadata:
-  hermes:
+  Titan:
     tags: [communication, decision-making, proposals, trade-offs]
 ---
 
@@ -102,3 +102,4 @@ Agent:
 3. Wrap existing API calls in `api_client.py` with the retry utility.
 4. Add unit tests mocking HTTP responses for each retry scenario.
 5. Verify under load with a simple stress test against a flaky endpoint mock.
+

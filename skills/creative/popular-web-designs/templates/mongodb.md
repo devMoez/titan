@@ -1,7 +1,7 @@
 # Design System: MongoDB
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `Source Code Pro`
@@ -277,3 +277,4 @@ What makes MongoDB distinctive is its dual-mode design: a dark hero/feature sect
 4. Weight 300 body text creates the airy reading experience — don't default to 400
 5. Source Code Pro uppercase with wide tracking for technical labels — the database voice
 6. Teal-tinted shadows keep everything in the MongoDB color world
+

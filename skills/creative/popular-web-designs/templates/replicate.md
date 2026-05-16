@@ -1,7 +1,7 @@
 # Design System: Replicate
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `JetBrains Mono`
@@ -272,3 +272,4 @@ What makes Replicate distinctive is its community-powered energy. The model gall
 3. Links use dotted underline (#bbbbbb) — never solid
 4. The gradient hero is the visual anchor — make it bold
 5. Use basier-square for body, rb-freigeist-neue for display, JetBrains Mono for code
+

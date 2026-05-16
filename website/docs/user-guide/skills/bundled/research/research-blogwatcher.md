@@ -25,7 +25,7 @@ Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Blogwatcher
@@ -150,3 +150,4 @@ Unread articles (2):
 - Import blogs in bulk from OPML files exported by Feedly, Inoreader, NewsBlur, etc.
 - Database stored at `~/.blogwatcher-cli/blogwatcher-cli.db` by default (override with `--db` or `BLOGWATCHER_DB`).
 - Use `blogwatcher-cli <command> --help` to discover all flags and options.
+

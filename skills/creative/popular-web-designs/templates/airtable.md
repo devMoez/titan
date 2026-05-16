@@ -1,7 +1,7 @@
 # Design System: Airtable
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `system monospace stack`
@@ -100,3 +100,4 @@ Breakpoints: 425–1664px (23 breakpoints)
 - CTA: Airtable Blue (`#1b61c9`)
 - Background: White (`#ffffff`)
 - Border: `#e0e2e6`
+

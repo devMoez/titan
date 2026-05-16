@@ -12,7 +12,7 @@ def clean_env(monkeypatch):
         "OPENAI_API_KEY",
         "MINIMAX_API_KEY",
         "MINIMAX_GROUP_ID",
-        "HERMES_SESSION_PLATFORM",
+        "Titan_SESSION_PLATFORM",
     ):
         monkeypatch.delenv(key, raising=False)
 
@@ -238,3 +238,4 @@ class TestMinimaxTtsLegacyTextToSpeech:
         _, output = self._run({}, tmp_path, monkeypatch)
         with open(output, "rb") as f:
             assert f.read() == b"\x00\x01\x02\x03"
+

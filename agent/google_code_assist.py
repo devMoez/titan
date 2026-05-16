@@ -301,7 +301,7 @@ def onboard_user(
     if tier_id != FREE_TIER_ID and tier_id != LEGACY_TIER_ID and not project_id:
         raise ProjectIdRequiredError(
             f"Tier {tier_id!r} requires a GCP project id. "
-            "Set HERMES_GEMINI_PROJECT_ID or GOOGLE_CLOUD_PROJECT."
+            "Set Titan_GEMINI_PROJECT_ID or GOOGLE_CLOUD_PROJECT."
         )
 
     body: Dict[str, Any] = {
@@ -450,3 +450,4 @@ def resolve_project_context(
         tier_id=tier,
         source=source,
     )
+

@@ -2,11 +2,11 @@
 name: design-md
 description: Author/validate/export Google's DESIGN.md token spec files.
 version: 1.0.0
-author: Hermes Agent
+author: Titan Agent
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [design, design-system, tokens, ui, accessibility, wcag, tailwind, dtcg, google]
     related_skills: [popular-web-designs, claude-design, excalidraw, architecture-diagram]
 ---
@@ -197,3 +197,4 @@ summary — WCAG findings are the most load-bearing reason to use the CLI.
 - CLI: `@google/design.md` on npm
 - License of generated DESIGN.md files: whatever the user's project uses;
   the spec itself is Apache-2.0.
+

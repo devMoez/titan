@@ -6,7 +6,7 @@ author: adanaleycio
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [creative, memes, humor, images]
     related_skills: [ascii-art, generative-widgets]
     category: creative
@@ -57,7 +57,7 @@ python "$SKILL_DIR/scripts/generate_meme.py" --search "disaster"
 3. Write short captions for each field (8-12 words max per field, shorter is better).
 4. Find the skill's script directory:
    ```
-   SKILL_DIR=$(dirname "$(find ~/.hermes/skills -path '*/meme-generation/SKILL.md' 2>/dev/null | head -1)")
+   SKILL_DIR=$(dirname "$(find ~/.Titan/skills -path '*/meme-generation/SKILL.md' 2>/dev/null | head -1)")
    ```
 5. Run the generator:
    ```bash
@@ -128,3 +128,4 @@ The output is correct if:
 - Text is legible (white with black outline) on the template
 - The joke lands — caption matches the template's intended structure
 - File can be delivered via MEDIA: path
+

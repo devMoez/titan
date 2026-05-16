@@ -10,13 +10,13 @@ Cloud memory API with hybrid search (Vector + BM25 + Reranking) and 7 memory typ
 ## Setup
 
 ```bash
-hermes memory setup    # select "retaindb"
+Titan memory setup    # select "retaindb"
 ```
 
 Or manually:
 ```bash
-hermes config set memory.provider retaindb
-echo "RETAINDB_API_KEY=your-key" >> ~/.hermes/.env
+Titan config set memory.provider retaindb
+echo "RETAINDB_API_KEY=your-key" >> ~/.Titan/.env
 ```
 
 ## Config
@@ -38,3 +38,4 @@ All config via environment variables in `.env`:
 | `retaindb_context` | Task-relevant context |
 | `retaindb_remember` | Store a fact with type + importance |
 | `retaindb_forget` | Delete a memory by ID |
+

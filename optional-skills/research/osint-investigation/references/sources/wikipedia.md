@@ -18,7 +18,7 @@ inclusion is real, but anything past that bar is well-cross-referenced.
 - **Wikidata SPARQL:** `https://query.wikidata.org/sparql` (more powerful but aggressively rate-limited)
 - **Auth:** None, but **a meaningful User-Agent is required**
 
-Set `HERMES_OSINT_UA` to something identifying (e.g. `your-app/1.0 (you@example.com)`).
+Set `Titan_OSINT_UA` to something identifying (e.g. `your-app/1.0 (you@example.com)`).
 Wikimedia returns HTTP 429 to generic UAs.
 
 ## 3. Data Schema
@@ -105,3 +105,4 @@ matches. Each is enriched with the QID + structured facts unless
 - Wikidata Action API: https://www.wikidata.org/wiki/Wikidata:Data_access
 - Wikidata SPARQL: https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service
 - User-Agent policy: https://meta.wikimedia.org/wiki/User-Agent_policy
+

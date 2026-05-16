@@ -70,7 +70,7 @@ async def test_hook_skip_short_circuits_dispatch(monkeypatch):
             return [{"action": "skip", "reason": "plugin-handled"}]
         return []
 
-    monkeypatch.setattr("hermes_cli.plugins.invoke_hook", _fake_hook)
+    monkeypatch.setattr("Titan_cli.plugins.invoke_hook", _fake_hook)
 
     runner, adapter = _make_runner(Platform.WHATSAPP)
 
@@ -98,7 +98,7 @@ async def test_hook_rewrite_replaces_event_text(monkeypatch):
         seen_text["value"] = event.text
         return "ok"
 
-    monkeypatch.setattr("hermes_cli.plugins.invoke_hook", _fake_hook)
+    monkeypatch.setattr("Titan_cli.plugins.invoke_hook", _fake_hook)
 
     runner, _adapter = _make_runner(Platform.WHATSAPP)
     runner._handle_message_with_agent = _capture  # noqa: SLF001
@@ -120,7 +120,7 @@ async def test_hook_allow_falls_through_to_auth(monkeypatch):
             return [{"action": "allow"}]
         return []
 
-    monkeypatch.setattr("hermes_cli.plugins.invoke_hook", _fake_hook)
+    monkeypatch.setattr("Titan_cli.plugins.invoke_hook", _fake_hook)
 
     runner, adapter = _make_runner(Platform.WHATSAPP)
     runner.pairing_store.generate_code.return_value = "12345"
@@ -141,7 +141,7 @@ async def test_hook_exception_does_not_break_dispatch(monkeypatch):
     def _fake_hook(name, **kwargs):
         raise RuntimeError("plugin blew up")
 
-    monkeypatch.setattr("hermes_cli.plugins.invoke_hook", _fake_hook)
+    monkeypatch.setattr("Titan_cli.plugins.invoke_hook", _fake_hook)
 
     runner, _adapter = _make_runner(Platform.WHATSAPP)
     runner.pairing_store.generate_code.return_value = None
@@ -166,7 +166,7 @@ async def test_internal_events_bypass_hook(monkeypatch):
     async def _capture(event, source, _quick_key, _run_generation):
         return "ok"
 
-    monkeypatch.setattr("hermes_cli.plugins.invoke_hook", _fake_hook)
+    monkeypatch.setattr("Titan_cli.plugins.invoke_hook", _fake_hook)
 
     runner, _adapter = _make_runner(Platform.WHATSAPP)
     runner._handle_message_with_agent = _capture  # noqa: SLF001
@@ -177,3 +177,4 @@ async def test_internal_events_bypass_hook(monkeypatch):
     # Even though the hook would say skip, internal events bypass it.
     await runner._handle_message(event)
     assert called["count"] == 0
+

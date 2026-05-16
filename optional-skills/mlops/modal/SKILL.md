@@ -7,7 +7,7 @@ license: MIT
 dependencies: [modal>=0.64.0]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Infrastructure, Serverless, GPU, Cloud, Deployment, Modal]
 
 ---
@@ -343,3 +343,4 @@ if __name__ == "__main__":
 - **Examples**: https://github.com/modal-labs/modal-examples
 - **Pricing**: https://modal.com/pricing
 - **Discord**: https://discord.gg/modal
+

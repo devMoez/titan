@@ -1,4 +1,4 @@
-import type { ScrollBoxHandle } from '@hermes/ink'
+import type { ScrollBoxHandle } from '@Titan/ink'
 import {
   type RefObject,
   useCallback,
@@ -534,3 +534,4 @@ interface VirtualHistoryOptions {
   onHeightsChange?: (heights: ReadonlyMap<string, number>) => void
   overscan?: number
 }
+

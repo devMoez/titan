@@ -1,4 +1,4 @@
-import { Box, NoSelect, Text } from '@hermes/ink'
+import { Box, NoSelect, Text } from '@Titan/ink'
 import { memo, type ReactNode, useEffect, useMemo, useState } from 'react'
 import spinners, { type BrailleSpinnerName } from 'unicode-animations'
 
@@ -1204,3 +1204,4 @@ export const ToolTrail = memo(function ToolTrail({
     </Box>
   )
 })
+

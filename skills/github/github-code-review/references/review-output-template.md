@@ -30,7 +30,7 @@ Use this as the structure for PR review summary comments. Copy and fill in the s
 - [aspect that was done well]
 
 ---
-*Reviewed by Hermes Agent*
+*Reviewed by Titan Agent*
 ```
 
 ## Severity Guide
@@ -72,3 +72,4 @@ Prefix inline comments with the severity icon so they're scannable:
 ## For Local (Pre-Push) Review
 
 When reviewing locally before push, use the same structure but present it as a message to the user instead of a PR comment. Skip the PR metadata header and just start with the severity sections.
+

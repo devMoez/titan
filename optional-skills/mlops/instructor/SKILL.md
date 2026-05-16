@@ -7,7 +7,7 @@ license: MIT
 dependencies: [instructor, pydantic, openai, anthropic]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Prompt Engineering, Instructor, Structured Output, Pydantic, Data Extraction, JSON Parsing, Type Safety, Validation, Streaming, OpenAI, Anthropic]
 
 ---
@@ -740,5 +740,6 @@ class PartialData(BaseModel):
 - `references/validation.md` - Advanced validation patterns
 - `references/providers.md` - Provider-specific configuration
 - `references/examples.md` - Real-world use cases
+
 
 

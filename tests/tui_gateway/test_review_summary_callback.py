@@ -22,12 +22,12 @@ def server():
     with patch.dict(
         "sys.modules",
         {
-            "hermes_constants": MagicMock(
-                get_hermes_home=MagicMock(return_value="/tmp/hermes_test_review_summary")
+            "Titan_constants": MagicMock(
+                get_Titan_home=MagicMock(return_value="/tmp/Titan_test_review_summary")
             ),
-            "hermes_cli.env_loader": MagicMock(),
-            "hermes_cli.banner": MagicMock(),
-            "hermes_state": MagicMock(),
+            "Titan_cli.env_loader": MagicMock(),
+            "Titan_cli.banner": MagicMock(),
+            "Titan_state": MagicMock(),
         },
     ):
         import importlib
@@ -81,7 +81,7 @@ def test_init_session_attaches_background_review_callback(server, monkeypatch):
     captured_emits.clear()
 
     # Invoke the callback the way AIAgent._spawn_background_review would.
-    cb("💾 Self-improvement review: Skill 'hermes-release' patched")
+    cb("💾 Self-improvement review: Skill 'Titan-release' patched")
 
     # Exactly one review.summary event should have been emitted, bound to
     # the session id we passed in, carrying the full message text.
@@ -90,7 +90,7 @@ def test_init_session_attaches_background_review_callback(server, monkeypatch):
     event, sid, payload = matched[0]
     assert sid == "sid-abc"
     assert payload == {
-        "text": "💾 Self-improvement review: Skill 'hermes-release' patched"
+        "text": "💾 Self-improvement review: Skill 'Titan-release' patched"
     }
 
 
@@ -115,3 +115,4 @@ def test_review_summary_callback_survives_agent_without_attribute(server, monkey
     # LockedAgent's __slots__ blocks background_review_callback assignment.
     server._init_session("sid-x", "key-x", LockedAgent(), [], cols=80)
     # If we got here, _init_session swallowed the AttributeError gracefully.
+

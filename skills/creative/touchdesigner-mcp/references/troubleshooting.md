@@ -133,11 +133,11 @@ n.cook(force=True)
 actual = str(n.width) + 'x' + str(n.height)
 ```
 
-## 5. Hermes Configuration
+## 5. Titan Configuration
 
 ### Config location
 
-`$HERMES_HOME/config.yaml` (defaults to `~/.hermes/config.yaml` when `HERMES_HOME` is unset)
+`$Titan_HOME/config.yaml` (defaults to `~/.Titan/config.yaml` when `Titan_HOME` is unset)
 
 ### MCP entry format
 
@@ -150,7 +150,7 @@ mcpServers:
 
 ### After config changes
 
-Restart the Hermes session for changes to take effect. The MCP connection is
+Restart the Titan session for changes to take effect. The MCP connection is
 established at session startup.
 
 ### Verifying MCP tools are available
@@ -242,3 +242,4 @@ rec.par.record = False  # stop
 
 TOP.save() captures same frame when called rapidly. Use MovieFileOut for
 real-time recording. Set project.realTime = False for frame-accurate output.
+

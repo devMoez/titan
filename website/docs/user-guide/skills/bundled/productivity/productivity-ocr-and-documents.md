@@ -17,7 +17,7 @@ Extract text from PDFs/scans (pymupdf, marker-pdf).
 | Source | Bundled (installed by default) |
 | Path | `skills/productivity/ocr-and-documents` |
 | Version | `2.3.0` |
-| Author | Hermes Agent |
+| Author | Titan Agent |
 | License | MIT |
 | Platforms | linux, macos, windows |
 | Tags | `PDF`, `Documents`, `Research`, `Arxiv`, `Text-Extraction`, `OCR` |
@@ -26,7 +26,7 @@ Extract text from PDFs/scans (pymupdf, marker-pdf).
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # PDF & Document Extraction
@@ -188,3 +188,4 @@ No extra dependencies needed — pymupdf covers split, merge, search, and text e
 - marker-pdf downloads ~2.5GB of models to `~/.cache/huggingface/` on first use
 - For Word docs: `pip install python-docx` (better than OCR — parses actual structure)
 - For PowerPoint: see the `powerpoint` skill (uses python-pptx)
+

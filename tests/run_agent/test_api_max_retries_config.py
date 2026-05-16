@@ -17,7 +17,7 @@ def _make_agent(api_max_retries=None):
         cfg["agent"]["api_max_retries"] = api_max_retries
 
     with patch("run_agent.OpenAI"), \
-         patch("hermes_cli.config.load_config", return_value=cfg):
+         patch("Titan_cli.config.load_config", return_value=cfg):
         return AIAgent(
             api_key="test-key",
             base_url="https://openrouter.ai/api/v1",
@@ -63,3 +63,4 @@ def test_api_max_retries_falls_back_on_invalid_value():
     # None with dict.get default fires → default(3), then int(None) raises
     # TypeError → except branch sets to 3.
     assert agent2._api_max_retries == 3
+

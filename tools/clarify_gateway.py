@@ -239,7 +239,7 @@ def get_clarify_timeout() -> int:
     Reads ``agent.clarify_timeout`` from config.yaml.
     """
     try:
-        from hermes_cli.config import load_config
+        from Titan_cli.config import load_config
         cfg = load_config() or {}
         agent_cfg = cfg.get("agent", {}) or {}
         return int(agent_cfg.get("clarify_timeout", 600))
@@ -276,3 +276,4 @@ def unregister_notify(session_key: str) -> None:
 def get_notify(session_key: str) -> Optional[Callable[[_ClarifyEntry], None]]:
     with _lock:
         return _notify_cbs.get(session_key)
+

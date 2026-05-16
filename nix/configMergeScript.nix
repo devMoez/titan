@@ -3,7 +3,7 @@
 # Used by the NixOS module activation script and by checks.nix tests.
 # Nix keys override; user-added keys (skills, streaming, etc.) are preserved.
 { pkgs }:
-pkgs.writeScript "hermes-config-merge" ''
+pkgs.writeScript "Titan-config-merge" ''
   #!${pkgs.python3.withPackages (ps: [ ps.pyyaml ])}/bin/python3
   import json, yaml, sys
   from pathlib import Path
@@ -31,3 +31,4 @@ pkgs.writeScript "hermes-config-merge" ''
   with open(config_path, "w") as f:
       yaml.dump(merged, f, default_flow_style=False, sort_keys=False)
 ''
+

@@ -77,7 +77,7 @@ def _make_runner(platform: Platform, config: GatewayConfig):
 def test_whatsapp_lid_user_matches_phone_allowlist_via_session_mapping(monkeypatch, tmp_path):
     _clear_auth_env(monkeypatch)
     monkeypatch.setenv("WHATSAPP_ALLOWED_USERS", "15550000001")
-    monkeypatch.setenv("HERMES_HOME", str(tmp_path))
+    monkeypatch.setenv("Titan_HOME", str(tmp_path))
 
     session_dir = tmp_path / "whatsapp" / "session"
     session_dir.mkdir(parents=True)
@@ -646,3 +646,4 @@ def test_qqbot_with_allowlist_ignores_unauthorized_dm(monkeypatch):
 
     behavior = runner._get_unauthorized_dm_behavior(Platform.QQBOT)
     assert behavior == "ignore"
+

@@ -6,7 +6,7 @@ author: BadTechBandit
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [design, html, prototype, ux, ui, creative, artifact, deck, motion, design-system]
     related_skills: [design-md, popular-web-designs, excalidraw, architecture-diagram]
 ---
@@ -21,7 +21,7 @@ The goal is to preserve Claude Design's useful design behavior and taste while r
 
 ## When To Use This Skill vs `popular-web-designs` vs `design-md`
 
-Hermes has three design-related skills under `skills/creative/`. They do different jobs — load the right one (or combine them):
+Titan has three design-related skills under `skills/creative/`. They do different jobs — load the right one (or combine them):
 
 | Skill | What it gives you | Use when the user wants... |
 |---|---|---|
@@ -589,3 +589,4 @@ You are running in CLI/API mode, not hosted Claude Design. Ignore references to 
 - Do not under-ask for high-fidelity work with no brand context.
 - Do not produce generic SaaS layouts and call them designed.
 - Do not claim browser verification unless it actually happened.
+

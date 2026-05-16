@@ -66,7 +66,7 @@ class FirecrawlProvider(CloudBrowserProvider):
             )
 
         data = response.json()
-        session_name = f"hermes_{task_id}_{uuid.uuid4().hex[:8]}"
+        session_name = f"Titan_{task_id}_{uuid.uuid4().hex[:8]}"
 
         logger.info("Created Firecrawl browser session %s", session_name)
 
@@ -110,3 +110,4 @@ class FirecrawlProvider(CloudBrowserProvider):
             logger.warning("Cannot emergency-cleanup Firecrawl session %s — missing credentials", session_id)
         except Exception as e:
             logger.debug("Emergency cleanup failed for Firecrawl session %s: %s", session_id, e)
+

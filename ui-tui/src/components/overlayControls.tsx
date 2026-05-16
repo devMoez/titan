@@ -1,4 +1,4 @@
-import { Text, useInput } from '@hermes/ink'
+import { Text, useInput } from '@Titan/ink'
 
 import type { Theme } from '../theme.js'
 
@@ -48,3 +48,4 @@ interface OverlayKeysOptions {
   onBack?: () => void
   onClose: () => void
 }
+

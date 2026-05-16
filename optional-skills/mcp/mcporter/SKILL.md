@@ -6,7 +6,7 @@ author: community
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [MCP, Tools, API, Integrations, Interop]
     homepage: https://mcporter.dev
 prerequisites:
@@ -71,7 +71,7 @@ mcporter call --stdio "bun run ./server.ts" scrape url=https://example.com
 # JSON payload
 mcporter call <server.tool> --args '{"limit": 5}'
 
-# Machine-readable output (recommended for Hermes)
+# Machine-readable output (recommended for Titan)
 mcporter call <server.tool> key=value --output json
 ```
 
@@ -121,3 +121,4 @@ mcporter emit-ts <server> --mode types
 - Use `--output json` for structured output that's easier to parse
 - Ad-hoc servers (HTTP URL or `--stdio` command) work without any config — useful for one-off calls
 - OAuth auth may require interactive browser flow — use `terminal(command="mcporter auth <server>", pty=true)` if needed
+

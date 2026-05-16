@@ -629,7 +629,7 @@ class TestNoCredsPreflight:
     With the guard, ``connect()`` returns False immediately with a
     non-retryable fatal error so the reconnect watcher drops the platform
     and the gateway gets a single clear log line telling the user to run
-    ``hermes whatsapp``.
+    ``Titan whatsapp``.
     """
 
     @pytest.mark.asyncio
@@ -701,3 +701,4 @@ class TestNoCredsPreflight:
         # but the fatal-error code is NOT the "not paired" one.
         assert result is False
         assert adapter._fatal_error_code != "whatsapp_not_paired"
+

@@ -7,7 +7,7 @@ license: MIT
 dependencies: [sae-lens>=6.0.0, transformer-lens>=2.0.0, torch>=2.0.0]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Sparse Autoencoders, SAE, Mechanistic Interpretability, Feature Discovery, Superposition]
 
 ---
@@ -388,3 +388,4 @@ cfg = LanguageModelSAERunnerConfig(
     activation_fn_kwargs={"k": 50},
 )
 ```
+

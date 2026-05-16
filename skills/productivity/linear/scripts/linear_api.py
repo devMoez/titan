@@ -62,7 +62,7 @@ def _get_key() -> str:
         sys.stderr.write(
             "ERROR: LINEAR_API_KEY not set.\n"
             "Create one at https://linear.app/settings/api and export it,\n"
-            "or add `LINEAR_API_KEY=lin_api_...` to ~/.hermes/.env\n"
+            "or add `LINEAR_API_KEY=lin_api_...` to ~/.Titan/.env\n"
         )
         sys.exit(2)
     return key
@@ -81,7 +81,7 @@ def gql(query: str, variables: dict[str, Any] | None = None) -> dict[str, Any]:
         headers={
             "Content-Type": "application/json",
             "Authorization": key,  # Personal API key — NO `Bearer` prefix
-            "User-Agent": "hermes-agent-linear-skill/1.0",
+            "User-Agent": "titan-agent-linear-skill/1.0",
         },
         method="POST",
     )
@@ -443,3 +443,4 @@ def main(argv: list[str] | None = None) -> None:
 
 if __name__ == "__main__":
     main()
+

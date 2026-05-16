@@ -14,7 +14,7 @@ Free web search via DuckDuckGo — text, news, images, videos. No API key needed
 
 | | |
 |---|---|
-| Source | Optional — install with `hermes skills install official/research/duckduckgo-search` |
+| Source | Optional — install with `Titan skills install official/research/duckduckgo-search` |
 | Path | `optional-skills/research/duckduckgo-search` |
 | Version | `1.3.0` |
 | Author | gamedevCloudy |
@@ -26,7 +26,7 @@ Free web search via DuckDuckGo — text, news, images, videos. No API key needed
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # DuckDuckGo Search
@@ -253,3 +253,4 @@ Then extract the best URL with `web_extract` or another content-retrieval tool.
 ## Validated With
 
 Validated examples against `ddgs==9.11.2` semantics. Skill guidance now treats CLI availability and Python import availability as separate concerns so the documented workflow matches actual runtime behavior.
+

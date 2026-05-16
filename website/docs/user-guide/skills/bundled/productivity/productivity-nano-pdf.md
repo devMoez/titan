@@ -25,7 +25,7 @@ Edit PDF text/typos/titles via nano-pdf CLI (NL prompts).
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # nano-pdf
@@ -35,7 +35,7 @@ Edit PDFs using natural-language instructions. Point it at a page and describe w
 ## Prerequisites
 
 ```bash
-# Install with uv (recommended — already available in Hermes)
+# Install with uv (recommended — already available in Titan)
 uv pip install nano-pdf
 
 # Or with pip
@@ -67,3 +67,4 @@ nano-pdf edit contract.pdf 2 "Change the client name from 'Acme Corp' to 'Acme I
 - Always verify the output PDF after editing (use `read_file` to check file size, or open it)
 - The tool uses an LLM under the hood — requires an API key (check `nano-pdf --help` for config)
 - Works well for text changes; complex layout modifications may need a different approach
+

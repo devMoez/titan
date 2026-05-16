@@ -9,7 +9,7 @@ future keepalive / transport reimplementation plumbs sockets in, the Nth call
 to ``_create_openai_client`` must not hand back a client wrapping a
 now-closed httpx transport from an earlier call.
 
-AlexKucera's Discord report (2026-04-16): after ``hermes update`` pulled
+AlexKucera's Discord report (2026-04-16): after ``Titan update`` pulled
 #10933, the first chat on a session worked, every subsequent chat failed
 with ``APIConnectionError('Connection error.')`` whose cause was
 ``RuntimeError: Cannot send a request, as the client has been closed``.
@@ -186,3 +186,4 @@ def test_replace_primary_openai_client_survives_repeated_rebuilds():
         "Some _create_openai_client calls returned the same object across "
         "a teardown — rebuild is not producing fresh clients"
     )
+

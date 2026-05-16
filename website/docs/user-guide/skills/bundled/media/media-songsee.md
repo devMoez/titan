@@ -25,7 +25,7 @@ Audio spectrograms/features (mel, chroma, MFCC) via CLI.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # songsee
@@ -96,3 +96,4 @@ Multiple `--viz` types render as a grid in a single image.
 - WAV and MP3 are decoded natively; other formats require `ffmpeg`
 - Output images can be inspected with `vision_analyze` for automated audio analysis
 - Useful for comparing audio outputs, debugging synthesis, or documenting audio processing pipelines
+

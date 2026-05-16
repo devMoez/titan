@@ -1,6 +1,6 @@
 """Tests for the curator per-run report writer (run.json + REPORT.md).
 
-Reports live under ``~/.hermes/logs/curator/{YYYYMMDD-HHMMSS}/`` alongside
+Reports live under ``~/.Titan/logs/curator/{YYYYMMDD-HHMMSS}/`` alongside
 the standard log dir, not inside the user's ``skills/`` data directory.
 """
 
@@ -16,17 +16,17 @@ import pytest
 
 @pytest.fixture
 def curator_env(tmp_path, monkeypatch):
-    """Isolated HERMES_HOME with a skills/ dir + reset curator module state."""
-    home = tmp_path / ".hermes"
+    """Isolated Titan_HOME with a skills/ dir + reset curator module state."""
+    home = tmp_path / ".Titan"
     home.mkdir()
     (home / "skills").mkdir()
     (home / "logs").mkdir()
-    monkeypatch.setenv("HERMES_HOME", str(home))
+    monkeypatch.setenv("Titan_HOME", str(home))
     monkeypatch.setattr(Path, "home", lambda: tmp_path)
 
     import importlib
-    import hermes_constants
-    importlib.reload(hermes_constants)
+    import Titan_constants
+    importlib.reload(Titan_constants)
     from agent import curator
     importlib.reload(curator)
     from tools import skill_usage
@@ -295,7 +295,7 @@ def curator_env_with_cron(curator_env, monkeypatch):
     import importlib
     import cron.jobs as jobs_mod
     importlib.reload(jobs_mod)
-    monkeypatch.setattr(jobs_mod, "HERMES_DIR", home)
+    monkeypatch.setattr(jobs_mod, "Titan_DIR", home)
     monkeypatch.setattr(jobs_mod, "CRON_DIR", home / "cron")
     monkeypatch.setattr(jobs_mod, "JOBS_FILE", home / "cron" / "jobs.json")
     monkeypatch.setattr(jobs_mod, "OUTPUT_DIR", home / "cron" / "output")
@@ -434,3 +434,4 @@ def test_curator_report_has_no_cron_section_when_nothing_changes(curator_env_wit
     payload = json.loads((run_dir / "run.json").read_text())
     assert payload["cron_rewrites"]["jobs_updated"] == 0
     assert payload["counts"]["cron_jobs_rewritten"] == 0
+

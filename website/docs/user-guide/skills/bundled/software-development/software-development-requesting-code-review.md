@@ -17,7 +17,7 @@ Pre-commit review: security scan, quality gates, auto-fix.
 | Source | Bundled (installed by default) |
 | Path | `skills/software-development/requesting-code-review` |
 | Version | `2.0.0` |
-| Author | Hermes Agent (adapted from obra/superpowers + MorAlekss) |
+| Author | Titan Agent (adapted from obra/superpowers + MorAlekss) |
 | License | MIT |
 | Platforms | linux, macos, windows |
 | Tags | `code-review`, `security`, `verification`, `quality`, `pre-commit`, `auto-fix` |
@@ -26,7 +26,7 @@ Pre-commit review: security scan, quality gates, auto-fix.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Pre-Commit Code Verification
@@ -296,3 +296,4 @@ tests exist, tests pass, no regressions.
 - **No test framework found** — skip regression check, reviewer verdict still runs
 - **Lint tools not installed** — skip that check silently, don't fail
 - **Auto-fix introduces new issues** — counts as a new failure, cycle continues
+

@@ -6,7 +6,7 @@ description: "How the messaging gateway boots, authorizes users, routes sessions
 
 # Gateway Internals
 
-The messaging gateway is the long-running process that connects Hermes to 20+ external messaging platforms through a unified architecture.
+The messaging gateway is the long-running process that connects Titan to 20+ external messaging platforms through a unified architecture.
 
 ## Key Files
 
@@ -112,7 +112,7 @@ Pairing state is persisted in `gateway/pairing.py` and survives restarts.
 
 All slash commands in the gateway flow through the same resolution pipeline:
 
-1. `resolve_command()` from `hermes_cli/commands.py` maps input to canonical name (handles aliases, prefix matching)
+1. `resolve_command()` from `Titan_cli/commands.py` maps input to canonical name (handles aliases, prefix matching)
 2. The canonical name is checked against `GATEWAY_KNOWN_COMMANDS`
 3. Handler in `_handle_message()` dispatches based on canonical name
 4. Some commands are gated on config (`gateway_config_gate` on `CommandDef`)
@@ -135,8 +135,8 @@ The gateway reads configuration from multiple sources:
 
 | Source | What it provides |
 |--------|-----------------|
-| `~/.hermes/.env` | API keys, bot tokens, platform credentials |
-| `~/.hermes/config.yaml` | Model settings, tool configuration, display options |
+| `~/.Titan/.env` | API keys, bot tokens, platform credentials |
+| `~/.Titan/config.yaml` | Model settings, tool configuration, display options |
 | Environment variables | Override any of the above |
 
 Unlike the CLI (which uses `load_cli_config()` with hardcoded defaults), the gateway reads `config.yaml` directly via YAML loader. This means config keys that exist in the CLI's defaults dict but not in the user's config file may behave differently between CLI and gateway.
@@ -208,7 +208,7 @@ Gateway hooks are Python modules that respond to lifecycle events:
 | `agent:end` | Agent finishes and returns response |
 | `command:*` | Any slash command is executed |
 
-Hooks are discovered from `gateway/builtin_hooks/` (an extension point — currently empty in the shipped distribution; `_register_builtin_hooks()` is a no-op stub) and `~/.hermes/hooks/` (user-installed). Each hook is a directory with a `HOOK.yaml` manifest and `handler.py`.
+Hooks are discovered from `gateway/builtin_hooks/` (an extension point — currently empty in the shipped distribution; `_register_builtin_hooks()` is a no-op stub) and `~/.Titan/hooks/` (user-installed). Each hook is a directory with a `HOOK.yaml` manifest and `handler.py`.
 
 ## Memory Provider Integration
 
@@ -247,11 +247,11 @@ The gateway runs periodic maintenance alongside message handling:
 
 The gateway runs as a long-lived process, managed via:
 
-- `hermes gateway start` / `hermes gateway stop` — manual control
+- `Titan gateway start` / `Titan gateway stop` — manual control
 - `systemctl` (Linux) or `launchctl` (macOS) — service management
-- PID file at `~/.hermes/gateway.pid` — profile-scoped process tracking
+- PID file at `~/.Titan/gateway.pid` — profile-scoped process tracking
 
-**Profile-scoped vs global**: `start_gateway()` uses profile-scoped PID files. `hermes gateway stop` stops only the current profile's gateway. `hermes gateway stop --all` uses global `ps aux` scanning to kill all gateway processes (used during updates).
+**Profile-scoped vs global**: `start_gateway()` uses profile-scoped PID files. `Titan gateway stop` stops only the current profile's gateway. `Titan gateway stop --all` uses global `ps aux` scanning to kill all gateway processes (used during updates).
 
 ## Related Docs
 
@@ -260,3 +260,4 @@ The gateway runs as a long-lived process, managed via:
 - [ACP Internals](./acp-internals.md)
 - [Agent Loop Internals](./agent-loop.md)
 - [Messaging Gateway (User Guide)](/docs/user-guide/messaging)
+

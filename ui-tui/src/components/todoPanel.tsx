@@ -1,4 +1,4 @@
-import { Box, Text } from '@hermes/ink'
+import { Box, Text } from '@Titan/ink'
 import { memo, useState } from 'react'
 
 import { countPendingTodos } from '../lib/liveProgress.js'
@@ -91,3 +91,4 @@ export const TodoPanel = memo(function TodoPanel({
     </Box>
   )
 })
+

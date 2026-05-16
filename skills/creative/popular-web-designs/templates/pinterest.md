@@ -1,7 +1,7 @@
 # Design System: Pinterest
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `DM Sans` | **Mono:** `system monospace stack`
@@ -241,3 +241,4 @@ What distinguishes Pinterest is its generous border-radius system (12px–40px, 
 4. Pin Sans is the only font — compact at 12px for UI, 70px for display
 5. Photography carries the design — the UI stays warm and minimal
 6. Plum black (#211922) for text — warmer than pure black
+

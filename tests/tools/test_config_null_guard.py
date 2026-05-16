@@ -102,10 +102,11 @@ class TestTrajectoryCompressorNullGuard:
     def test_config_loading_null_base_url_keeps_default(self):
         """YAML ``summarization: {base_url: null}`` should keep default."""
         from trajectory_compressor import CompressionConfig
-        from hermes_constants import OPENROUTER_BASE_URL
+        from Titan_constants import OPENROUTER_BASE_URL
 
         config = CompressionConfig()
         data = {"summarization": {"base_url": None}}
 
         config.base_url = data["summarization"].get("base_url") or config.base_url
         assert config.base_url == OPENROUTER_BASE_URL
+

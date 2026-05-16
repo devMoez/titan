@@ -4,7 +4,7 @@ Reported during the TUI v2 blitz retest:
   - typing `@folder:` (and `@folder` with no colon yet) surfaced files
     alongside directories — the gateway-side completion lives in
     `tui_gateway/server.py` and was never touched by the earlier fix to
-    `hermes_cli/commands.py`.
+    `Titan_cli/commands.py`.
   - typing `@appChrome` required the full `@ui-tui/src/components/app…`
     path to find the file — users expect Cmd-P-style fuzzy basename
     matching across the repo, not a strict directory prefix filter.
@@ -277,3 +277,4 @@ def test_fuzzy_paths_relative_to_cwd_inside_subdir(tmp_path, monkeypatch):
     readme_texts = [t for t, _, _ in _items("@README")]
 
     assert not any("README.md" in t for t in readme_texts), readme_texts
+

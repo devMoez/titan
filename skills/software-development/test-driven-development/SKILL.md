@@ -2,11 +2,11 @@
 name: test-driven-development
 description: "TDD: enforce RED-GREEN-REFACTOR, tests before code."
 version: 1.1.0
-author: Hermes Agent (adapted from obra/superpowers)
+author: Titan Agent (adapted from obra/superpowers)
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [testing, tdd, development, quality, red-green-refactor]
     related_skills: [systematic-debugging, writing-plans, subagent-driven-development]
 ---
@@ -280,7 +280,7 @@ Can't check all boxes? You skipped TDD. Start over.
 | Must mock everything | Code too coupled. Use dependency injection. |
 | Test setup huge | Extract helpers. Still complex? Simplify the design. |
 
-## Hermes Agent Integration
+## Titan Agent Integration
 
 ### Running Tests
 
@@ -341,3 +341,4 @@ Otherwise → not TDD
 ```
 
 No exceptions without the user's explicit permission.
+

@@ -70,9 +70,10 @@ export async function terminalParityHints(
       key: 'remote',
       tone: 'warn',
       message:
-        'SSH session detected · text clipboard can bridge via OSC52, but image clipboard and local screenshot paths still depend on the machine running Hermes'
+        'SSH session detected · text clipboard can bridge via OSC52, but image clipboard and local screenshot paths still depend on the machine running Titan'
     })
   }
 
   return hints
 }
+

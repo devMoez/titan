@@ -7,7 +7,7 @@ license: MIT
 dependencies: [llama-cpp-python>=0.2.0]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [llama.cpp, GGUF, Quantization, Hugging Face Hub, CPU Inference, Apple Silicon, Edge Deployment, AMD GPUs, Intel GPUs, NVIDIA, URL-first]
 ---
 
@@ -247,3 +247,4 @@ Source URLs:
 - **Example tree API**: https://huggingface.co/api/models/unsloth/Qwen3.6-35B-A3B-GGUF/tree/main?recursive=true
 - **Example llama.cpp search**: https://huggingface.co/models?num_parameters=min:0,max:24B&apps=llama.cpp&sort=trending
 - **License**: MIT
+

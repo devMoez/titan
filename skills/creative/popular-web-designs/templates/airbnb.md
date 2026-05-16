@@ -1,7 +1,7 @@
 # Design System: Airbnb
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `DM Sans` | **Mono:** `system monospace stack`
@@ -257,3 +257,4 @@ What distinguishes Airbnb is its palette-based token system (`--palette-*`) and 
 5. Generous radius: 8px buttons, 20px cards, 50% controls
 6. Cereal VF at 500–700 weight — no thin weights for any heading
 7. Photography is hero — every listing card is image-first
+

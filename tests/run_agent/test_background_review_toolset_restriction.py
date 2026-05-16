@@ -94,7 +94,7 @@ def test_background_review_installs_thread_local_whitelist():
     whitelist is set with exactly the memory+skills tool names.
     """
     import run_agent
-    from hermes_cli import plugins as _plugins
+    from Titan_cli import plugins as _plugins
 
     captured = {}
 
@@ -156,3 +156,4 @@ def test_background_review_agent_tools_are_limited():
     assert "delegate_task" not in expected_tools
     assert "web_search" not in expected_tools
     assert "execute_code" not in expected_tools
+

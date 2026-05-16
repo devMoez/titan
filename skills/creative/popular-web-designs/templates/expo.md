@@ -1,7 +1,7 @@
 # Design System: Expo
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `JetBrains Mono`
@@ -292,3 +292,4 @@ What makes Expo distinctive is its pill-shaped geometry. Buttons, tabs, video co
 5. Always specify Inter and the exact weight — weight contrast IS the hierarchy
 6. For shadows, specify "whisper shadow" or "standard elevation" from the elevation table
 7. Keep the interface monochrome — let product content be the color
+

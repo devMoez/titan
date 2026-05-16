@@ -7,7 +7,7 @@ license: MIT
 dependencies: [guidance, transformers]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Prompt Engineering, Guidance, Constrained Generation, Structured Output, JSON Validation, Grammar, Microsoft Research, Format Enforcement, Multi-Step Workflows]
 
 ---
@@ -572,5 +572,6 @@ lm += gen("name", regex=r"^(John|Jane)$", max_tokens=10)
 - `references/constraints.md` - Comprehensive regex and grammar patterns
 - `references/backends.md` - Backend-specific configuration
 - `references/examples.md` - Production-ready examples
+
 
 

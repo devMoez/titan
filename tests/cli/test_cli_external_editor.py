@@ -2,7 +2,7 @@
 
 from unittest.mock import patch
 
-from cli import HermesCLI
+from cli import TitanCLI
 
 
 class _FakeBuffer:
@@ -21,7 +21,7 @@ class _FakeApp:
 
 
 def _make_cli(with_app=True):
-    cli_obj = HermesCLI.__new__(HermesCLI)
+    cli_obj = TitanCLI.__new__(TitanCLI)
     cli_obj._app = _FakeApp() if with_app else None
     cli_obj._command_running = False
     cli_obj._command_status = ""
@@ -103,3 +103,4 @@ def test_open_external_editor_sets_skip_collapse_flag_during_expansion(tmp_path)
     # Flag is consumed by _on_text_changed, but since no handler is attached
     # in tests it stays True until the handler resets it.
     assert cli_obj._skip_paste_collapse is True
+

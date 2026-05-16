@@ -6,7 +6,7 @@ author: okaris
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [AI, image-generation, video, LLM, search, inference, FLUX, Veo, Claude]
     related_skills: []
 ---
@@ -154,3 +154,4 @@ infsh app list --search twitter
 - `references/app-discovery.md` — Searching and browsing the app catalog
 - `references/running-apps.md` — Running apps, input formats, output handling
 - `references/cli-reference.md` — Complete CLI command reference
+

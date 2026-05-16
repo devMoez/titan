@@ -7,7 +7,7 @@ license: MIT
 dependencies: [trl, transformers, datasets, peft, accelerate, torch]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Post-Training, TRL, Reinforcement Learning, Fine-Tuning, SFT, DPO, PPO, GRPO, RLHF, Preference Alignment, HuggingFace]
 
 ---
@@ -458,6 +458,7 @@ config = PPOConfig(
   - "Direct Preference Optimization: Your Language Model is Secretly a Reward Model" (DPO, 2023)
   - "Group Relative Policy Optimization" (GRPO, 2024)
 - Examples: https://github.com/huggingface/trl/tree/main/examples/scripts
+
 
 
 

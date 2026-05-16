@@ -17,13 +17,13 @@ Query Polymarket: markets, prices, orderbooks, history.
 | Source | Bundled (installed by default) |
 | Path | `skills/research/polymarket` |
 | Version | `1.0.0` |
-| Author | Hermes Agent + Teknium |
+| Author | Titan Agent + Teknium |
 | Platforms | linux, macos, windows |
 
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Polymarket — Prediction Market Data
@@ -94,3 +94,4 @@ Generous — unlikely to hit for normal usage:
 - Trading requires wallet-based crypto authentication (EIP-712 signatures)
 - Some new markets may have empty price history
 - Geographic restrictions apply to trading but read-only data is globally accessible
+

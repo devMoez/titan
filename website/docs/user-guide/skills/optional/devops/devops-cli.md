@@ -14,7 +14,7 @@ Run 150+ AI apps via inference.sh CLI (infsh) — image generation, video creati
 
 | | |
 |---|---|
-| Source | Optional — install with `hermes skills install official/devops/cli` |
+| Source | Optional — install with `Titan skills install official/devops/cli` |
 | Path | `optional-skills/devops/cli` |
 | Version | `1.0.0` |
 | Author | okaris |
@@ -25,7 +25,7 @@ Run 150+ AI apps via inference.sh CLI (infsh) — image generation, video creati
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # inference.sh CLI
@@ -171,3 +171,4 @@ infsh app list --search twitter
 - `references/app-discovery.md` — Searching and browsing the app catalog
 - `references/running-apps.md` — Running apps, input formats, output handling
 - `references/cli-reference.md` — Complete CLI command reference
+

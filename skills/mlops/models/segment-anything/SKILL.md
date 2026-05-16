@@ -7,7 +7,7 @@ license: MIT
 dependencies: [segment-anything, transformers>=4.30.0, torch>=1.7.0]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Multimodal, Image Segmentation, Computer Vision, SAM, Zero-Shot]
 
 ---
@@ -504,3 +504,4 @@ mask_generator = SamAutomaticMaskGenerator(
 - **Demo**: https://segment-anything.com
 - **SAM 2 (Video)**: https://github.com/facebookresearch/segment-anything-2
 - **HuggingFace**: https://huggingface.co/facebook/sam-vit-huge
+

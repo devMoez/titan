@@ -25,7 +25,7 @@ Control Philips Hue lights, scenes, rooms via OpenHue CLI.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # OpenHue CLI
@@ -117,8 +117,9 @@ openhue set room "Living Room" --off
 
 ## Notes
 
-- Bridge must be on the same local network as the machine running Hermes
+- Bridge must be on the same local network as the machine running Titan
 - First run requires physically pressing the button on the Hue Bridge to authorize
 - Colors only work on color-capable bulbs (not white-only models)
 - Light and room names are case-sensitive — use `openhue get light` to check exact names
 - Works great with cron jobs for scheduled lighting (e.g. dim at bedtime, bright at wake)
+

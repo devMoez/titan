@@ -1,7 +1,7 @@
 # Design System: Mintlify
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `Geist Mono`
@@ -337,3 +337,4 @@ What distinguishes Mintlify from other documentation platforms is its atmospheri
 6. Geist Mono uppercase for technical labels, Inter for everything else
 7. Section padding is generous: 64px–96px on desktop, 48px on mobile
 8. No gray background sections — white throughout, separation through borders and whitespace
+

@@ -96,6 +96,7 @@ let
         pythonPackageOverrides
       ]);
 in
-pythonSet.mkVirtualEnv "hermes-agent-env" {
-  hermes-agent = dependency-groups;
+pythonSet.mkVirtualEnv "titan-agent-env" {
+  titan-agent = dependency-groups;
 }
+

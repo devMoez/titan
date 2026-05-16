@@ -1,7 +1,7 @@
 # Design System: Stripe
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Source Sans 3` | **Mono:** `Source Code Pro`
@@ -333,3 +333,4 @@ What truly distinguishes Stripe is its shadow system. Rather than the flat or si
 6. Use `"tnum"` for any numbers in tables, charts, or financial displays
 7. Dark sections use `#1c1e54` -- not black, not gray, but a deep branded indigo
 8. SourceCodePro for code at 12px/500 with 2.00 line-height (very generous for readability)
+

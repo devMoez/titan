@@ -87,7 +87,7 @@ class FakeThread:
 
 @pytest.fixture(autouse=True)
 def _redirect_cache(tmp_path, monkeypatch):
-    """Point document cache to tmp_path so tests never write to ~/.hermes."""
+    """Point document cache to tmp_path so tests never write to ~/.Titan."""
     monkeypatch.setattr(
         "gateway.platforms.base.DOCUMENT_CACHE_DIR", tmp_path / "doc_cache"
     )
@@ -384,3 +384,4 @@ class TestIncomingDocumentHandling:
         assert event.message_type == MessageType.PHOTO
         assert event.media_urls == ["/tmp/cached_image.png"]
         assert event.media_types == ["image/png"]
+

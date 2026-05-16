@@ -2,14 +2,14 @@
 
 Official skills maintained by Nous Research that are **not activated by default**.
 
-These skills ship with the hermes-agent repository but are not copied to
-`~/.hermes/skills/` during setup. They are discoverable via the Skills Hub:
+These skills ship with the titan-agent repository but are not copied to
+`~/.Titan/skills/` during setup. They are discoverable via the Skills Hub:
 
 ```bash
-hermes skills browse               # browse all skills, official shown first
-hermes skills browse --source official  # browse only official optional skills
-hermes skills search <query>       # finds optional skills labeled "official"
-hermes skills install <identifier> # copies to ~/.hermes/skills/ and activates
+Titan skills browse               # browse all skills, official shown first
+Titan skills browse --source official  # browse only official optional skills
+Titan skills search <query>       # finds optional skills labeled "official"
+Titan skills install <identifier> # copies to ~/.Titan/skills/ and activates
 ```
 
 ## Why optional?
@@ -22,3 +22,4 @@ Some skills are useful but not broadly needed by every user:
 
 By keeping them optional, we keep the default skill set lean while still
 providing curated, tested, official skills for users who want them.
+

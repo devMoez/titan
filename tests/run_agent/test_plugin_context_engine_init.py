@@ -34,7 +34,7 @@ def test_plugin_engine_gets_context_length_on_init():
     cfg = {"context": {"engine": "stub"}, "agent": {}}
 
     with (
-        patch("hermes_cli.config.load_config", return_value=cfg),
+        patch("Titan_cli.config.load_config", return_value=cfg),
         patch("plugins.context_engine.load_context_engine", return_value=engine),
         patch("agent.model_metadata.get_model_context_length", return_value=204_800),
         patch("run_agent.get_tool_definitions", return_value=[]),
@@ -64,7 +64,7 @@ def test_plugin_engine_update_model_args():
     cfg = {"context": {"engine": "stub"}, "agent": {}}
 
     with (
-        patch("hermes_cli.config.load_config", return_value=cfg),
+        patch("Titan_cli.config.load_config", return_value=cfg),
         patch("plugins.context_engine.load_context_engine", return_value=engine),
         patch("agent.model_metadata.get_model_context_length", return_value=131_072),
         patch("run_agent.get_tool_definitions", return_value=[]),
@@ -89,3 +89,4 @@ def test_plugin_engine_update_model_args():
     assert "provider" in kw
     # Should NOT pass api_mode — the ABC doesn't accept it
     assert "api_mode" not in kw
+

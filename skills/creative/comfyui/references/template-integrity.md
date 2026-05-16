@@ -1,7 +1,7 @@
 # ComfyUI Workflow-Template Integrity
 
 > **Authored by [@purzbeats](https://github.com/purzbeats)** — adapted from
-> [purzbeats/hermes-agent-comfyui-helper](https://github.com/purzbeats/hermes-agent-comfyui-helper).
+> [purzbeats/titan-agent-comfyui-helper](https://github.com/purzbeats/titan-agent-comfyui-helper).
 > Use this reference when converting workflows from the official
 > `comfyui-workflow-templates` package (editor format) into API format for
 > submission via `/api/prompt`. The conversion has subtle gotchas that cause
@@ -241,3 +241,4 @@ ffmpeg -y -i a.mp4 -i b.mp4 -i c.mp4 \
 ```
 
 Offset for xfade #N = `(N+1) × duration - N × overlap`.
+

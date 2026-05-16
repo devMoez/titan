@@ -2,14 +2,14 @@
 name: gif-search
 description: "Search/download GIFs from Tenor via curl + jq."
 version: 1.1.0
-author: Hermes Agent
+author: Titan Agent
 license: MIT
 platforms: [linux, macos, windows]
 prerequisites:
   env_vars: [TENOR_API_KEY]
   commands: [curl, jq]
 metadata:
-  hermes:
+  Titan:
     tags: [GIF, Media, Search, Tenor, API]
 ---
 
@@ -23,7 +23,7 @@ Useful for finding reaction GIFs, creating visual content, and sending GIFs in c
 
 ## Setup
 
-Set your Tenor API key in your environment (add to `~/.hermes/.env`):
+Set your Tenor API key in your environment (add to `~/.Titan/.env`):
 
 ```bash
 TENOR_API_KEY=your_key_here
@@ -89,3 +89,4 @@ Each result has multiple formats under `.media_formats`:
 - URL-encode the query: spaces as `+`, special chars as `%XX`
 - For sending in chat, `tinygif` URLs are lighter weight
 - GIF URLs can be used directly in markdown: `![alt](url)`
+

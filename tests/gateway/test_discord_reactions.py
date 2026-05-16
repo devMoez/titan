@@ -63,7 +63,7 @@ def adapter():
         tree=FakeTree(),
         get_channel=lambda _id: None,
         fetch_channel=AsyncMock(),
-        user=SimpleNamespace(id=99999, name="HermesBot"),
+        user=SimpleNamespace(id=99999, name="TitanBot"),
     )
     return adapter
 
@@ -246,3 +246,4 @@ async def test_on_processing_complete_cancelled_removes_eyes_without_terminal_re
 
     raw_message.remove_reaction.assert_awaited_once_with("👀", adapter._client.user)
     raw_message.add_reaction.assert_not_awaited()
+

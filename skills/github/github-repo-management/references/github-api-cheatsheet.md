@@ -6,7 +6,7 @@ All requests need: `-H "Authorization: token $GITHUB_TOKEN"`
 
 Use the `gh-env.sh` helper to set `$GITHUB_TOKEN`, `$GH_OWNER`, `$GH_REPO` automatically:
 ```bash
-source "${HERMES_HOME:-$HOME/.hermes}/skills/github/github-auth/scripts/gh-env.sh"
+source "${Titan_HOME:-$HOME/.Titan}/skills/github/github-auth/scripts/gh-env.sh"
 ```
 
 ## Repositories
@@ -159,3 +159,4 @@ curl -s -X DELETE \
 # Parse JSON response with python3
 curl -s ... | python3 -c "import sys,json; data=json.load(sys.stdin); print(data['field'])"
 ```
+

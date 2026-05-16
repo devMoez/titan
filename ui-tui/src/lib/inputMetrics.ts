@@ -1,4 +1,4 @@
-import { stringWidth } from '@hermes/ink'
+import { stringWidth } from '@Titan/ink'
 
 import type { Role } from '../types.js'
 
@@ -179,3 +179,4 @@ export function stableComposerColumns(totalCols: number, promptWidth: number) {
   // keeping gutters visually aligned.
   return Math.max(1, totalCols - promptWidth - 2 - (totalCols - promptWidth >= 24 ? 2 : 0))
 }
+

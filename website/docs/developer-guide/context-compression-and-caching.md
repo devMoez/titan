@@ -1,6 +1,6 @@
 # Context Compression and Caching
 
-Hermes Agent uses a dual compression system and Anthropic prompt caching to
+Titan Agent uses a dual compression system and Anthropic prompt caching to
 manage context window usage efficiently across long conversations.
 
 Source files: `agent/context_engine.py` (ABC), `agent/context_compressor.py` (default engine),
@@ -30,13 +30,13 @@ Selection is config-driven via `context.engine` in `config.yaml`. The resolution
 
 Plugin engines are **never auto-activated** — the user must explicitly set `context.engine` to the plugin's name. The default `"compressor"` always uses the built-in.
 
-Configure via `hermes plugins` → Provider Plugins → Context Engine, or edit `config.yaml` directly.
+Configure via `Titan plugins` → Provider Plugins → Context Engine, or edit `config.yaml` directly.
 
 For building a context engine plugin, see [Context Engine Plugins](/docs/developer-guide/context-engine-plugin).
 
 ## Dual Compression System
 
-Hermes has two separate compression layers that operate independently:
+Titan has two separate compression layers that operate independently:
 
 ```
                      ┌──────────────────────────┐
@@ -278,7 +278,7 @@ conversation prefix. Uses Anthropic's `cache_control` breakpoints.
 
 ### Strategy: system_and_3
 
-Anthropic allows a maximum of 4 `cache_control` breakpoints per request. Hermes
+Anthropic allows a maximum of 4 `cache_control` breakpoints per request. Titan
 uses the "system_and_3" strategy:
 
 ```
@@ -346,3 +346,4 @@ The CLI shows caching status at startup:
 ## Context Pressure Warnings
 
 Intermediate context-pressure warnings have been removed (see the iteration-budget block in `run_agent.py`, which notes: "No intermediate pressure warnings — they caused models to 'give up' prematurely on complex tasks"). Compression fires when prompt tokens reach the configured `compression.threshold` (default 50%) with no prior warning step; gateway session hygiene fires as the secondary safety net at 85% of the model's context window.
+

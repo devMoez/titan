@@ -2,11 +2,11 @@
 name: apple-reminders
 description: "Apple Reminders via remindctl: add, list, complete."
 version: 1.0.0
-author: Hermes Agent
+author: Titan Agent
 license: MIT
 platforms: [macos]
 metadata:
-  hermes:
+  Titan:
     tags: [Reminders, tasks, todo, macOS, Apple]
 prerequisites:
   commands: [remindctl]
@@ -96,3 +96,4 @@ Accepted by `--due` and date filters:
 1. When user says "remind me", clarify: Apple Reminders (syncs to phone) vs agent cronjob alert
 2. Always confirm reminder content and due date before creating
 3. Use `--json` for programmatic parsing
+

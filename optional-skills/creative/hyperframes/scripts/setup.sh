@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# HyperFrames setup for Hermes.
+# HyperFrames setup for Titan.
 #
 # Verifies Node >= 22 and FFmpeg, installs the `hyperframes` CLI globally,
 # pre-caches `chrome-headless-shell`, and runs `hyperframes doctor`.
@@ -133,3 +133,4 @@ else
   yellow "  See references/troubleshooting.md or re-run 'hyperframes doctor'."
   exit 1
 fi
+

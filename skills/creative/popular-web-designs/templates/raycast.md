@@ -1,7 +1,7 @@
 # Design System: Raycast
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `Geist Mono`
@@ -279,3 +279,4 @@ When refining existing screens generated with this design system:
 3. Ensure shadows have both outer and inset layers — single-layer shadows look flat and wrong
 4. Confirm Inter has OpenType features `calt`, `kern`, `liga`, `ss03` enabled
 5. Test that hover states use opacity transitions (0.6) not color swaps — this is a core interaction pattern
+

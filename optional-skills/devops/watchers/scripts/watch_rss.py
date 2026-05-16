@@ -3,9 +3,9 @@
 
 Usage (via cron with --no-agent):
 
-    hermes cron create my-feed \\
+    Titan cron create my-feed \\
       --schedule "*/15 * * * *" --no-agent \\
-      --script "$HERMES_HOME/skills/devops/watchers/scripts/watch_rss.py" \\
+      --script "$Titan_HOME/skills/devops/watchers/scripts/watch_rss.py" \\
       --script-args "--name hn --url https://news.ycombinator.com/rss"
 
 First run records a baseline (emits nothing).  Subsequent runs emit only
@@ -88,7 +88,7 @@ def main() -> int:
     args = p.parse_args()
 
     try:
-        req = urllib.request.Request(args.url, headers={"User-Agent": "Hermes-Watcher/1.0"})
+        req = urllib.request.Request(args.url, headers={"User-Agent": "Titan-Watcher/1.0"})
         with urllib.request.urlopen(req, timeout=args.timeout) as resp:
             xml_bytes = resp.read()
     except urllib.error.HTTPError as e:
@@ -119,3 +119,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

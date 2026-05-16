@@ -12,7 +12,7 @@ from prompt_toolkit.input.ansi_escape_sequences import ANSI_SEQUENCES
 from prompt_toolkit.input.vt100_parser import Vt100Parser
 from prompt_toolkit.keys import Keys
 
-from hermes_cli.pt_input_extras import install_shift_enter_alias
+from Titan_cli.pt_input_extras import install_shift_enter_alias
 
 
 SHIFT_ENTER_SEQUENCES = (
@@ -86,3 +86,4 @@ def test_plain_enter_remains_distinct_from_alt_enter():
     assert enter != alt_enter
     assert len(enter) == 1
     assert len(alt_enter) == 2
+

@@ -2,7 +2,7 @@
 test_yuanbao_markdown.py - Unit tests for yuanbao_markdown.py
 
 Run (no pytest needed):
-    cd /root/.openclaw/workspace/hermes-agent
+    cd /root/.openclaw/workspace/titan-agent
     python3 tests/test_yuanbao_markdown.py -v
 
 Or with pytest if available:
@@ -322,3 +322,4 @@ def test_exact_limit():
     text = "a" * 3000
     chunks = MarkdownProcessor.chunk_markdown_text(text, 3000)
     assert len(chunks) == 1
+

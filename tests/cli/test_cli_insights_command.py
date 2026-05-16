@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, patch
 
-from cli import HermesCLI
+from cli import TitanCLI
 
 
 class _InsightsEngineStub:
@@ -18,10 +18,10 @@ class _InsightsEngineStub:
 
 
 def _run_show_insights(command: str):
-    cli_obj = HermesCLI.__new__(HermesCLI)
+    cli_obj = TitanCLI.__new__(TitanCLI)
     db = MagicMock()
     _InsightsEngineStub.calls = []
-    with patch("hermes_state.SessionDB", return_value=db), \
+    with patch("Titan_state.SessionDB", return_value=db), \
          patch("agent.insights.InsightsEngine", _InsightsEngineStub):
         cli_obj._show_insights(command)
     return _InsightsEngineStub.calls, db
@@ -41,3 +41,4 @@ def test_cli_insights_keeps_days_flag_and_source(capsys):
     assert calls == [{"days": 14, "source": "discord"}]
     db.close.assert_called_once()
     assert "days=14 source=discord" in capsys.readouterr().out
+

@@ -1,7 +1,7 @@
 # Design System: Spotify
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `DM Sans` | **Mono:** `system monospace stack`
@@ -257,3 +257,4 @@ What distinguishes Spotify is its pill-and-circle geometry. Primary buttons use 
 4. Uppercase + wide tracking on buttons — the systematic label voice
 5. Heavy shadows (0.3–0.5 opacity) for elevation — light shadows are invisible on dark
 6. Album art provides all the color — the UI stays achromatic
+

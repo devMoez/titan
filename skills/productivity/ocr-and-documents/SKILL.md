@@ -2,11 +2,11 @@
 name: ocr-and-documents
 description: "Extract text from PDFs/scans (pymupdf, marker-pdf)."
 version: 2.3.0
-author: Hermes Agent
+author: Titan Agent
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [PDF, Documents, Research, Arxiv, Text-Extraction, OCR]
     related_skills: [powerpoint]
 ---
@@ -170,3 +170,4 @@ No extra dependencies needed — pymupdf covers split, merge, search, and text e
 - marker-pdf downloads ~2.5GB of models to `~/.cache/huggingface/` on first use
 - For Word docs: `pip install python-docx` (better than OCR — parses actual structure)
 - For PowerPoint: see the `powerpoint` skill (uses python-pptx)
+

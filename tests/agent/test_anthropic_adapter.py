@@ -1903,7 +1903,7 @@ class TestConvertToolsToAnthropicDedup:
 
     Anthropic rejects requests with duplicate tool names.  This guard converts
     a hard failure into a warning log.  See:
-    https://github.com/NousResearch/hermes-agent/issues/18478
+    https://github.com/NousResearch/titan-agent/issues/18478
     """
 
     def _make_openai_tool(self, name: str) -> dict:
@@ -1944,3 +1944,4 @@ class TestConvertToolsToAnthropicDedup:
 
     def test_none_tools_returns_empty(self):
         assert convert_tools_to_anthropic(None) == []
+

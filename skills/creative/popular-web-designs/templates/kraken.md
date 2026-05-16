@@ -1,7 +1,7 @@
 # Design System: Kraken
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `system monospace stack`
@@ -136,3 +136,4 @@ Breakpoints: 375px, 425px, 640px, 768px, 1024px, 1280px, 1536px
 
 ### Example Component Prompts
 - "Create hero: white background. Kraken-Brand 48px weight 700, letter-spacing -1px. Purple CTA (#7132f5, 12px radius, 13px 16px padding)."
+

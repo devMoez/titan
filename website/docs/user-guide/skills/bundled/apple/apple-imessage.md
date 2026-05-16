@@ -17,7 +17,7 @@ Send and receive iMessages/SMS via the imsg CLI on macOS.
 | Source | Bundled (installed by default) |
 | Path | `skills/apple/imessage` |
 | Version | `1.0.0` |
-| Author | Hermes Agent |
+| Author | Titan Agent |
 | License | MIT |
 | Platforms | macos |
 | Tags | `iMessage`, `SMS`, `messaging`, `macOS`, `Apple` |
@@ -25,7 +25,7 @@ Send and receive iMessages/SMS via the imsg CLI on macOS.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # iMessage
@@ -116,3 +116,4 @@ imsg chats --limit 20 --json | jq '.[] | select(.displayName | contains("Mom"))'
 # 3. Send after confirmation
 imsg send --to "+1555123456" --text "I'll be late"
 ```
+

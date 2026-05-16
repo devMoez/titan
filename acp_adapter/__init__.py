@@ -1,1 +1,2 @@
-"""ACP (Agent Communication Protocol) adapter for hermes-agent."""
+"""ACP (Agent Communication Protocol) adapter for titan-agent."""
+

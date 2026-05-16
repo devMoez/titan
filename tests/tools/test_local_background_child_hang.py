@@ -37,7 +37,7 @@ class TestBackgroundChildDoesNotHang:
 
     def test_plain_background_returns_promptly(self, local_env):
         """``cmd &`` with no output redirection must not hang on pipe inherit."""
-        marker = "hermes_8340_plain_bg"
+        marker = "Titan_8340_plain_bg"
         cmd = f'python3 -c "import time; time.sleep(60)" & echo {marker}'
         try:
             t0 = time.monotonic()
@@ -152,3 +152,4 @@ class TestBackgroundChildDoesNotHang:
         assert "before" in result["output"]
         assert "after" in result["output"]
         assert "binary output detected" not in result["output"]
+

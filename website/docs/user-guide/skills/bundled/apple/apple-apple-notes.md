@@ -17,7 +17,7 @@ Manage Apple Notes via memo CLI: create, search, edit.
 | Source | Bundled (installed by default) |
 | Path | `skills/apple/apple-notes` |
 | Version | `1.0.0` |
-| Author | Hermes Agent |
+| Author | Titan Agent |
 | License | MIT |
 | Platforms | macos |
 | Tags | `Notes`, `Apple`, `macOS`, `note-taking` |
@@ -26,7 +26,7 @@ Manage Apple Notes via memo CLI: create, search, edit.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Apple Notes
@@ -104,3 +104,4 @@ memo notes -ex                    # Export to HTML/Markdown
 1. Prefer Apple Notes when user wants cross-device sync (iPhone/iPad/Mac)
 2. Use the `memory` tool for agent-internal notes that don't need to sync
 3. Use the `obsidian` skill for Markdown-native knowledge management
+

@@ -61,20 +61,20 @@ jobs:
       - name: Build TUI bundle
         run: cd ui-tui && npm ci && npm run build
 
-      - name: Bundle TUI into hermes_cli
+      - name: Bundle TUI into Titan_cli
         run: |
-          mkdir -p hermes_cli/tui_dist
-          cp ui-tui/dist/entry.js hermes_cli/tui_dist/entry.js
+          mkdir -p Titan_cli/tui_dist
+          cp ui-tui/dist/entry.js Titan_cli/tui_dist/entry.js
 
       - name: Verify frontend assets exist
         run: |
-          test -f hermes_cli/web_dist/index.html || { echo "ERROR: web_dist not built"; exit 1; }
-          test -f hermes_cli/tui_dist/entry.js || { echo "ERROR: tui_dist not built"; exit 1; }
+          test -f Titan_cli/web_dist/index.html || { echo "ERROR: web_dist not built"; exit 1; }
+          test -f Titan_cli/tui_dist/entry.js || { echo "ERROR: tui_dist not built"; exit 1; }
 
       - name: Bundle install.sh into wheel
         run: |
-          mkdir -p hermes_cli/scripts
-          cp scripts/install.sh hermes_cli/scripts/install.sh
+          mkdir -p Titan_cli/scripts
+          cp scripts/install.sh Titan_cli/scripts/install.sh
 
       - name: Build wheel and sdist
         run: uv build --sdist --wheel
@@ -91,7 +91,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/hermes-agent
+      url: https://pypi.org/p/titan-agent
     permissions:
       id-token: write  # OIDC trusted publishing
 
@@ -161,3 +161,4 @@ jobs:
           "$GITHUB_REF_NAME" dist/*.sigstore.json
           --repo "$GITHUB_REPOSITORY"
           --clobber
+

@@ -21,7 +21,7 @@ const buildUiState = (): UiState => ({
   showCost: false,
   showReasoning: false,
   sid: null,
-  status: 'summoning hermes…',
+  status: 'summoning Titan…',
   statusBar: 'top',
   streaming: true,
   theme: DEFAULT_THEME,
@@ -39,3 +39,4 @@ export const patchUiState = (next: Partial<UiState> | ((state: UiState) => UiSta
   $uiState.set(typeof next === 'function' ? next($uiState.get()) : { ...$uiState.get(), ...next })
 
 export const resetUiState = () => $uiState.set(buildUiState())
+

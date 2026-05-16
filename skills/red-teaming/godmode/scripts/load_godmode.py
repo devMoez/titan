@@ -3,7 +3,7 @@ Loader for G0DM0D3 scripts. Handles the exec-scoping issues.
 
 Usage in execute_code:
     exec(open(os.path.expanduser(
-        os.path.join(os.environ.get("HERMES_HOME", os.path.expanduser("~/.hermes")), "skills/red-teaming/godmode/scripts/load_godmode.py")
+        os.path.join(os.environ.get("Titan_HOME", os.path.expanduser("~/.Titan")), "skills/red-teaming/godmode/scripts/load_godmode.py")
     )).read())
     
     # Now all functions are available:
@@ -17,7 +17,7 @@ Usage in execute_code:
 import os, sys
 from pathlib import Path
 
-_gm_scripts_dir = Path(os.getenv("HERMES_HOME", Path.home() / ".hermes")) / "skills" / "red-teaming" / "godmode" / "scripts"
+_gm_scripts_dir = Path(os.getenv("Titan_HOME", Path.home() / ".Titan")) / "skills" / "red-teaming" / "godmode" / "scripts"
 
 _gm_old_argv = sys.argv
 sys.argv = ["_godmode_loader"]
@@ -43,3 +43,4 @@ sys.argv = _gm_old_argv
 for _gm_cleanup in ['_gm_scripts_dir', '_gm_old_argv', '_gm_load', '_gm_ns', '_gm_k',
                      '_gm_v', '_gm_script', '_gm_path', '_gm_cleanup']:
     globals().pop(_gm_cleanup, None)
+

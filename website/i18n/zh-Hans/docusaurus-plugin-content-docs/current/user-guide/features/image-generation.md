@@ -1,13 +1,13 @@
 ---
 title: 文生图（Image Generation）
-description: 通过 FAL.ai 文生图；支持 8 个模型，含 FLUX 2、GPT-Image、Nano Banana Pro、Ideogram、Recraft V4 Pro 等，可用 hermes tools 切换。
+description: 通过 FAL.ai 文生图；支持 8 个模型，含 FLUX 2、GPT-Image、Nano Banana Pro、Ideogram、Recraft V4 Pro 等，可用 Titan tools 切换。
 sidebar_label: 文生图
 sidebar_position: 6
 ---
 
 # 文生图（Image Generation）
 
-Hermes Agent 通过 FAL.ai 根据文字提示生成图像。默认内置 8 个模型，在速度、画质与成本上各有取舍。当前模型可通过 `hermes tools` 配置，并持久化在 `config.yaml`。
+Titan Agent 通过 FAL.ai 根据文字提示生成图像。默认内置 8 个模型，在速度、画质与成本上各有取舍。当前模型可通过 `Titan tools` 配置，并持久化在 `config.yaml`。
 
 ## 支持的模型
 
@@ -42,7 +42,7 @@ Hermes Agent 通过 FAL.ai 根据文字提示生成图像。默认内置 8 个�
 执行：
 
 ```bash
-hermes tools
+Titan tools
 ```
 
 进入 **🎨 Image Generation**，选择后端（Nous Subscription 或 FAL.ai），随后在表格中用方向键选择模型，回车确认：
@@ -151,3 +151,4 @@ export IMAGE_TOOLS_DEBUG=true
 - **仅文生图** — 不支持局部重绘、图生图或编辑类工作流  
 - **临时 URL** — FAL 托管链接会在数小时至数天后过期；请自行落盘保存  
 - **按模型能力裁剪** — 部分模型不支持 `seed`、`num_inference_steps` 等；`supports` 会静默丢弃不支持的参数，属预期行为  
+

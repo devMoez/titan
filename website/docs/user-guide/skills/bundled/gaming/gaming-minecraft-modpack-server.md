@@ -21,7 +21,7 @@ Host modded Minecraft servers (CurseForge, Modrinth).
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Minecraft Modpack Server Setup
@@ -204,3 +204,4 @@ Add hourly cron:
 - Check logs: `tail -f ~/minecraft-server/server/logs/latest.log`
 - Look for "Done (Xs)!" in the log = server is ready
 - Test connection: player adds server IP in Multiplayer
+

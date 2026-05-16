@@ -16,8 +16,8 @@ from tests.gateway.restart_test_helpers import make_restart_runner
 
 @pytest.fixture
 def runner_with_home(tmp_path, monkeypatch):
-    """Create a runner with a writable HERMES_HOME."""
-    monkeypatch.setattr("gateway.run._hermes_home", tmp_path)
+    """Create a runner with a writable Titan_HOME."""
+    monkeypatch.setattr("gateway.run._Titan_home", tmp_path)
     runner, adapter = make_restart_runner()
     return runner, tmp_path
 
@@ -114,3 +114,4 @@ class TestStuckLoopDetection:
         assert runner._suspend_stuck_loop_sessions() == 0
         # Clear on nonexistent file — should not crash
         runner._clear_restart_failure_count("nonexistent")
+

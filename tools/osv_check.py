@@ -142,7 +142,7 @@ def _query_osv(
         data=data,
         headers={
             "Content-Type": "application/json",
-            "User-Agent": "hermes-agent-osv-check/1.0",
+            "User-Agent": "titan-agent-osv-check/1.0",
         },
         method="POST",
     )
@@ -153,3 +153,4 @@ def _query_osv(
     vulns = result.get("vulns", [])
     # Only malware advisories — ignore regular CVEs
     return [v for v in vulns if v.get("id", "").startswith("MAL-")]
+

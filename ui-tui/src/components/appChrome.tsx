@@ -1,4 +1,4 @@
-import { Box, type ScrollBoxHandle, Text } from '@hermes/ink'
+import { Box, type ScrollBoxHandle, Text } from '@Titan/ink'
 import { useStore } from '@nanostores/react'
 import { type ReactNode, type RefObject, useEffect, useMemo, useRef, useState } from 'react'
 import unicodeSpinners from 'unicode-animations'
@@ -482,3 +482,4 @@ interface TranscriptScrollbarProps {
   scrollRef: RefObject<ScrollBoxHandle | null>
   t: Theme
 }
+

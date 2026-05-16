@@ -137,8 +137,8 @@ export interface Translations {
     starting: string;
     startedInBackground: string;
     stopped: string;
-    updateHermes: string;
-    updatingHermes: string;
+    updateTitan: string;
+    updatingTitan: string;
     waitingForOutput: string;
   };
 
@@ -450,7 +450,7 @@ export interface Translations {
     switchTheme: string;
   };
 
-  // ── Achievements plugin (plugins/hermes-achievements) ──
+  // ── Achievements plugin (plugins/Titan-achievements) ──
   achievements: {
     hero: {
       kicker: string;
@@ -699,3 +699,4 @@ export interface Translations {
     logAt: string;
   };
 }
+

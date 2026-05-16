@@ -14,7 +14,7 @@ Manage Docker containers, images, volumes, networks, and Compose stacks — life
 
 | | |
 |---|---|
-| Source | Optional — install with `hermes skills install official/devops/docker-management` |
+| Source | Optional — install with `Titan skills install official/devops/docker-management` |
 | Path | `optional-skills/devops/docker-management` |
 | Version | `1.0.0` |
 | Author | sprmn24 |
@@ -25,7 +25,7 @@ Manage Docker containers, images, volumes, networks, and Compose stacks — life
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Docker Management
@@ -295,3 +295,4 @@ When reviewing or creating a Dockerfile, suggest these improvements:
 5. **Pin base image versions** — `node:20-alpine` not `node:latest`
 6. **Run as non-root** — add `USER` instruction for security
 7. **Use slim/alpine bases** — `python:3.12-slim` not `python:3.12`
+

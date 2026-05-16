@@ -7,7 +7,7 @@ license: MIT
 dependencies: [wandb]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [MLOps, Weights And Biases, WandB, Experiment Tracking, Hyperparameter Tuning, Model Registry, Collaboration, Real-Time Visualization, PyTorch, TensorFlow, HuggingFace]
 
 ---
@@ -590,5 +590,6 @@ print(f"Share this URL: {run.url}")
 - `references/sweeps.md` - Comprehensive hyperparameter optimization guide
 - `references/artifacts.md` - Data and model versioning patterns
 - `references/integrations.md` - Framework-specific examples
+
 
 

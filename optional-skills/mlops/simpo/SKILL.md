@@ -7,7 +7,7 @@ license: MIT
 dependencies: [torch, transformers, datasets, trl, accelerate]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Post-Training, SimPO, Preference Optimization, Alignment, DPO Alternative, Reference-Free, LLM Alignment, Efficient Training]
 
 ---
@@ -218,6 +218,7 @@ gradient_checkpointing: true
 - GitHub: https://github.com/princeton-nlp/SimPO
 - Models: https://huggingface.co/princeton-nlp
 - Alignment Handbook: https://github.com/huggingface/alignment-handbook
+
 
 
 

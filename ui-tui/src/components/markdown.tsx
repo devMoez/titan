@@ -1,4 +1,4 @@
-import { Box, Link, stringWidth, Text } from '@hermes/ink'
+import { Box, Link, stringWidth, Text } from '@Titan/ink'
 import { Fragment, memo, type ReactNode, useMemo } from 'react'
 
 import { ensureEmojiPresentation } from '../lib/emoji.js'
@@ -1111,3 +1111,4 @@ interface MdProps {
   t: Theme
   text: string
 }
+

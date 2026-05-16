@@ -1,6 +1,6 @@
 # Experiment Design Patterns
 
-Patterns and best practices distilled from running research experiments at scale with the Hermes agent. These cover experiment infrastructure, evaluation protocols, monitoring, and failure recovery.
+Patterns and best practices distilled from running research experiments at scale with the Titan agent. These cover experiment infrastructure, evaluation protocols, monitoring, and failure recovery.
 
 ---
 
@@ -726,3 +726,4 @@ with plt.style.context(style):
 | Ablation study | Stacked/grouped bar | Highlight removed component |
 | Trajectory/convergence | Line chart over iterations | Show winner per iteration |
 | Per-task breakdown | Heatmap or grouped bar | Show variance across tasks |
+

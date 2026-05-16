@@ -5,7 +5,7 @@ from types import SimpleNamespace
 from unittest.mock import MagicMock, patch
 
 import cli as cli_module
-from cli import HermesCLI
+from cli import TitanCLI
 
 
 class _FakeBuffer:
@@ -19,7 +19,7 @@ class _FakeBuffer:
 
 
 def _make_cli_stub():
-    cli = HermesCLI.__new__(HermesCLI)
+    cli = TitanCLI.__new__(TitanCLI)
     cli._approval_state = None
     cli._approval_deadline = 0
     cli._approval_lock = threading.Lock()
@@ -333,9 +333,9 @@ class TestCliApprovalUi:
                 time.sleep(0.01)
 
         assert seen["approval"].__self__ is cli
-        assert seen["approval"].__func__ is HermesCLI._approval_callback
+        assert seen["approval"].__func__ is TitanCLI._approval_callback
         assert seen["sudo"].__self__ is cli
-        assert seen["sudo"].__func__ is HermesCLI._sudo_password_callback
+        assert seen["sudo"].__func__ is TitanCLI._sudo_password_callback
         assert not cli._background_tasks
 
 
@@ -422,3 +422,4 @@ class TestApprovalCallbackThreadLocalWiring:
         # would hold a stale reference to a disposed CLI instance.
         assert seen["approval_after"] is None
         assert seen["sudo_after"] is None
+

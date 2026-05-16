@@ -17,7 +17,7 @@ describe('writeActiveSessionFile', () => {
   })
 
   it('writes the actual resumed session id for the shell exit summary', () => {
-    dir = mkdtempSync(join(tmpdir(), 'hermes-tui-active-'))
+    dir = mkdtempSync(join(tmpdir(), 'Titan-tui-active-'))
     const path = join(dir, 'active.json')
 
     writeActiveSessionFile('actual_session', path)
@@ -25,3 +25,4 @@ describe('writeActiveSessionFile', () => {
     expect(JSON.parse(readFileSync(path, 'utf8'))).toEqual({ session_id: 'actual_session' })
   })
 })
+

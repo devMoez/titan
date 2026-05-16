@@ -29,7 +29,7 @@ import urllib.request
 # Constants
 # ---------------------------------------------------------------------------
 
-USER_AGENT = "HermesAgent/1.0 (contact: hermes@agent.ai)"
+USER_AGENT = "TitanAgent/1.0 (contact: Titan@agent.ai)"
 DATA_SOURCE = "OpenStreetMap/Nominatim"
 
 NOMINATIM_SEARCH  = "https://nominatim.openstreetmap.org/search"
@@ -1296,3 +1296,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

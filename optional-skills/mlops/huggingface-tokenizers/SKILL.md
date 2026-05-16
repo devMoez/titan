@@ -7,7 +7,7 @@ license: MIT
 dependencies: [tokenizers, transformers, datasets]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Tokenization, HuggingFace, BPE, WordPiece, Unigram, Fast Tokenization, Rust, Custom Tokenizer, Alignment Tracking, Production]
 
 ---
@@ -516,5 +516,6 @@ Browse all: https://huggingface.co/models?library=tokenizers
 - **Version**: 0.20.0+
 - **Course**: https://huggingface.co/learn/nlp-course/chapter6/1
 - **Paper**: BPE (Sennrich et al., 2016), WordPiece (Schuster & Nakajima, 2012)
+
 
 

@@ -431,7 +431,7 @@ class TestTelegramApprovalCallback:
         context = MagicMock()
 
         with patch("tools.approval.resolve_gateway_approval") as mock_resolve:
-            with patch("hermes_constants.get_hermes_home", return_value=tmp_path):
+            with patch("Titan_constants.get_Titan_home", return_value=tmp_path):
                 with patch.dict(os.environ, {"TELEGRAM_ALLOWED_USERS": ""}):
                     await adapter._handle_callback_query(update, context)
 
@@ -457,7 +457,7 @@ class TestTelegramApprovalCallback:
         update.callback_query = query
         context = MagicMock()
 
-        with patch("hermes_constants.get_hermes_home", return_value=tmp_path):
+        with patch("Titan_constants.get_Titan_home", return_value=tmp_path):
             with patch.dict(os.environ, {"TELEGRAM_ALLOWED_USERS": "111"}):
                 await adapter._handle_callback_query(update, context)
 
@@ -487,7 +487,7 @@ class TestTelegramApprovalCallback:
         update.callback_query = query
         context = MagicMock()
 
-        with patch("hermes_constants.get_hermes_home", return_value=tmp_path):
+        with patch("Titan_constants.get_Titan_home", return_value=tmp_path):
             with patch.dict(os.environ, {"TELEGRAM_ALLOWED_USERS": ""}):
                 await adapter._handle_callback_query(update, context)
 
@@ -517,10 +517,11 @@ class TestTelegramApprovalCallback:
         update.callback_query = query
         context = MagicMock()
 
-        with patch("hermes_constants.get_hermes_home", return_value=tmp_path):
+        with patch("Titan_constants.get_Titan_home", return_value=tmp_path):
             with patch.dict(os.environ, {"TELEGRAM_ALLOWED_USERS": "111"}):
                 await adapter._handle_callback_query(update, context)
 
         query.answer.assert_called_once()
         query.edit_message_text.assert_called_once()
         assert (tmp_path / ".update_response").read_text() == "n"
+

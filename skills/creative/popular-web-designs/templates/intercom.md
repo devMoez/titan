@@ -1,7 +1,7 @@
 # Design System: Intercom
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `system monospace stack`
@@ -157,3 +157,4 @@ Breakpoints: 425px, 530px, 600px, 640px, 768px, 896px
 
 ### Example Component Prompts
 - "Create hero: warm cream (#faf9f6) background. Saans 80px weight 400, line-height 1.00, letter-spacing -2.4px, #111111. Dark button (#111111, 4px radius). Hover: scale(1.1), white bg."
+

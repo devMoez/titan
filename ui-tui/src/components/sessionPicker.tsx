@@ -1,4 +1,4 @@
-import { Box, Text, useInput, useStdout } from '@hermes/ink'
+import { Box, Text, useInput, useStdout } from '@Titan/ink'
 import { useEffect, useState } from 'react'
 
 import type { GatewayClient } from '../gatewayClient.js'
@@ -225,3 +225,4 @@ interface SessionPickerProps {
   onSelect: (id: string) => void
   t: Theme
 }
+

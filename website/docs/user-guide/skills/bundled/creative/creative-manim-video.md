@@ -22,7 +22,7 @@ Manim CE animations: 3Blue1Brown math/algo videos.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Manim Video Production Pipeline
@@ -287,3 +287,4 @@ Take a standard mathematical/technical visualization and transform it:
 2. Pick the most fundamental assumption
 3. Reverse it (right-to-left derivation, 3D embedding of a 2D concept, continuous morphing instead of steps, zero notation)
 4. Explore what the reversal reveals that the standard approach hides
+

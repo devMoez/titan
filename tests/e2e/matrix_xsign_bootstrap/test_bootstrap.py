@@ -165,7 +165,7 @@ class XsignBootstrapE2E(unittest.IsolatedAsyncioTestCase):
         from mautrix.util.async_db import Database
 
         # The actual bootstrap snippet from gateway/platforms/matrix.py
-        # (copied so we can run it without importing the full hermes
+        # (copied so we can run it without importing the full Titan
         # gateway and its many deps). If the source code drifts from this,
         # the test should be updated to match.
         log_lines: list[str] = []
@@ -331,3 +331,4 @@ class XsignBootstrapE2E(unittest.IsolatedAsyncioTestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+

@@ -7,7 +7,7 @@ license: MIT
 dependencies: [vllm, torch, transformers]
 platforms: [linux, macos]
 metadata:
-  hermes:
+  Titan:
     tags: [vLLM, Inference Serving, PagedAttention, Continuous Batching, High Throughput, Production, OpenAI API, Quantization, Tensor Parallelism]
 
 ---
@@ -367,6 +367,7 @@ Supported platforms: NVIDIA (primary), AMD ROCm, Intel GPUs, TPUs
 - GitHub: https://github.com/vllm-project/vllm
 - Paper: "Efficient Memory Management for Large Language Model Serving with PagedAttention" (SOSP 2023)
 - Community: https://discuss.vllm.ai
+
 
 
 

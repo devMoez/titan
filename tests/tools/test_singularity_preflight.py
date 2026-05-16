@@ -3,7 +3,7 @@
 Verifies that a clear error is raised when neither apptainer nor
 singularity is installed, instead of a cryptic FileNotFoundError.
 
-See: https://github.com/NousResearch/hermes-agent/issues/1511
+See: https://github.com/NousResearch/titan-agent/issues/1511
 """
 
 import subprocess
@@ -75,3 +75,4 @@ class TestEnsureSingularityAvailable:
         with patch("shutil.which", return_value=None):
             with pytest.raises(RuntimeError, match="Neither.*apptainer.*nor.*singularity"):
                 _ensure_singularity_available()
+

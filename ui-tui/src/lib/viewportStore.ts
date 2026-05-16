@@ -1,4 +1,4 @@
-import type { ScrollBoxHandle } from '@hermes/ink'
+import type { ScrollBoxHandle } from '@Titan/ink'
 import type { RefObject } from 'react'
 import { useCallback, useMemo, useSyncExternalStore } from 'react'
 
@@ -122,3 +122,4 @@ export function useScrollbarSnapshot(scrollRef: RefObject<ScrollBoxHandle | null
     }
   }, [key])
 }
+

@@ -2,7 +2,7 @@
 
 Renders any content as colored ASCII character video. Audio, video, images, text, or pure math in, MP4/GIF/PNG sequence out. Full RGB color per character cell, 1080p 24fps default. No GPU.
 
-Built for [Hermes Agent](https://github.com/NousResearch/hermes-agent). Usable in any coding agent. Canonical source lives here; synced to [`NousResearch/hermes-agent/skills/creative/ascii-video`](https://github.com/NousResearch/hermes-agent/tree/main/skills/creative/ascii-video) via PR.
+Built for [Titan Agent](https://github.com/NousResearch/titan-agent). Usable in any coding agent. Canonical source lives here; synced to [`NousResearch/titan-agent/skills/creative/ascii-video`](https://github.com/NousResearch/titan-agent/tree/main/skills/creative/ascii-video) via PR.
 
 ## What this is
 
@@ -288,3 +288,4 @@ Auto-detects CPU count, RAM, platform, ffmpeg. Adapts worker count, resolution, 
 ✦ Audio-reactive music visualizer. 3.5 min, 8 sections with distinct effects, beat-triggered particles and glitch, cycling palettes.
 
 ✦ TTS narrated testimonial video. 23 quotes, per-quote ElevenLabs voices, background music at 15% wide stereo, per-clip re-rendering for iterative editing.
+

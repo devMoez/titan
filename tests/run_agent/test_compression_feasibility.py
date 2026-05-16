@@ -248,7 +248,7 @@ def test_init_feasibility_check_uses_aux_context_override_from_config():
     mock_client.api_key = "sk-custom"
 
     with (
-        patch("hermes_cli.config.load_config", return_value=cfg),
+        patch("Titan_cli.config.load_config", return_value=cfg),
         patch("run_agent.get_tool_definitions", return_value=[]),
         patch("run_agent.check_toolset_requirements", return_value={}),
         patch("run_agent.OpenAI"),
@@ -456,3 +456,4 @@ def test_run_conversation_clears_warning_after_replay(mock_get_client, mock_ctx_
         agent._compression_warning = None
 
     assert len(callback_events) == 0
+

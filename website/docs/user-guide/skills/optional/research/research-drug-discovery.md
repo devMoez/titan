@@ -14,7 +14,7 @@ Pharmaceutical research assistant for drug discovery workflows. Search bioactive
 
 | | |
 |---|---|
-| Source | Optional — install with `hermes skills install official/research/drug-discovery` |
+| Source | Optional — install with `Titan skills install official/research/drug-discovery` |
 | Path | `optional-skills/research/drug-discovery` |
 | Version | `1.0.0` |
 | Author | bennytimz |
@@ -25,7 +25,7 @@ Pharmaceutical research assistant for drug discovery workflows. Search bioactive
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Drug Discovery & Pharmaceutical Research
@@ -235,3 +235,4 @@ For ADMET questions, reason through Absorption, Distribution, Metabolism, Excret
 | Drug interactions | OpenFDA | `/drug/label.json?search=drug_interactions:` |
 | Adverse events | OpenFDA | `/drug/event.json?search=...&count=reaction` |
 | Gene-disease | OpenTargets | GraphQL POST `/api/v4/graphql` |
+

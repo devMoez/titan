@@ -1,13 +1,13 @@
 ---
 title: Image Generation
-description: Generate images via FAL.ai — 9 models including FLUX 2, GPT Image (1.5 & 2), Nano Banana Pro, Ideogram, Recraft V4 Pro, and more, selectable via `hermes tools`.
+description: Generate images via FAL.ai — 9 models including FLUX 2, GPT Image (1.5 & 2), Nano Banana Pro, Ideogram, Recraft V4 Pro, and more, selectable via `Titan tools`.
 sidebar_label: Image Generation
 sidebar_position: 6
 ---
 
 # Image Generation
 
-Hermes Agent generates images from text prompts via FAL.ai. Nine models are supported out of the box, each with different speed, quality, and cost tradeoffs. The active model is user-configurable via `hermes tools` and persists in `config.yaml`.
+Titan Agent generates images from text prompts via FAL.ai. Nine models are supported out of the box, each with different speed, quality, and cost tradeoffs. The active model is user-configurable via `Titan tools` and persists in `config.yaml`.
 
 ## Supported Models
 
@@ -43,7 +43,7 @@ If the managed gateway returns `HTTP 4xx` for a specific model, that model isn't
 Run the tools command:
 
 ```bash
-hermes tools
+Titan tools
 ```
 
 Navigate to **🎨 Image Generation**, pick your backend (Nous Subscription or FAL.ai), then the picker shows all supported models in a column-aligned table — arrow keys to navigate, Enter to select:
@@ -154,3 +154,4 @@ Debug logs go to `./logs/image_tools_debug_<session_id>.json` with per-call deta
 - **Text-to-image only** — no inpainting, img2img, or editing via this tool
 - **Temporary URLs** — FAL returns hosted URLs that expire after hours/days; save locally if needed
 - **Per-model constraints** — some models don't support `seed`, `num_inference_steps`, etc. The `supports` filter silently drops unsupported params; this is expected behavior
+

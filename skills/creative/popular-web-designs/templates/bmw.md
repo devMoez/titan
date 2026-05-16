@@ -1,7 +1,7 @@
 # Design System: BMW
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `DM Sans` | **Mono:** `system monospace stack`
@@ -191,3 +191,4 @@ What makes BMW distinctive is its CSS variable-driven theming system. Context-aw
 3. BMW Blue for interactive only — never as background or decoration
 4. Photography carries emotion — the UI is pure precision
 5. Tight line-heights everywhere — 1.15 to 1.30 is the range
+

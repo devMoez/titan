@@ -40,7 +40,7 @@ result = agent.run_conversation(
 
 ## API Modes
 
-Hermes supports three API execution modes, resolved from provider selection, explicit args, and base URL heuristics:
+Titan supports three API execution modes, resolved from provider selection, explicit args, and base URL heuristics:
 
 | API mode | Used for | Client type |
 |----------|----------|-------------|
@@ -214,9 +214,9 @@ The fallback system also covers auxiliary tasks independently — vision, compre
 ### Session Persistence
 
 After each turn:
-- Messages are saved to the session store (SQLite via `hermes_state.py`)
+- Messages are saved to the session store (SQLite via `Titan_state.py`)
 - Memory changes are flushed to `MEMORY.md` / `USER.md`
-- The session can be resumed later via `/resume` or `hermes chat --resume`
+- The session can be resumed later via `/resume` or `Titan chat --resume`
 
 ## Key Source Files
 
@@ -237,3 +237,4 @@ After each turn:
 - [Context Compression & Prompt Caching](./context-compression-and-caching.md)
 - [Tools Runtime](./tools-runtime.md)
 - [Architecture Overview](./architecture.md)
+

@@ -1,8 +1,8 @@
 # bootstrap_browser_tools.ps1 — install agent-browser + Playwright Chromium
-# into ~/.hermes/node/ for use by Hermes Agent's browser tools on Windows.
+# into ~/.Titan/node/ for use by Titan Agent's browser tools on Windows.
 #
-# Targets the registry-install path: users who got Hermes via
-# `uvx --from 'hermes-agent[acp]==X' hermes-acp` don't have a repo clone,
+# Targets the registry-install path: users who got Titan via
+# `uvx --from 'titan-agent[acp]==X' Titan-acp` don't have a repo clone,
 # so the install.ps1 `npm install`-in-repo flow doesn't apply. This script
 # is a self-contained, idempotent slice of install.ps1's browser block.
 #
@@ -35,11 +35,11 @@ function Write-Err     { param([string]$msg) Write-Host "[x] $msg" -ForegroundCo
 # Paths
 # ─────────────────────────────────────────────────────────────────────────
 
-$HermesHome = $env:HERMES_HOME
-if (-not $HermesHome) {
-    $HermesHome = Join-Path $env:USERPROFILE ".hermes"
+$TitanHome = $env:Titan_HOME
+if (-not $TitanHome) {
+    $TitanHome = Join-Path $env:USERPROFILE ".Titan"
 }
-$NodePrefix = Join-Path $HermesHome "node"
+$NodePrefix = Join-Path $TitanHome "node"
 
 # ─────────────────────────────────────────────────────────────────────────
 # Step 1: Node.js
@@ -86,11 +86,11 @@ function Ensure-Node {
         }
     }
 
-    # Hermes-managed Node?
+    # Titan-managed Node?
     $managedNode = Join-Path $NodePrefix "node.exe"
     if (Test-Path $managedNode) {
         $v = & $managedNode --version
-        Write-Success "Node.js $v found (Hermes-managed at $NodePrefix)"
+        Write-Success "Node.js $v found (Titan-managed at $NodePrefix)"
         # Prepend to current-process PATH so subsequent npm/npx calls find it.
         $env:PATH = "$NodePrefix;$env:PATH"
         return
@@ -111,7 +111,7 @@ function Ensure-Node {
         $zipName = $matches[0].Value
         $zipUrl = "$indexUrl$zipName"
 
-        $tmpDir = Join-Path $env:TEMP "hermes-node-$([guid]::NewGuid().ToString('N'))"
+        $tmpDir = Join-Path $env:TEMP "Titan-node-$([guid]::NewGuid().ToString('N'))"
         New-Item -ItemType Directory -Force -Path $tmpDir | Out-Null
         $zipPath = Join-Path $tmpDir $zipName
 
@@ -124,7 +124,7 @@ function Ensure-Node {
         if (-not $extracted) { Write-Err "Node.js extraction failed"; throw "extract" }
 
         if (Test-Path $NodePrefix) { Remove-Item -Recurse -Force $NodePrefix }
-        New-Item -ItemType Directory -Force -Path $HermesHome | Out-Null
+        New-Item -ItemType Directory -Force -Path $TitanHome | Out-Null
         Move-Item -Path $extracted.FullName -Destination $NodePrefix
 
         Remove-Item -Recurse -Force $tmpDir -ErrorAction SilentlyContinue
@@ -159,7 +159,7 @@ function Ensure-AgentBrowser {
 
     # When the user has system Node (winget / installer-based), `npm install
     # -g` writes to a directory that may require admin rights. Force the
-    # prefix to the user-writable Hermes-managed Node directory so we never
+    # prefix to the user-writable Titan-managed Node directory so we never
     # need elevation and the agent can always find the result. Mirrors the
     # bash bootstrap's `--prefix $NODE_PREFIX` strategy.
     New-Item -ItemType Directory -Force -Path $NodePrefix | Out-Null
@@ -206,8 +206,8 @@ function Find-SystemBrowser {
 
 function Write-BrowserEnv {
     param([string]$BrowserPath)
-    $envFile = Join-Path $HermesHome ".env"
-    New-Item -ItemType Directory -Force -Path $HermesHome | Out-Null
+    $envFile = Join-Path $TitanHome ".env"
+    New-Item -ItemType Directory -Force -Path $TitanHome | Out-Null
     if (Test-Path $envFile) {
         $existing = Get-Content $envFile -Raw -ErrorAction SilentlyContinue
         if ($existing -and ($existing -match "(?m)^AGENT_BROWSER_EXECUTABLE_PATH=")) {
@@ -215,7 +215,7 @@ function Write-BrowserEnv {
         }
     }
     Add-Content -Path $envFile -Value ""
-    Add-Content -Path $envFile -Value "# Hermes Agent browser tools — use the system Chrome/Chromium/Edge binary."
+    Add-Content -Path $envFile -Value "# Titan Agent browser tools — use the system Chrome/Chromium/Edge binary."
     Add-Content -Path $envFile -Value "AGENT_BROWSER_EXECUTABLE_PATH=$BrowserPath"
     Write-Success "Configured browser tools to use $BrowserPath"
 }
@@ -276,8 +276,8 @@ function Ensure-Chromium {
 # Main
 # ─────────────────────────────────────────────────────────────────────────
 
-Write-Info "Hermes Agent: bootstrapping browser tools"
-Write-Info "  HERMES_HOME = $HermesHome"
+Write-Info "Titan Agent: bootstrapping browser tools"
+Write-Info "  Titan_HOME = $TitanHome"
 Write-Info "  OS          = Windows"
 
 Ensure-Node
@@ -285,4 +285,5 @@ Ensure-AgentBrowser
 Ensure-Chromium
 
 Write-Success "Browser tools setup complete."
-Write-Info "Hermes Agent will pick up agent-browser from $NodePrefix on next launch."
+Write-Info "Titan Agent will pick up agent-browser from $NodePrefix on next launch."
+

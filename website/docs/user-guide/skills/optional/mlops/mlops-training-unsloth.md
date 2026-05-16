@@ -14,7 +14,7 @@ Unsloth: 2-5x faster LoRA/QLoRA fine-tuning, less VRAM.
 
 | | |
 |---|---|
-| Source | Optional — install with `hermes skills install official/mlops/unsloth` |
+| Source | Optional — install with `Titan skills install official/mlops/unsloth` |
 | Path | `optional-skills/mlops/training/unsloth` |
 | Version | `1.0.0` |
 | Author | Orchestra Research |
@@ -26,7 +26,7 @@ Unsloth: 2-5x faster LoRA/QLoRA fine-tuning, less VRAM.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Unsloth Skill
@@ -96,3 +96,4 @@ To refresh this skill with updated documentation:
 2. The skill will be rebuilt with the latest information
 
 <!-- Trigger re-upload 1763621536 -->
+

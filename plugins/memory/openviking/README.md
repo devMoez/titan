@@ -11,13 +11,13 @@ Context database by Volcengine (ByteDance) with filesystem-style knowledge hiera
 ## Setup
 
 ```bash
-hermes memory setup    # select "openviking"
+Titan memory setup    # select "openviking"
 ```
 
 Or manually:
 ```bash
-hermes config set memory.provider openviking
-echo "OPENVIKING_ENDPOINT=http://localhost:1933" >> ~/.hermes/.env
+Titan config set memory.provider openviking
+echo "OPENVIKING_ENDPOINT=http://localhost:1933" >> ~/.Titan/.env
 ```
 
 ## Config
@@ -38,3 +38,4 @@ All config via environment variables in `.env`:
 | `viking_browse` | Filesystem-style navigation (list/tree/stat) |
 | `viking_remember` | Store a fact for extraction on session commit |
 | `viking_add_resource` | Ingest URLs/docs into the knowledge base |
+

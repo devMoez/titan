@@ -8,7 +8,7 @@ import pytest
 
 @pytest.fixture(autouse=True)
 def clean_env(monkeypatch):
-    for key in ("MISTRAL_API_KEY", "HERMES_SESSION_PLATFORM"):
+    for key in ("MISTRAL_API_KEY", "Titan_SESSION_PLATFORM"):
         monkeypatch.delenv(key, raising=False)
 
 
@@ -228,3 +228,4 @@ class TestCheckTtsRequirementsMistral:
              patch("tools.tts_tool._check_piper_available", return_value=False), \
              patch("tools.tts_tool._has_any_command_tts_provider", return_value=False):
             assert check_tts_requirements() is False
+

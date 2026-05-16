@@ -227,8 +227,8 @@ class ThreadParticipationTracker:
         }
 
     def _state_path(self) -> Path:
-        from hermes_constants import get_hermes_home
-        return get_hermes_home() / f"{self._platform}_threads.json"
+        from Titan_constants import get_Titan_home
+        return get_Titan_home() / f"{self._platform}_threads.json"
 
     def _load(self) -> list[str]:
         path = self._state_path()
@@ -276,3 +276,4 @@ def redact_phone(phone: str) -> str:
     if len(phone) <= 8:
         return phone[:2] + "****" + phone[-2:] if len(phone) > 4 else "****"
     return phone[:4] + "****" + phone[-4:]
+

@@ -2,7 +2,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from cli import (
-    HermesCLI,
+    TitanCLI,
     _collect_query_images,
     _format_image_attachment_badges,
     _termux_example_image_path,
@@ -10,7 +10,7 @@ from cli import (
 
 
 def _make_cli():
-    cli_obj = HermesCLI.__new__(HermesCLI)
+    cli_obj = TitanCLI.__new__(TitanCLI)
     cli_obj._attached_images = []
     return cli_obj
 
@@ -107,3 +107,4 @@ class TestImageBadgeFormatting:
         badges = _format_image_attachment_badges([img1, img2], image_counter=2, width=45)
 
         assert badges == "[📎 2 images attached]"
+

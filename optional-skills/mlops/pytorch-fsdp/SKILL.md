@@ -7,7 +7,7 @@ license: MIT
 dependencies: [torch>=2.0, transformers]
 platforms: [linux, macos]
 metadata:
-  hermes:
+  Titan:
     tags: [Distributed Training, PyTorch, FSDP, Data Parallel, Sharding, Mixed Precision, CPU Offloading, FSDP2, Large-Scale Training]
 
 ---
@@ -126,5 +126,6 @@ Add templates, boilerplate, or example projects here.
 To refresh this skill with updated documentation:
 1. Re-run the scraper with the same configuration
 2. The skill will be rebuilt with the latest information
+
 
 

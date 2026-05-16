@@ -4,7 +4,7 @@ description: "HeartMuLa: Suno-like song generation from lyrics + tags."
 version: 1.0.0
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [music, audio, generation, ai, heartmula, heartcodec, lyrics, songs]
     related_skills: [audiocraft]
 ---
@@ -169,3 +169,4 @@ Bridge lyrics...
 - Models: https://huggingface.co/HeartMuLa
 - Paper: https://arxiv.org/abs/2601.10547
 - License: Apache-2.0
+

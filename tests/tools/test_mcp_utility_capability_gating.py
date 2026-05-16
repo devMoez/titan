@@ -2,7 +2,7 @@
 
 Background
 ==========
-For every connected MCP server, hermes-agent used to register four "utility"
+For every connected MCP server, titan-agent used to register four "utility"
 tool schemas (``mcp_<server>_list_resources``, ``read_resource``,
 ``list_prompts``, ``get_prompt``) regardless of whether the server actually
 advertises those capabilities. The old gate used ``hasattr(server.session,
@@ -173,3 +173,4 @@ class TestLegacyFallback:
         server.session = MagicMock(spec=["list_resources"])
         selected = _select_utility_schemas("legacy-partial", server, {})
         assert _handler_keys(selected) == {"list_resources"}
+

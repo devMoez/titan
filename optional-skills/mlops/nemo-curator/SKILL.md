@@ -7,7 +7,7 @@ license: MIT
 dependencies: [nemo-curator, cudf, dask, rapids]
 platforms: [linux, macos]
 metadata:
-  hermes:
+  Titan:
     tags: [Data Processing, NeMo Curator, Data Curation, GPU Acceleration, Deduplication, Quality Filtering, NVIDIA, RAPIDS, PII Redaction, Multimodal, LLM Training Data]
 
 ---
@@ -382,6 +382,7 @@ cluster.close()
 - **Docs**: https://docs.nvidia.com/nemo-framework/user-guide/latest/datacuration/
 - **Version**: 0.4.0+
 - **License**: Apache 2.0
+
 
 
 

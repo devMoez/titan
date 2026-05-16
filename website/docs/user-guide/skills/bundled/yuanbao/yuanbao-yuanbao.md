@@ -23,7 +23,7 @@ Yuanbao (元宝) groups: @mention users, query info/members.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Yuanbao Group Interaction
@@ -123,3 +123,4 @@ yb_query_group_info({ "group_code": "328306697" })
 - `group_code` comes from chat_id: `group:328306697` → `328306697`
 - Groups are called "派 (Pai)" in the Yuanbao app
 - Member roles: `user`, `yuanbao_ai`, `bot`
+

@@ -98,19 +98,19 @@ class TestCommandTimeoutCache:
 
     def test_default_is_30(self):
         from tools.browser_tool import _get_command_timeout
-        with patch("hermes_cli.config.read_raw_config", return_value={}):
+        with patch("Titan_cli.config.read_raw_config", return_value={}):
             assert _get_command_timeout() == 30
 
     def test_reads_from_config(self):
         from tools.browser_tool import _get_command_timeout
         cfg = {"browser": {"command_timeout": 60}}
-        with patch("hermes_cli.config.read_raw_config", return_value=cfg):
+        with patch("Titan_cli.config.read_raw_config", return_value=cfg):
             assert _get_command_timeout() == 60
 
     def test_cached_after_first_call(self):
         from tools.browser_tool import _get_command_timeout
         mock_read = MagicMock(return_value={"browser": {"command_timeout": 45}})
-        with patch("hermes_cli.config.read_raw_config", mock_read):
+        with patch("Titan_cli.config.read_raw_config", mock_read):
             _get_command_timeout()
             _get_command_timeout()
         mock_read.assert_called_once()
@@ -269,3 +269,4 @@ class TestCamofoxEvalFix:
         assert "json_data=" not in src, \
             "_camofox_eval should use body= kwarg for _post, not json_data="
         assert "body=" in src
+

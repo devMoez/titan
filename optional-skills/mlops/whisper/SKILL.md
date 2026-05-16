@@ -7,7 +7,7 @@ license: MIT
 dependencies: [openai-whisper, transformers, torch]
 platforms: [linux, macos]
 metadata:
-  hermes:
+  Titan:
     tags: [Whisper, Speech Recognition, ASR, Multimodal, Multilingual, OpenAI, Speech-To-Text, Transcription, Translation, Audio Processing]
 
 ---
@@ -317,5 +317,6 @@ Full list: 99 languages total
 - **Model Card**: https://github.com/openai/whisper/blob/main/model-card.md
 - **Colab**: Available in repo
 - **License**: MIT
+
 
 

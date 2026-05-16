@@ -20,7 +20,7 @@ def _make_adapter(routes=None, extra=None):
 
 @pytest.fixture(autouse=True)
 def _isolate(tmp_path, monkeypatch):
-    monkeypatch.setenv("HERMES_HOME", str(tmp_path))
+    monkeypatch.setenv("Titan_HOME", str(tmp_path))
 
 
 class TestDynamicRouteLoading:
@@ -85,3 +85,4 @@ class TestDynamicRouteLoading:
         adapter._reload_dynamic_routes()
         assert "static" in adapter._routes
         assert len(adapter._dynamic_routes) == 0
+

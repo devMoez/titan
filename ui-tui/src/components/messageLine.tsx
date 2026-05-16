@@ -1,4 +1,4 @@
-import { Ansi, Box, NoSelect, Text } from '@hermes/ink'
+import { Ansi, Box, NoSelect, Text } from '@Titan/ink'
 import { memo, useState } from 'react'
 
 import { LONG_MSG } from '../config/limits.js'
@@ -219,3 +219,4 @@ interface MessageLineProps {
   t: Theme
   tools?: ActiveTool[]
 }
+

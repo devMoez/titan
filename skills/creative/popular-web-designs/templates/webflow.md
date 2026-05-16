@@ -1,7 +1,7 @@
 # Design System: Webflow
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `system monospace stack`
@@ -103,3 +103,4 @@ Webflow's website is a visually rich, tool-forward platform that communicates "d
 - Background: White (`#ffffff`)
 - Border: `#d8d8d8`
 - Secondary: Purple `#7a3dff`, Pink `#ed52cb`, Green `#00d722`
+

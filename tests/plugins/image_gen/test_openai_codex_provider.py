@@ -52,8 +52,8 @@ class _FakeStream:
 
 
 @pytest.fixture(autouse=True)
-def _tmp_hermes_home(tmp_path, monkeypatch):
-    monkeypatch.setenv("HERMES_HOME", str(tmp_path))
+def _tmp_Titan_home(tmp_path, monkeypatch):
+    monkeypatch.setenv("Titan_HOME", str(tmp_path))
     yield tmp_path
 
 
@@ -297,3 +297,4 @@ class TestRegistration:
         codex_plugin.register(_Ctx())
         assert len(registered) == 1
         assert registered[0].name == "openai-codex"
+

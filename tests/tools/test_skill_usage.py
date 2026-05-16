@@ -8,8 +8,8 @@ from pathlib import Path
 import pytest
 
 
-def _bump_view_many(hermes_home: str, skill_name: str, iterations: int) -> None:
-    os.environ["HERMES_HOME"] = hermes_home
+def _bump_view_many(Titan_home: str, skill_name: str, iterations: int) -> None:
+    os.environ["Titan_HOME"] = Titan_home
     from tools.skill_usage import bump_view
 
     for _ in range(iterations):
@@ -18,12 +18,12 @@ def _bump_view_many(hermes_home: str, skill_name: str, iterations: int) -> None:
 
 @pytest.fixture
 def skills_home(tmp_path, monkeypatch):
-    """Isolated HERMES_HOME with a clean skills/ dir for each test."""
-    home = tmp_path / ".hermes"
+    """Isolated Titan_HOME with a clean skills/ dir for each test."""
+    home = tmp_path / ".Titan"
     home.mkdir()
     (home / "skills").mkdir()
     monkeypatch.setattr(Path, "home", lambda: tmp_path)
-    monkeypatch.setenv("HERMES_HOME", str(home))
+    monkeypatch.setenv("Titan_HOME", str(home))
     # Force skill_usage module to re-resolve paths per test
     import importlib
     import tools.skill_usage as mod
@@ -637,3 +637,4 @@ def test_end_to_end_no_code_path_mutates_bundled_skill(skills_home):
     # The agent-created skill can still be mutated normally
     bump_view("mine")
     assert load_usage()["mine"]["view_count"] == 1
+

@@ -40,7 +40,7 @@ class TestFuzzyPatchSkill:
         skills_dir = tmp_path / "skills"
         skills_dir.mkdir()
         monkeypatch.setattr("tools.skill_manager_tool.SKILLS_DIR", skills_dir)
-        monkeypatch.setenv("HERMES_HOME", str(tmp_path))
+        monkeypatch.setenv("Titan_HOME", str(tmp_path))
         self.skills_dir = skills_dir
 
     def test_exact_match_still_works(self):
@@ -172,3 +172,4 @@ word word word
         result = json.loads(raw)
         # Should succeed via line-trimmed or indentation-flexible matching
         assert result["success"] is True
+

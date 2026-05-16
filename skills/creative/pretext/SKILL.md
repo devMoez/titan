@@ -2,11 +2,11 @@
 name: pretext
 description: "Use when building creative browser demos with @chenglou/pretext — DOM-free text layout for ASCII art, typographic flow around obstacles, text-as-geometry games, kinetic typography, and text-powered generative art. Produces single-file HTML demos by default."
 version: 1.0.0
-author: Hermes Agent
+author: Titan Agent
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [creative-coding, typography, pretext, ascii-art, canvas, generative, text-layout, kinetic-typography]
     related_skills: [p5js, claude-design, excalidraw, architecture-diagram]
 ---
@@ -19,7 +19,7 @@ metadata:
 
 That sounds like plumbing. It is not. Because it is fast and geometric, it is a **creative primitive**: you can reflow paragraphs around a moving sprite at 60fps, build games whose level geometry is made of real words, drive ASCII logos through prose, shatter text into particles with exact per-grapheme starting positions, or pack shrink-wrapped multiline UI without any `getBoundingClientRect` thrash.
 
-This skill exists so Hermes can make **cool demos** with it — the kind people post to X. See `pretext.cool` and `chenglou.me/pretext` for the community demo corpus.
+This skill exists so Titan can make **cool demos** with it — the kind people post to X. See `pretext.cool` and `chenglou.me/pretext` for the community demo corpus.
 
 ## When to Use
 
@@ -218,3 +218,4 @@ Clone these for inspiration / patterns (all MIT-ish, linked from [pretext.cool](
 - **Alarmy editorial clock** — `github.com/SmisLee/alarmy-pretext-demo`
 
 Official playground: [chenglou.me/pretext](https://chenglou.me/pretext/) — accordion, bubbles, dynamic-layout, editorial-engine, justification-comparison, masonry, markdown-chat, rich-note.
+

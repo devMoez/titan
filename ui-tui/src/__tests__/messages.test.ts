@@ -1,4 +1,4 @@
-import { renderSync } from '@hermes/ink'
+import { renderSync } from '@Titan/ink'
 import React from 'react'
 import { PassThrough } from 'stream'
 import { describe, expect, it } from 'vitest'
@@ -90,3 +90,4 @@ describe('upsert', () => {
     expect(prev).toHaveLength(1)
   })
 })
+

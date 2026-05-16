@@ -1,6 +1,6 @@
-"""Shared Hermes-side execution flow for Modal transports.
+"""Shared Titan-side execution flow for Modal transports.
 
-This module deliberately stops at the Hermes boundary:
+This module deliberately stops at the Titan boundary:
 - command preparation
 - cwd/timeout normalization
 - stdin/sudo shell wrapping
@@ -44,9 +44,9 @@ class ModalExecStart:
 
 def wrap_modal_stdin_heredoc(command: str, stdin_data: str) -> str:
     """Append stdin as a shell heredoc for transports without stdin piping."""
-    marker = f"HERMES_EOF_{uuid.uuid4().hex[:8]}"
+    marker = f"Titan_EOF_{uuid.uuid4().hex[:8]}"
     while marker in stdin_data:
-        marker = f"HERMES_EOF_{uuid.uuid4().hex[:8]}"
+        marker = f"Titan_EOF_{uuid.uuid4().hex[:8]}"
     return f"{command} << '{marker}'\n{stdin_data}\n{marker}"
 
 
@@ -197,3 +197,4 @@ class BaseModalExecutionEnvironment(BaseEnvironment):
     @abstractmethod
     def _cancel_modal_exec(self, handle: Any) -> None:
         """Cancel or terminate the active transport exec."""
+

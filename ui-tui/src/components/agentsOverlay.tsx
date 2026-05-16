@@ -1,4 +1,4 @@
-import { Box, NoSelect, ScrollBox, type ScrollBoxHandle, Text, useInput, useStdout } from '@hermes/ink'
+import { Box, NoSelect, ScrollBox, type ScrollBoxHandle, Text, useInput, useStdout } from '@Titan/ink'
 import { useStore } from '@nanostores/react'
 import { type ReactNode, type RefObject, useEffect, useMemo, useRef, useState } from 'react'
 
@@ -1071,3 +1071,4 @@ interface AgentsOverlayProps {
 
 export const closeAgentsOverlay = () => patchOverlayState({ agents: false })
 export const openAgentsOverlay = () => patchOverlayState({ agents: true })
+

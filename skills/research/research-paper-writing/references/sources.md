@@ -6,7 +6,7 @@ This document lists all authoritative sources used to build this skill, organize
 
 ## Origin & Attribution
 
-The writing philosophy, citation verification workflow, and conference reference materials in this skill were originally compiled by **[Orchestra Research](https://github.com/orchestra-research)** as the `ml-paper-writing` skill (January 2026), drawing on Neel Nanda's blog post and other researcher guides listed below. The skill was integrated into hermes-agent by teknium (January 2026), then expanded into the current `research-paper-writing` pipeline by SHL0MS (April 2026, PR #4654), which added experiment design, execution monitoring, iterative refinement, and submission phases while preserving the original writing philosophy and reference files.
+The writing philosophy, citation verification workflow, and conference reference materials in this skill were originally compiled by **[Orchestra Research](https://github.com/orchestra-research)** as the `ml-paper-writing` skill (January 2026), drawing on Neel Nanda's blog post and other researcher guides listed below. The skill was integrated into titan-agent by teknium (January 2026), then expanded into the current `research-paper-writing` pipeline by SHL0MS (April 2026, PR #4654), which added experiment design, execution monitoring, iterative refinement, and submission phases while preserving the original writing philosophy and reference files.
 
 ---
 
@@ -189,3 +189,4 @@ The writing philosophy, citation verification workflow, and conference reference
 | **ML CO2 Impact** | [mlco2.github.io](https://mlco2.github.io/impact/) | Compute carbon footprint calculator |
 | **NeurIPS Broader Impact Guide** | [NeurIPS](https://neurips.cc/public/guides/PaperChecklist) | Official guidance on impact statements |
 | **ACL Ethics Policy** | [ACL](https://www.aclweb.org/portal/content/acl-code-ethics) | Ethics requirements for NLP research |
+

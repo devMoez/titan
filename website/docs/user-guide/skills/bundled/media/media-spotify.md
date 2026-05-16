@@ -17,7 +17,7 @@ Spotify: play, search, queue, manage playlists and devices.
 | Source | Bundled (installed by default) |
 | Path | `skills/media/spotify` |
 | Version | `1.0.0` |
-| Author | Hermes Agent |
+| Author | Titan Agent |
 | License | MIT |
 | Platforms | linux, macos, windows |
 | Tags | `spotify`, `music`, `playback`, `playlists`, `media` |
@@ -26,12 +26,12 @@ Spotify: play, search, queue, manage playlists and devices.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Spotify
 
-Control the user's Spotify account via the Hermes Spotify toolset (7 tools). Setup guide: https://hermes-agent.nousresearch.com/docs/user-guide/features/spotify
+Control the user's Spotify account via the Titan Spotify toolset (7 tools). Setup guide: https://titan-agent.nousresearch.com/docs/user-guide/features/spotify
 
 ## When to use this skill
 
@@ -128,7 +128,7 @@ spotify_devices({"action": "transfer", "device_id": "<id>", "play": true})
 
 **`429 Too Many Requests`** = rate limit. Wait and retry once. If it keeps happening, you're looping — stop.
 
-**`401 Unauthorized` after a retry** — refresh token revoked. Tell the user to run `hermes auth spotify` again.
+**`401 Unauthorized` after a retry** — refresh token revoked. Tell the user to run `Titan auth spotify` again.
 
 ## URI and ID formats
 
@@ -149,3 +149,4 @@ Entity types: `track`, `album`, `artist`, `playlist`, `show`, `episode`. Use the
 - **Don't retry on `403 Premium required` or `403 No active device`.** Those are permanent until user action.
 - **Don't use `spotify_search` to find a playlist by name** — that searches the public Spotify catalog. User playlists come from `spotify_playlists list`.
 - **Don't mix `kind: "tracks"` with album URIs** in `spotify_library` (or vice versa). The tool normalizes IDs but the API endpoint differs.
+

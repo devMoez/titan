@@ -1,4 +1,4 @@
-import type { ScrollBoxHandle } from '@hermes/ink'
+import type { ScrollBoxHandle } from '@Titan/ink'
 
 import type { SelectionApi } from './interfaces.js'
 
@@ -69,3 +69,4 @@ export function scrollWithSelectionBy(delta: number, { scrollRef, selection }: S
 
   s.scrollBy(actual)
 }
+

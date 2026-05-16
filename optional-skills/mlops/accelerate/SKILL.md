@@ -7,7 +7,7 @@ license: MIT
 dependencies: [accelerate, torch, transformers]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Distributed Training, HuggingFace, Accelerate, DeepSpeed, FSDP, Mixed Precision, PyTorch, DDP, Unified API, Simple]
 
 ---
@@ -331,6 +331,7 @@ set_seed(42)
 - Tutorial: "Accelerate your scripts"
 - Examples: https://github.com/huggingface/accelerate/tree/main/examples
 - Used by: HuggingFace Transformers, TRL, PEFT, all HF libraries
+
 
 
 

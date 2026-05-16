@@ -452,7 +452,7 @@ def http_request(
     if headers is None:
         headers = {}
     headers = dict(headers)  # copy
-    headers.setdefault("User-Agent", "hermes-comfyui-skill/5.0")
+    headers.setdefault("User-Agent", "Titan-comfyui-skill/5.0")
 
     if files or form is not None:
         # Multipart upload — needs `requests`. The stdlib fallback lacks
@@ -833,3 +833,4 @@ def emit_json(obj: Any, *, indent: int = 2) -> None:
 def log(msg: str) -> None:
     """stderr log with consistent prefix (so JSON stdout stays clean)."""
     print(f"[comfyui-skill] {msg}", file=sys.stderr)
+

@@ -7,7 +7,7 @@ license: MIT
 dependencies: [transformers, torch, pillow]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Multimodal, CLIP, Vision-Language, Zero-Shot, Image Classification, OpenAI, Image Search, Cross-Modal Retrieval, Content Moderation]
 
 ---
@@ -253,5 +253,6 @@ results = collection.query(
 - **Paper**: https://arxiv.org/abs/2103.00020
 - **Colab**: https://colab.research.google.com/github/openai/clip/
 - **License**: MIT
+
 
 

@@ -2,11 +2,11 @@
 name: apple-notes
 description: "Manage Apple Notes via memo CLI: create, search, edit."
 version: 1.0.0
-author: Hermes Agent
+author: Titan Agent
 license: MIT
 platforms: [macos]
 metadata:
-  hermes:
+  Titan:
     tags: [Notes, Apple, macOS, note-taking]
     related_skills: [obsidian]
 prerequisites:
@@ -88,3 +88,4 @@ memo notes -ex                    # Export to HTML/Markdown
 1. Prefer Apple Notes when user wants cross-device sync (iPhone/iPad/Mac)
 2. Use the `memory` tool for agent-internal notes that don't need to sync
 3. Use the `obsidian` skill for Markdown-native knowledge management
+

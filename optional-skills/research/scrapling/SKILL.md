@@ -6,7 +6,7 @@ author: FEUAZUR
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Web Scraping, Browser, Cloudflare, Stealth, Crawling, Spider]
     related_skills: [duckduckgo-search, domain-intel]
     homepage: https://github.com/D4Vinci/Scrapling
@@ -334,3 +334,4 @@ spider.start()  # Ctrl+C to pause, re-run to resume from checkpoint
 - **Resource usage**: StealthyFetcher runs a real browser -- limit concurrent usage
 - **Legal**: always check robots.txt and website ToS before scraping. This library is for educational and research purposes
 - **Python version**: requires Python 3.10+
+

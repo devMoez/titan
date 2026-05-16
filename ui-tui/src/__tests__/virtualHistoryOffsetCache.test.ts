@@ -1,6 +1,6 @@
 import { PassThrough } from 'stream'
 
-import { Box, renderSync, ScrollBox, type ScrollBoxHandle, Text } from '@hermes/ink'
+import { Box, renderSync, ScrollBox, type ScrollBoxHandle, Text } from '@Titan/ink'
 import React, { useLayoutEffect, useRef } from 'react'
 import { describe, expect, it } from 'vitest'
 
@@ -153,3 +153,4 @@ describe('useVirtualHistory offset cache reuse', () => {
     }
   })
 })
+

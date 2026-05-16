@@ -7,7 +7,7 @@ license: MIT
 dependencies: [lightning, torch, transformers]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [PyTorch Lightning, Training Framework, Distributed Training, DDP, FSDP, DeepSpeed, High-Level API, Callbacks, Best Practices, Scalable]
 
 ---
@@ -346,5 +346,6 @@ trainer = L.Trainer(accelerator='gpu', devices=1)
 - Examples: https://github.com/Lightning-AI/pytorch-lightning/tree/master/examples
 - Discord: https://discord.gg/lightning-ai
 - Used by: Kaggle winners, research labs, production teams
+
 
 

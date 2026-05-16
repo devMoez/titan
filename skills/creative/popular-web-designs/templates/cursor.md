@@ -1,7 +1,7 @@
 # Design System: Cursor
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `JetBrains Mono`
@@ -320,3 +320,4 @@ The border system is particularly distinctive -- Cursor uses `oklab()` color spa
 6. Hover states use `#cf2d56` text color -- the warm crimson shift is a signature interaction
 7. Shadows use large blur values (28px, 70px) for diffused atmospheric depth
 8. The sub-8px spacing scale (1.5, 2, 2.5, 3, 4, 5, 6px) is critical for icon/text micro-alignment
+

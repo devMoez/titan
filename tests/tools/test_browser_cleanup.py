@@ -17,9 +17,9 @@ class TestScreenshotPathRecovery:
 
         assert (
             _extract_screenshot_path_from_text(
-                "Screenshot saved to '/Users/david/.hermes/browser_screenshots/shot.png'"
+                "Screenshot saved to '/Users/david/.Titan/browser_screenshots/shot.png'"
             )
-            == "/Users/david/.hermes/browser_screenshots/shot.png"
+            == "/Users/david/.Titan/browser_screenshots/shot.png"
         )
 
 
@@ -138,3 +138,4 @@ class TestBrowserCleanup:
         assert browser_tool._session_last_activity == {}
         assert browser_tool._recording_sessions == set()
         assert browser_tool._cleanup_done is True
+

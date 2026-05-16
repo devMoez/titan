@@ -23,7 +23,7 @@ def _reset():
 
 @pytest.fixture
 def caplog_lsp(caplog):
-    caplog.set_level(logging.DEBUG, logger="hermes.lint.lsp")
+    caplog.set_level(logging.DEBUG, logger="Titan.lint.lsp")
     return caplog
 
 
@@ -197,3 +197,4 @@ def test_short_path_keeps_absolute_when_outside(tmp_path, monkeypatch):
 
 def test_short_path_handles_empty_string():
     assert eventlog._short_path("") == ""
+

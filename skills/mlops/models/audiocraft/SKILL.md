@@ -7,7 +7,7 @@ license: MIT
 dependencies: [audiocraft, torch>=2.0.0, transformers>=4.30.0]
 platforms: [linux, macos]
 metadata:
-  hermes:
+  Titan:
     tags: [Multimodal, Audio Generation, Text-to-Music, Text-to-Audio, MusicGen]
 
 ---
@@ -566,3 +566,4 @@ for desc in descriptions:
 - **Paper (AudioGen)**: https://arxiv.org/abs/2209.15352
 - **HuggingFace**: https://huggingface.co/facebook/musicgen-small
 - **Demo**: https://huggingface.co/spaces/facebook/MusicGen
+

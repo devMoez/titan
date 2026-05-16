@@ -7,7 +7,7 @@ Everything is a JSON object with the same envelope shape:
     Error:     {"type": "error", "id": <req-id>, "error": <str>}
 
 Requests must carry the shared bearer token (set up via
-``hermes meet node approve`` on the gateway and read off disk on the
+``Titan meet node approve`` on the gateway and read off disk on the
 server). Mismatched tokens are rejected before dispatch.
 """
 
@@ -122,3 +122,4 @@ def validate_request(msg: Dict[str, Any], expected_token: str) -> Tuple[bool, st
     if not isinstance(payload, dict):
         return False, "payload must be a dict"
     return True, ""
+

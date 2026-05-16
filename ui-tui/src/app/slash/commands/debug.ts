@@ -3,7 +3,7 @@ import type { SlashCommand } from '../types.js'
 
 export const debugCommands: SlashCommand[] = [
   {
-    help: 'write a V8 heap snapshot + memory diagnostics (see HERMES_HEAPDUMP_DIR)',
+    help: 'write a V8 heap snapshot + memory diagnostics (see Titan_HEAPDUMP_DIR)',
     name: 'heapdump',
     run: (_arg, ctx) => {
       const { heapUsed, rss } = process.memoryUsage()
@@ -46,3 +46,4 @@ export const debugCommands: SlashCommand[] = [
     }
   }
 ]
+

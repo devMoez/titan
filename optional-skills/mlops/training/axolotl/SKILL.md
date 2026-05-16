@@ -7,7 +7,7 @@ license: MIT
 dependencies: [axolotl, torch, transformers, datasets, peft, accelerate, deepspeed]
 platforms: [linux, macos]
 metadata:
-  hermes:
+  Titan:
     tags: [Fine-Tuning, Axolotl, LLM, LoRA, QLoRA, DPO, KTO, ORPO, GRPO, YAML, HuggingFace, DeepSpeed, Multimodal]
 
 ---
@@ -162,5 +162,6 @@ Add templates, boilerplate, or example projects here.
 To refresh this skill with updated documentation:
 1. Re-run the scraper with the same configuration
 2. The skill will be rebuilt with the latest information
+
 
 

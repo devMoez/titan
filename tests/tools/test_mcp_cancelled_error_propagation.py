@@ -7,7 +7,7 @@ rather than ``Exception``, so a bare ``except Exception`` does NOT catch it.
 ``MCPServerTask.run`` had a broad ``except Exception`` around the transport
 loop which meant a task cancellation (gateway restart, explicit
 ``task.cancel()``) caused the reconnect loop to exit silently — the MCP
-server stayed dead until Hermes was restarted. See #9930.
+server stayed dead until Titan was restarted. See #9930.
 
 The fix adds an explicit ``except asyncio.CancelledError: raise`` BEFORE
 the broad catch so cancellation propagates cleanly to asyncio's task
@@ -90,3 +90,4 @@ class TestCancelledErrorPropagation:
 
         done = asyncio.run(drive())
         assert done, "MCPServerTask did not finish after cancel — #9930 regression"
+

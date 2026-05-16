@@ -1,12 +1,12 @@
 from types import SimpleNamespace
 from unittest.mock import MagicMock, patch
 
-from cli import HermesCLI, _rich_text_from_ansi
-from hermes_cli.skin_engine import get_active_skin, set_active_skin
+from cli import TitanCLI, _rich_text_from_ansi
+from Titan_cli.skin_engine import get_active_skin, set_active_skin
 
 
 def _make_cli_stub():
-    cli = HermesCLI.__new__(HermesCLI)
+    cli = TitanCLI.__new__(TitanCLI)
     cli._sudo_state = None
     cli._secret_state = None
     cli._approval_state = None
@@ -53,7 +53,7 @@ class TestCliSkinPromptIntegration:
         cli = _make_cli_stub()
         cli._voice_mode = True
 
-        with patch.object(HermesCLI, "_get_tui_terminal_width", return_value=50):
+        with patch.object(TitanCLI, "_get_tui_terminal_width", return_value=50):
             assert cli._get_tui_prompt_fragments() == [("class:voice-prompt", "🎤 ")]
 
     def test_narrow_terminals_compact_voice_recording_prompt_fragments(self):
@@ -61,7 +61,7 @@ class TestCliSkinPromptIntegration:
         cli._voice_recording = True
         cli._voice_recorder = SimpleNamespace(current_rms=3000)
 
-        with patch.object(HermesCLI, "_get_tui_terminal_width", return_value=50):
+        with patch.object(TitanCLI, "_get_tui_terminal_width", return_value=50):
             frags = cli._get_tui_prompt_fragments()
 
         assert frags[0][0] == "class:voice-recording"
@@ -72,7 +72,7 @@ class TestCliSkinPromptIntegration:
         cli = _make_cli_stub()
         cli._secret_state = {"response_queue": object()}
 
-        with patch("hermes_cli.skin_engine.get_active_prompt_symbol", return_value="⚔ "):
+        with patch("Titan_cli.skin_engine.get_active_prompt_symbol", return_value="⚔ "):
             assert cli._get_tui_prompt_fragments() == [("class:sudo-prompt", "🔑 ⚔ ")]
 
     def test_build_tui_style_dict_uses_skin_overrides(self):
@@ -115,3 +115,4 @@ class TestAnsiRichTextHelper:
     def test_strips_ansi_but_keeps_plain_text(self):
         text = _rich_text_from_ansi("\x1b[31mred\x1b[0m")
         assert text.plain == "red"
+

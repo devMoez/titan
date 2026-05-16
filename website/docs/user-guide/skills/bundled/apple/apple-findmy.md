@@ -17,7 +17,7 @@ Track Apple devices/AirTags via FindMy.app on macOS.
 | Source | Bundled (installed by default) |
 | Path | `skills/apple/findmy` |
 | Version | `1.0.0` |
-| Author | Hermes Agent |
+| Author | Titan Agent |
 | License | MIT |
 | Platforms | macos |
 | Tags | `FindMy`, `AirTag`, `location`, `tracking`, `macOS`, `Apple` |
@@ -25,7 +25,7 @@ Track Apple devices/AirTags via FindMy.app on macOS.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Find My (Apple)
@@ -147,3 +147,4 @@ Analyze each screenshot with vision to extract coordinates, then compile a route
 2. Use `vision_analyze` to read screenshot content — don't try to parse pixels
 3. For ongoing tracking, use a cronjob to periodically capture and log locations
 4. Respect privacy — only track devices/items the user owns
+

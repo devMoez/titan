@@ -61,7 +61,7 @@ def _via_html(query: str, limit: int) -> list[dict]:
     """Best-effort HTML fallback when no API token is available."""
     params = {"q": query, "utf8": "✓"}
     url = f"{HTML_URL}?{urllib.parse.urlencode(params)}"
-    body = get(url, user_agent="Mozilla/5.0 hermes-osint").decode("utf-8", errors="replace")
+    body = get(url, user_agent="Mozilla/5.0 Titan-osint").decode("utf-8", errors="replace")
     # Each result is in <li class="company"> ... </li> with name, url, status
     pattern = re.compile(
         r'<li[^>]*class="[^"]*company[^"]*"[^>]*>.*?'
@@ -190,3 +190,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

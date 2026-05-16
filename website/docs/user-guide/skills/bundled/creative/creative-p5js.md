@@ -24,7 +24,7 @@ p5.js sketches: gen art, shaders, interactive, 3D.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # p5.js Production Pipeline
@@ -572,3 +572,4 @@ Take a known generative pattern (flow field, particle system, L-system, cellular
    - Medium (interesting): one fish in a school swimming the wrong way, a phone with no notifications, the gap between subway cars
    - Far (abstract): prime numbers, asymptotic curves, the color of 3am
 3. Develop the medium-distance associations — they're specific enough to visualize but unexpected enough to be interesting
+

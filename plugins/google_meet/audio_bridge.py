@@ -34,7 +34,7 @@ class AudioBridge:
     ``teardown()`` when the session ends. ``teardown()`` is idempotent.
     """
 
-    def __init__(self, name_prefix: str = "hermes_meet") -> None:
+    def __init__(self, name_prefix: str = "Titan_meet") -> None:
         self._name_prefix = name_prefix
         self._platform: Optional[str] = None
         self._device_name: Optional[str] = None
@@ -106,7 +106,7 @@ class AudioBridge:
                     "load-module",
                     "module-null-sink",
                     f"sink_name={sink_name}",
-                    f"sink_properties=device.description=HermesMeetSink",
+                    f"sink_properties=device.description=TitanMeetSink",
                 ],
                 check=True,
                 capture_output=True,
@@ -242,3 +242,4 @@ def chrome_fake_audio_flags(bridge_info: dict) -> list[str]:
     if system == "Windows":
         raise RuntimeError("windows not supported in v2")
     raise RuntimeError(f"unsupported platform: {system}")
+

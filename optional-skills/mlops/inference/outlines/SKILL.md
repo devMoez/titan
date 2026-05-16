@@ -7,7 +7,7 @@ license: MIT
 dependencies: [outlines, transformers, vllm, pydantic]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Prompt Engineering, Outlines, Structured Generation, JSON Schema, Pydantic, Local Models, Grammar-Based Generation, vLLM, Transformers, Type Safety]
 
 ---
@@ -652,5 +652,6 @@ class Article(BaseModel):
 - `references/json_generation.md` - Comprehensive JSON and Pydantic patterns
 - `references/backends.md` - Backend-specific configuration
 - `references/examples.md` - Production-ready examples
+
 
 

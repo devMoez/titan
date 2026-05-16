@@ -1,4 +1,4 @@
-import { Box, Text } from '@hermes/ink'
+import { Box, Text } from '@Titan/ink'
 
 import { compactPreview } from '../lib/text.js'
 import type { Theme } from '../theme.js'
@@ -62,3 +62,4 @@ interface QueuedMessagesProps {
   queued: string[]
   t: Theme
 }
+

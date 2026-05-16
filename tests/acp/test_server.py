@@ -1,4 +1,4 @@
-"""Tests for acp_adapter.server — HermesACPAgent ACP server."""
+"""Tests for acp_adapter.server — TitanACPAgent ACP server."""
 
 import asyncio
 import os
@@ -35,9 +35,9 @@ from acp.schema import (
     UserMessageChunk,
 )
 from acp_adapter.auth import TERMINAL_SETUP_AUTH_METHOD_ID
-from acp_adapter.server import HermesACPAgent, HERMES_VERSION
+from acp_adapter.server import TitanACPAgent, Titan_VERSION
 from acp_adapter.session import SessionManager
-from hermes_state import SessionDB
+from Titan_state import SessionDB
 
 
 @pytest.fixture()
@@ -48,8 +48,8 @@ def mock_manager():
 
 @pytest.fixture()
 def agent(mock_manager):
-    """HermesACPAgent backed by a mock session manager."""
-    return HermesACPAgent(session_manager=mock_manager)
+    """TitanACPAgent backed by a mock session manager."""
+    return TitanACPAgent(session_manager=mock_manager)
 
 
 # ---------------------------------------------------------------------------
@@ -69,8 +69,8 @@ class TestInitialize:
         resp = await agent.initialize(protocol_version=1)
         assert resp.agent_info is not None
         assert isinstance(resp.agent_info, Implementation)
-        assert resp.agent_info.name == "hermes-agent"
-        assert resp.agent_info.version == HERMES_VERSION
+        assert resp.agent_info.name == "titan-agent"
+        assert resp.agent_info.version == Titan_VERSION
 
     @pytest.mark.asyncio
     async def test_initialize_returns_capabilities(self, agent):
@@ -120,11 +120,11 @@ class TestInitialize:
             {
                 "args": ["--setup"],
                 "description": (
-                    "Open Hermes' interactive model/provider setup in a terminal. "
-                    "Use this when Hermes has not been configured on this machine yet."
+                    "Open Titan' interactive model/provider setup in a terminal. "
+                    "Use this when Titan has not been configured on this machine yet."
                 ),
                 "id": TERMINAL_SETUP_AUTH_METHOD_ID,
-                "name": "Configure Hermes provider",
+                "name": "Configure Titan provider",
                 "type": "terminal",
             }
         ]
@@ -212,10 +212,10 @@ class TestSessionOps:
         manager = SessionManager(
             agent_factory=lambda: SimpleNamespace(model="gpt-5.4", provider="openai-codex")
         )
-        acp_agent = HermesACPAgent(session_manager=manager)
+        acp_agent = TitanACPAgent(session_manager=manager)
 
         with patch(
-            "hermes_cli.models.curated_models_for_provider",
+            "Titan_cli.models.curated_models_for_provider",
             return_value=[("gpt-5.4", "recommended"), ("gpt-5.4-mini", "")],
         ):
             resp = await acp_agent.new_session(cwd="/tmp")
@@ -337,7 +337,7 @@ class TestSessionOps:
         state.history = [
             {"role": "system", "content": "hidden system"},
             {"role": "user", "content": "what controls the / slash commands?"},
-            {"role": "assistant", "content": "HermesACPAgent._ADVERTISED_COMMANDS controls them."},
+            {"role": "assistant", "content": "TitanACPAgent._ADVERTISED_COMMANDS controls them."},
             {
                 "role": "assistant",
                 "content": "",
@@ -375,7 +375,7 @@ class TestSessionOps:
         assert isinstance(replay_calls[0].kwargs["update"], UserMessageChunk)
         assert replay_calls[0].kwargs["update"].content.text == "what controls the / slash commands?"
         assert isinstance(replay_calls[1].kwargs["update"], AgentMessageChunk)
-        assert replay_calls[1].kwargs["update"].content.text.startswith("HermesACPAgent")
+        assert replay_calls[1].kwargs["update"].content.text.startswith("TitanACPAgent")
 
         tool_updates = [
             call.kwargs["update"]
@@ -661,17 +661,17 @@ class TestSessionConfiguration:
                 api_mode=kwargs.get("api_mode"),
             )
 
-        monkeypatch.setattr("hermes_cli.config.load_config", lambda: {
+        monkeypatch.setattr("Titan_cli.config.load_config", lambda: {
             "model": {"provider": "openrouter", "default": "openrouter/gpt-5"}
         })
         monkeypatch.setattr(
-            "hermes_cli.runtime_provider.resolve_runtime_provider",
+            "Titan_cli.runtime_provider.resolve_runtime_provider",
             fake_resolve_runtime_provider,
         )
         manager = SessionManager(db=SessionDB(tmp_path / "state.db"))
 
         with patch("run_agent.AIAgent", side_effect=fake_agent):
-            acp_agent = HermesACPAgent(session_manager=manager)
+            acp_agent = TitanACPAgent(session_manager=manager)
             state = manager.create_session(cwd="/tmp")
             result = await acp_agent.set_session_model(
                 model_id="anthropic:claude-sonnet-4-6",
@@ -997,7 +997,7 @@ class TestSlashCommands:
     def test_version(self, agent, mock_manager):
         state = self._make_state(mock_manager)
         result = agent._handle_slash_command("/version", state)
-        assert HERMES_VERSION in result
+        assert Titan_VERSION in result
 
     def test_compact_compresses_context(self, agent, mock_manager):
         state = self._make_state(mock_manager)
@@ -1117,17 +1117,17 @@ class TestSlashCommands:
                 api_mode=kwargs.get("api_mode"),
             )
 
-        monkeypatch.setattr("hermes_cli.config.load_config", lambda: {
+        monkeypatch.setattr("Titan_cli.config.load_config", lambda: {
             "model": {"provider": "openrouter", "default": "openrouter/gpt-5"}
         })
         monkeypatch.setattr(
-            "hermes_cli.runtime_provider.resolve_runtime_provider",
+            "Titan_cli.runtime_provider.resolve_runtime_provider",
             fake_resolve_runtime_provider,
         )
         manager = SessionManager(db=SessionDB(tmp_path / "state.db"))
 
         with patch("run_agent.AIAgent", side_effect=fake_agent):
-            acp_agent = HermesACPAgent(session_manager=manager)
+            acp_agent = TitanACPAgent(session_manager=manager)
             state = manager.create_session(cwd="/tmp")
             result = acp_agent._cmd_model("anthropic:claude-sonnet-4-6", state)
 
@@ -1160,7 +1160,7 @@ class TestRegisterSessionMcpServers:
 
         state = mock_manager.create_session(cwd="/tmp")
         # Give the mock agent the attributes _register_session_mcp_servers reads
-        state.agent.enabled_toolsets = ["hermes-acp"]
+        state.agent.enabled_toolsets = ["Titan-acp"]
         state.agent.disabled_toolsets = None
         state.agent.tools = []
         state.agent.valid_tool_names = set()
@@ -1193,7 +1193,7 @@ class TestRegisterSessionMcpServers:
         from acp.schema import McpServerHttp, HttpHeader
 
         state = mock_manager.create_session(cwd="/tmp")
-        state.agent.enabled_toolsets = ["hermes-acp"]
+        state.agent.enabled_toolsets = ["Titan-acp"]
         state.agent.disabled_toolsets = None
         state.agent.tools = []
         state.agent.valid_tool_names = set()
@@ -1224,7 +1224,7 @@ class TestRegisterSessionMcpServers:
         from acp.schema import McpServerStdio
 
         state = mock_manager.create_session(cwd="/tmp")
-        state.agent.enabled_toolsets = ["hermes-acp"]
+        state.agent.enabled_toolsets = ["Titan-acp"]
         state.agent.disabled_toolsets = None
         state.agent.tools = []
         state.agent.valid_tool_names = set()
@@ -1247,11 +1247,11 @@ class TestRegisterSessionMcpServers:
             await agent._register_session_mcp_servers(state, [server])
 
         mock_defs.assert_called_once_with(
-            enabled_toolsets=["hermes-acp", "mcp-srv"],
+            enabled_toolsets=["Titan-acp", "mcp-srv"],
             disabled_toolsets=None,
             quiet_mode=True,
         )
-        assert state.agent.enabled_toolsets == ["hermes-acp", "mcp-srv"]
+        assert state.agent.enabled_toolsets == ["Titan-acp", "mcp-srv"]
         assert state.agent.tools == fake_tools
         assert state.agent.valid_tool_names == {"mcp_srv_search", "terminal"}
         # _invalidate_system_prompt should have been called
@@ -1273,3 +1273,4 @@ class TestRegisterSessionMcpServers:
         with patch("tools.mcp_tool.register_mcp_servers", side_effect=RuntimeError("boom")):
             # Should not raise
             await agent._register_session_mcp_servers(state, [server])
+

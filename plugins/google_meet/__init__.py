@@ -95,9 +95,10 @@ def register(ctx) -> None:
         setup_fn=_register_meet_cli,
         handler_fn=_meet_command,
         description=(
-            "Let the hermes agent join a Google Meet call and scrape live "
-            "captions into a transcript. See: hermes meet setup"
+            "Let the Titan agent join a Google Meet call and scrape live "
+            "captions into a transcript. See: Titan meet setup"
         ),
     )
 
     ctx.register_hook("on_session_end", _on_session_end)
+

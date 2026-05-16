@@ -223,13 +223,13 @@ class TestSanitizeStructureNonAscii:
     def test_sanitizes_nested_dict_structure(self):
         payload = {
             "default_headers": {
-                "X-Title": "Hermes │ Agent",
-                "User-Agent": "Hermes/1.0 🤖",
+                "X-Title": "Titan │ Agent",
+                "User-Agent": "Titan/1.0 🤖",
             }
         }
         assert _sanitize_structure_non_ascii(payload) is True
-        assert payload["default_headers"]["X-Title"] == "Hermes  Agent"
-        assert payload["default_headers"]["User-Agent"] == "Hermes/1.0 "
+        assert payload["default_headers"]["X-Title"] == "Titan  Agent"
+        assert payload["default_headers"]["User-Agent"] == "Titan/1.0 "
 
 
 class TestApiKeyClientSync:
@@ -370,3 +370,4 @@ class TestApiMessagesAndApiKwargsSanitized:
         assert _sanitize_messages_non_ascii(messages) is True
         assert "\xab" not in messages[1]["reasoning"]
         assert "\xbb" not in messages[1]["reasoning"]
+

@@ -26,7 +26,7 @@ W&B: log ML experiments, sweeps, model registry, dashboards.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Weights & Biases: ML Experiment Tracking & MLOps
@@ -607,3 +607,4 @@ print(f"Share this URL: {run.url}")
 - `references/sweeps.md` - Comprehensive hyperparameter optimization guide
 - `references/artifacts.md` - Data and model versioning patterns
 - `references/integrations.md` - Framework-specific examples
+

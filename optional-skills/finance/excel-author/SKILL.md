@@ -6,7 +6,7 @@ author: Anthropic (adapted by Nous Research)
 license: Apache-2.0
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [excel, openpyxl, finance, spreadsheet, modeling]
     related_skills: [pptx-author, dcf-model, comps-analysis, lbo-model, 3-statement-model]
 ---
@@ -242,3 +242,4 @@ Checkpoint pattern:
 ## Attribution
 
 Conventions (blue/black/green, formulas-over-hardcodes, named ranges, sensitivity rules) adapted from Anthropic's Claude for Financial Services plugin suite, Apache-2.0 licensed. Original: https://github.com/anthropics/financial-services/tree/main/plugins/vertical-plugins/financial-analysis/skills/xlsx-author
+

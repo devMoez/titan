@@ -1,7 +1,7 @@
 # Design System: Supabase
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `Source Code Pro`
@@ -266,3 +266,4 @@ The green accent (`#3ecf8e`) appears selectively — in the Supabase logo, in li
 5. Hero line-height of 1.00 is the signature typographic move
 6. Pill (9999px) for primary actions, 6px for secondary, 8-16px for cards
 7. HSL with alpha channels creates the sophisticated translucent layering
+

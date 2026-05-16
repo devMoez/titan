@@ -1,12 +1,12 @@
 ---
 name: plan
-description: "Plan mode: write markdown plan to .hermes/plans/, no exec."
+description: "Plan mode: write markdown plan to .Titan/plans/, no exec."
 version: 1.0.0
-author: Hermes Agent
+author: Titan Agent
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [planning, plan-mode, implementation, workflow]
     related_skills: [writing-plans, subagent-driven-development]
 ---
@@ -23,7 +23,7 @@ For this turn, you are planning only.
 - Do not edit project files except the plan markdown file.
 - Do not run mutating terminal commands, commit, push, or perform external actions.
 - You may inspect the repo or other context with read-only commands/tools when needed.
-- Your deliverable is a markdown plan saved inside the active workspace under `.hermes/plans/`.
+- Your deliverable is a markdown plan saved inside the active workspace under `.Titan/plans/`.
 
 ## Output requirements
 
@@ -43,12 +43,12 @@ If the task is code-related, include exact file paths, likely test targets, and 
 ## Save location
 
 Save the plan with `write_file` under:
-- `.hermes/plans/YYYY-MM-DD_HHMMSS-<slug>.md`
+- `.Titan/plans/YYYY-MM-DD_HHMMSS-<slug>.md`
 
-Treat that as relative to the active working directory / backend workspace. Hermes file tools are backend-aware, so using this relative path keeps the plan with the workspace on local, docker, ssh, modal, and daytona backends.
+Treat that as relative to the active working directory / backend workspace. Titan file tools are backend-aware, so using this relative path keeps the plan with the workspace on local, docker, ssh, modal, and daytona backends.
 
 If the runtime provides a specific target path, use that exact path.
-If not, create a sensible timestamped filename yourself under `.hermes/plans/`.
+If not, create a sensible timestamped filename yourself under `.Titan/plans/`.
 
 ## Interaction style
 
@@ -56,3 +56,4 @@ If not, create a sensible timestamped filename yourself under `.hermes/plans/`.
 - If no explicit instruction accompanies `/plan`, infer the task from the current conversation context.
 - If it is genuinely underspecified, ask a brief clarifying question instead of guessing.
 - After saving the plan, reply briefly with what you planned and the saved path.
+

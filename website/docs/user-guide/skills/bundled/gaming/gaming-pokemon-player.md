@@ -21,7 +21,7 @@ Play Pokemon via headless emulator + RAM reads.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Pokemon Player
@@ -234,3 +234,4 @@ Then hold B to speed through attack animations and text.
 - Dialog detection via RAM is unreliable — verify with screenshots
 - Save BEFORE risky encounters
 - The tunnel URL changes each time you restart it
+

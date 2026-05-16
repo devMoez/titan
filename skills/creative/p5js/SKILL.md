@@ -4,7 +4,7 @@ description: "p5.js sketches: gen art, shaders, interactive, 3D."
 version: 1.0.0
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [creative-coding, generative-art, p5js, canvas, interactive, visualization, webgl, shaders, animation]
     related_skills: [ascii-video, manim-video, excalidraw]
 ---
@@ -554,3 +554,4 @@ Take a known generative pattern (flow field, particle system, L-system, cellular
    - Medium (interesting): one fish in a school swimming the wrong way, a phone with no notifications, the gap between subway cars
    - Far (abstract): prime numbers, asymptotic curves, the color of 3am
 3. Develop the medium-distance associations — they're specific enough to visualize but unexpected enough to be interesting
+

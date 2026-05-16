@@ -3,12 +3,12 @@
 
 Usage (via cron with --no-agent):
 
-    hermes cron create hermes-issues \\
+    Titan cron create Titan-issues \\
       --schedule "*/5 * * * *" --no-agent \\
-      --script "$HERMES_HOME/skills/devops/watchers/scripts/watch_github.py" \\
-      --script-args "--name hermes-issues --repo NousResearch/hermes-agent --scope issues"
+      --script "$Titan_HOME/skills/devops/watchers/scripts/watch_github.py" \\
+      --script-args "--name Titan-issues --repo NousResearch/titan-agent --scope issues"
 
-Set GITHUB_TOKEN (or GH_TOKEN) in ~/.hermes/.env to avoid the 60 req/hr
+Set GITHUB_TOKEN (or GH_TOKEN) in ~/.Titan/.env to avoid the 60 req/hr
 anonymous rate limit.
 
 Scopes: issues | pulls | releases | commits.  Or pass --search QUERY to
@@ -112,7 +112,7 @@ def main() -> int:
 
     headers = {
         "Accept": "application/vnd.github+json",
-        "User-Agent": "Hermes-Watcher/1.0",
+        "User-Agent": "Titan-Watcher/1.0",
     }
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if token:
@@ -166,3 +166,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

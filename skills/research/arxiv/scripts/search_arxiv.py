@@ -43,7 +43,7 @@ def search(query=None, author=None, category=None, ids=None, max_results=5, sort
     
     url = "https://export.arxiv.org/api/query?" + "&".join(f"{k}={v}" for k, v in params.items())
     
-    req = urllib.request.Request(url, headers={'User-Agent': 'HermesAgent/1.0'})
+    req = urllib.request.Request(url, headers={'User-Agent': 'TitanAgent/1.0'})
     with urllib.request.urlopen(req, timeout=15) as resp:
         data = resp.read()
     
@@ -112,3 +112,4 @@ if __name__ == "__main__":
         query = " ".join(positional)
     
     search(query=query, author=author, category=category, ids=ids, max_results=max_results, sort=sort)
+

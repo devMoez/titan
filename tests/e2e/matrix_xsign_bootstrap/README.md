@@ -37,13 +37,14 @@ busy locally.
 The test mirrors the bootstrap snippet from
 `gateway/platforms/matrix.py` (the "if MATRIX_RECOVERY_KEY else
 get_own_cross_signing_public_keys / generate_recovery_key" branch)
-inline so it runs without importing the entire hermes gateway and its
+inline so it runs without importing the entire Titan gateway and its
 many dependencies. **If the source diverges from what's in
 `_connect_with_bootstrap`, this test must be updated to match.** A
-small price for not requiring the full hermes-agent runtime in CI.
+small price for not requiring the full titan-agent runtime in CI.
 
 ## Skipped when
 
 - `mautrix` Python package is not installed
 - The homeserver isn't reachable at `$E2E_MATRIX_HS` (default
   `http://127.0.0.1:26167`)
+

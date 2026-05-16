@@ -9,7 +9,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from hermes_cli.plugins import PluginContext, PluginManager, PluginManifest
+from Titan_cli.plugins import PluginContext, PluginManager, PluginManifest
 from gateway.config import GatewayConfig, Platform, PlatformConfig
 from plugins.teams_pipeline import register
 from plugins.teams_pipeline.pipeline import TeamsMeetingPipeline
@@ -466,3 +466,4 @@ class TestTeamsMeetingPipeline:
         assert len(store.list_jobs()) == 1
         receipt_key = TeamsPipelineStore.build_notification_receipt_key(notification)
         assert store.has_notification_receipt(receipt_key) is True
+

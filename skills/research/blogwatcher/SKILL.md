@@ -6,7 +6,7 @@ author: JulienTant (fork of Hyaxia/blogwatcher)
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [RSS, Blogs, Feed-Reader, Monitoring]
     homepage: https://github.com/JulienTant/blogwatcher-cli
 prerequisites:
@@ -135,3 +135,4 @@ Unread articles (2):
 - Import blogs in bulk from OPML files exported by Feedly, Inoreader, NewsBlur, etc.
 - Database stored at `~/.blogwatcher-cli/blogwatcher-cli.db` by default (override with `--db` or `BLOGWATCHER_DB`).
 - Use `blogwatcher-cli <command> --help` to discover all flags and options.
+

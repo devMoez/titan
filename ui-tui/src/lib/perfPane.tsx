@@ -4,9 +4,9 @@
 //   logFrameEvent (ink.onFrame) → yoga / renderer / diff / optimize / write
 //                                 phases + yoga counters + scroll fast-path
 //
-// Both gate on HERMES_DEV_PERF=1 and dump JSON-lines (default ~/.hermes/perf.log,
-// override HERMES_DEV_PERF_LOG). Tagged { src: 'react' | 'frame' } for jq.
-// HERMES_DEV_PERF_MS (default 2) skips sub-ms idle frames; set 0 to capture all.
+// Both gate on Titan_DEV_PERF=1 and dump JSON-lines (default ~/.Titan/perf.log,
+// override Titan_DEV_PERF_LOG). Tagged { src: 'react' | 'frame' } for jq.
+// Titan_DEV_PERF_MS (default 2) skips sub-ms idle frames; set 0 to capture all.
 //
 // Zero cost when unset: PerfPane returns children directly, logFrameEvent is
 // undefined so ink doesn't pay the timing cost.
@@ -15,13 +15,13 @@ import { appendFileSync, mkdirSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { dirname, join } from 'node:path'
 
-import type { FrameEvent } from '@hermes/ink'
-import { scrollFastPathStats } from '@hermes/ink'
+import type { FrameEvent } from '@Titan/ink'
+import { scrollFastPathStats } from '@Titan/ink'
 import { Profiler, type ProfilerOnRenderCallback, type ReactNode } from 'react'
 
-const ENABLED = /^(?:1|true|yes|on)$/i.test((process.env.HERMES_DEV_PERF ?? '').trim())
-const THRESHOLD_MS = Number(process.env.HERMES_DEV_PERF_MS ?? '2') || 0
-const LOG_PATH = process.env.HERMES_DEV_PERF_LOG?.trim() || join(homedir(), '.hermes', 'perf.log')
+const ENABLED = /^(?:1|true|yes|on)$/i.test((process.env.Titan_DEV_PERF ?? '').trim())
+const THRESHOLD_MS = Number(process.env.Titan_DEV_PERF_MS ?? '2') || 0
+const LOG_PATH = process.env.Titan_DEV_PERF_LOG?.trim() || join(homedir(), '.Titan', 'perf.log')
 
 let logReady = false
 
@@ -105,3 +105,4 @@ export const logFrameEvent = ENABLED
 
 export const PERF_ENABLED = ENABLED
 export const PERF_LOG_PATH = LOG_PATH
+

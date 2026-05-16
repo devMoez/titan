@@ -59,7 +59,7 @@ Read these before every investigation step. Violating them invalidates the repor
 
 > **Path convention**: Throughout this skill, `SKILL_DIR` refers to the root of this skill's
 > installation directory (the folder containing this `SKILL.md`). When the skill is loaded,
-> resolve `SKILL_DIR` to the actual path — e.g. `~/.hermes/skills/security/oss-forensics/`
+> resolve `SKILL_DIR` to the actual path — e.g. `~/.Titan/skills/security/oss-forensics/`
 > or the `optional-skills/` equivalent. All script and template references are relative to it.
 
 ## Phase 0: Initialization
@@ -421,3 +421,4 @@ If rate-limited mid-investigation, record the partial results in the evidence st
 - [investigation-templates.md](./references/investigation-templates.md) — Pre-built hypothesis templates per attack type
 - [evidence-store.py](./scripts/evidence-store.py) — CLI tool for managing the evidence JSON store
 - [forensic-report.md](./templates/forensic-report.md) — Structured report template
+

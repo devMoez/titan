@@ -1,4 +1,4 @@
-# Dependabot configuration for hermes-agent.
+# Dependabot configuration for titan-agent.
 #
 # Deliberately scoped to github-actions only.
 #
@@ -42,3 +42,4 @@ updates:
         update-types:
           - "minor"
           - "patch"
+

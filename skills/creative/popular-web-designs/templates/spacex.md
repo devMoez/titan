@@ -1,7 +1,7 @@
 # Design System: SpaceX
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `system monospace stack`
@@ -205,3 +205,4 @@ What makes SpaceX distinctive is its radical minimalism: no shadows, no borders 
 4. Ghost buttons are the only interactive element — transparent, spectral-bordered
 5. Zero shadows, zero cards, zero decorative elements
 6. Every section is full-viewport (100vh) — cinematic pacing
+

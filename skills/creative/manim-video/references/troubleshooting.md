@@ -74,10 +74,10 @@ self.play(Restore(circle))
 
 ```python
 # WRONG
-Text("HERMES", letter_spacing=6)
+Text("Titan", letter_spacing=6)
 
 # RIGHT: use MarkupText with Pango attributes for spacing control
-MarkupText('<span letter_spacing="6000">HERMES</span>', font_size=18)
+MarkupText('<span letter_spacing="6000">Titan</span>', font_size=18)
 # Note: Pango letter_spacing is in 1/1024 of a point
 ```
 
@@ -133,3 +133,4 @@ mob.resume_updating()
 3. Replace `self.play()` with `self.add()` to see final state instantly
 4. Print positions: `print(mob.get_center())`
 5. Clear cache: delete `media/` directory
+

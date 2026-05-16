@@ -75,8 +75,8 @@ SAMPLE_REGISTRY = {
 
 class TestProviderMapping:
     def test_all_mapped_providers_are_strings(self):
-        for hermes_id, mdev_id in PROVIDER_TO_MODELS_DEV.items():
-            assert isinstance(hermes_id, str)
+        for Titan_id, mdev_id in PROVIDER_TO_MODELS_DEV.items():
+            assert isinstance(Titan_id, str)
             assert isinstance(mdev_id, str)
 
     def test_known_providers_mapped(self):
@@ -254,7 +254,7 @@ class TestFetchModelsDev:
     @patch("agent.models_dev.requests.get")
     def test_force_refresh_skips_disk_cache(self, mock_get):
         """force_refresh=True bypasses BOTH the in-mem cache AND the
-        disk-cache fast path. Used by ``hermes config refresh`` and
+        disk-cache fast path. Used by ``Titan config refresh`` and
         anywhere else the user explicitly asked for fresh data.
         """
         import agent.models_dev as md
@@ -395,3 +395,4 @@ class TestGetModelCapabilities:
         with patch("agent.models_dev.fetch_models_dev", return_value=CAPS_REGISTRY):
             caps = get_model_capabilities("anthropic", "nonexistent-model")
         assert caps is None
+

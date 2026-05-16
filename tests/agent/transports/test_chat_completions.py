@@ -322,7 +322,7 @@ class TestChatCompletionsBuildKwargs:
     def test_gemma_does_not_receive_thinking_config(self, transport):
         # The `gemini` provider also serves Gemma (e.g. `gemma-4-31b-it`),
         # but Gemma rejects `thinking_config` with HTTP 400 (#17426). Even
-        # when Hermes has reasoning enabled, the field must be omitted for
+        # when Titan has reasoning enabled, the field must be omitted for
         # non-Gemini models on this provider.
         msgs = [{"role": "user", "content": "Hi"}]
         kw = transport.build_kwargs(
@@ -769,3 +769,4 @@ class TestChatCompletionsCacheStats:
         r = SimpleNamespace(usage=SimpleNamespace(prompt_tokens_details=details))
         result = transport.extract_cache_stats(r)
         assert result == {"cached_tokens": 500, "creation_tokens": 100}
+

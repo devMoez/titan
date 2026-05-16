@@ -14,14 +14,14 @@ Passive domain reconnaissance using Python stdlib. Subdomain discovery, SSL cert
 
 | | |
 |---|---|
-| Source | Optional — install with `hermes skills install official/research/domain-intel` |
+| Source | Optional — install with `Titan skills install official/research/domain-intel` |
 | Path | `optional-skills/research/domain-intel` |
 | Platforms | linux, macos, windows |
 
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Domain Intelligence — Passive OSINT
@@ -115,3 +115,4 @@ All queries are **passive** — no port scanning, no vulnerability testing:
 ---
 
 *Contributed by [@FurkanL0](https://github.com/FurkanL0)*
+

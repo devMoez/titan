@@ -1,7 +1,7 @@
 # Design System: Together AI
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `JetBrains Mono`
@@ -274,3 +274,4 @@ What makes Together AI distinctive is its type system. "The Future" handles all 
 4. Mono labels are always uppercase with positive letter-spacing
 5. Keep radius sharp (4px or 8px) — no pills, no generous rounding
 6. Pastel gradients are for decoration, not UI chrome
+

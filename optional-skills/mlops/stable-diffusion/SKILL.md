@@ -7,7 +7,7 @@ license: MIT
 dependencies: [diffusers>=0.30.0, transformers>=4.41.0, accelerate>=0.31.0, torch>=2.0.0]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [Image Generation, Stable Diffusion, Diffusers, Text-to-Image, Multimodal, Computer Vision]
 
 ---
@@ -521,3 +521,4 @@ image = pipe(prompt, num_inference_steps=20).images[0]
 - **Repository**: https://github.com/huggingface/diffusers
 - **Model Hub**: https://huggingface.co/models?library=diffusers
 - **Discord**: https://discord.gg/diffusers
+

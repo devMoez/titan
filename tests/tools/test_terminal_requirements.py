@@ -41,7 +41,7 @@ def _clear_terminal_env(monkeypatch):
 
 
 def test_local_terminal_requirements(monkeypatch, caplog):
-    """Local backend uses Hermes' own LocalEnvironment wrapper."""
+    """Local backend uses Titan' own LocalEnvironment wrapper."""
     _clear_terminal_env(monkeypatch)
     monkeypatch.setenv("TERMINAL_ENV", "local")
 
@@ -314,3 +314,4 @@ def test_vercel_backend_rejects_malformed_disk_without_raising(monkeypatch, capl
         "Invalid value for TERMINAL_CONTAINER_DISK" in record.getMessage()
         for record in caplog.records
     )
+

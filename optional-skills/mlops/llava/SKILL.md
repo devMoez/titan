@@ -7,7 +7,7 @@ license: MIT
 dependencies: [transformers, torch, pillow]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [LLaVA, Vision-Language, Multimodal, Visual Question Answering, Image Chat, CLIP, Vicuna, Conversational AI, Instruction Tuning, VQA]
 
 ---
@@ -304,5 +304,6 @@ demo.launch()
 - **Demo**: https://llava.hliu.cc
 - **Models**: https://huggingface.co/liuhaotian
 - **License**: Apache 2.0
+
 
 

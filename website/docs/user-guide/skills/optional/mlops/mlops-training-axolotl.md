@@ -14,7 +14,7 @@ Axolotl: YAML LLM fine-tuning (LoRA, DPO, GRPO).
 
 | | |
 |---|---|
-| Source | Optional — install with `hermes skills install official/mlops/axolotl` |
+| Source | Optional — install with `Titan skills install official/mlops/axolotl` |
 | Path | `optional-skills/mlops/training/axolotl` |
 | Version | `1.0.0` |
 | Author | Orchestra Research |
@@ -26,7 +26,7 @@ Axolotl: YAML LLM fine-tuning (LoRA, DPO, GRPO).
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Axolotl Skill
@@ -179,3 +179,4 @@ Add templates, boilerplate, or example projects here.
 To refresh this skill with updated documentation:
 1. Re-run the scraper with the same configuration
 2. The skill will be rebuilt with the latest information
+

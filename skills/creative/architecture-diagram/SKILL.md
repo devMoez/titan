@@ -2,12 +2,12 @@
 name: architecture-diagram
 description: "Dark-themed SVG architecture/cloud/infra diagrams as HTML."
 version: 1.0.0
-author: Cocoon AI (hello@cocoon-ai.com), ported by Hermes Agent
+author: Cocoon AI (hello@cocoon-ai.com), ported by Titan Agent
 license: MIT
 dependencies: []
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [architecture, diagrams, SVG, HTML, visualization, infrastructure, cloud]
     related_skills: [concept-diagrams, excalidraw]
 ---
@@ -146,3 +146,4 @@ skill_view(name="architecture-diagram", file_path="templates/template.html")
 ```
 
 The template contains working examples of every component type (frontend, backend, database, cloud, security), arrow styles (standard, dashed, curved), security groups, region boundaries, and the legend — use it as your structural reference when generating diagrams.
+

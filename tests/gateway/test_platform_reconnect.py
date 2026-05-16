@@ -115,8 +115,8 @@ class TestStartupPlatformIsolation:
             return MagicMock()
 
         with patch("gateway.status.write_runtime_status"):
-            with patch("hermes_cli.plugins.discover_plugins"):
-                with patch("hermes_cli.config.load_config", return_value={}):
+            with patch("Titan_cli.plugins.discover_plugins"):
+                with patch("Titan_cli.config.load_config", return_value={}):
                     with patch("agent.shell_hooks.register_from_config"):
                         with patch(
                             "tools.process_registry.process_registry.recover_from_checkpoint",
@@ -145,7 +145,7 @@ class TestStartupPlatformIsolation:
             return True
 
         adapter.connect = hang
-        monkeypatch.setenv("HERMES_GATEWAY_PLATFORM_CONNECT_TIMEOUT", "0.001")
+        monkeypatch.setenv("Titan_GATEWAY_PLATFORM_CONNECT_TIMEOUT", "0.001")
 
         with pytest.raises(TimeoutError, match="telegram connect timed out"):
             await runner._connect_adapter_with_timeout(adapter, Platform.TELEGRAM)
@@ -713,4 +713,5 @@ class TestPlatformSlashCommand:
         runner = _make_runner()
         out = await runner._handle_platform_command(self._make_event("/platform"))
         assert "Gateway platforms" in out
+
 

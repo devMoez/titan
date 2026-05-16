@@ -5,7 +5,7 @@ working directory, the next ``subprocess.Popen(..., cwd=self.cwd)`` would
 otherwise raise ``FileNotFoundError`` before bash starts, wedging every
 subsequent terminal/file-tool call until the gateway restarts.
 
-Regression coverage for https://github.com/NousResearch/hermes-agent/issues/17558.
+Regression coverage for https://github.com/NousResearch/titan-agent/issues/17558.
 """
 
 import os
@@ -185,3 +185,4 @@ class TestUpdateCwdRejectsMissingPaths:
         env._update_cwd({"output": "", "returncode": 0})
 
         assert env.cwd == str(new_dir)
+

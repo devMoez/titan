@@ -1,7 +1,7 @@
 """Tests for path traversal prevention in skill_view.
 
 Regression tests for issue #220: skill_view file_path parameter allowed
-reading arbitrary files (e.g., ~/.hermes/.env) via path traversal.
+reading arbitrary files (e.g., ~/.Titan/.env) via path traversal.
 """
 
 import json
@@ -81,3 +81,4 @@ class TestPathTraversalBlocked:
         assert result["success"] is False
         assert "sk-do-not-leak" not in result.get("content", "")
         assert "sk-do-not-leak" not in json.dumps(result)
+

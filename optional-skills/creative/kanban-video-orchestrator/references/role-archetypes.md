@@ -168,7 +168,7 @@ audio's energy.
 
 ### voice-talent / narrator
 
-Generates voiceover audio. Calls a TTS API directly; no Hermes skill required
+Generates voiceover audio. Calls a TTS API directly; no Titan skill required
 beyond `kanban-worker`. The user can also supply pre-recorded VO instead of
 generation.
 
@@ -296,3 +296,4 @@ violations.
   The kanban routing breaks down if every task fits every profile.
 - **No reviewer for important deliverables.** Saves an hour of pipeline time
   but ships flaws.
+

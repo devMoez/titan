@@ -157,9 +157,9 @@ def extract_local_skills():
             tags = []
             metadata = fm.get("metadata")
             if isinstance(metadata, dict):
-                hermes_meta = metadata.get("hermes", {})
-                if isinstance(hermes_meta, dict):
-                    tags = hermes_meta.get("tags", [])
+                Titan_meta = metadata.get("Titan", {})
+                if isinstance(Titan_meta, dict):
+                    tags = Titan_meta.get("tags", [])
             if not tags:
                 tags = fm.get("tags", [])
             if isinstance(tags, str):
@@ -350,3 +350,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

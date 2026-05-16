@@ -18,10 +18,10 @@ import pytest
 
 @pytest.fixture(autouse=True)
 def _isolate_home(tmp_path, monkeypatch):
-    hermes_home = tmp_path / ".hermes"
-    hermes_home.mkdir()
-    monkeypatch.setenv("HERMES_HOME", str(hermes_home))
-    yield hermes_home
+    Titan_home = tmp_path / ".Titan"
+    Titan_home.mkdir()
+    monkeypatch.setenv("Titan_HOME", str(Titan_home))
+    yield Titan_home
 
 
 # ---------------------------------------------------------------------------
@@ -291,3 +291,4 @@ def test_speaker_drops_line_without_processed_path_when_none(tmp_path):
     speaker.run_until_stopped(_stop, poll_interval=0.01)
     assert stub.spoken == ["once"]
     assert queue.read_text().strip() == ""
+

@@ -7,7 +7,7 @@ license: MIT
 dependencies: [pinecone-client]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [RAG, Pinecone, Vector Database, Managed Service, Serverless, Hybrid Search, Production, Auto-Scaling, Low Latency, Recommendations]
 
 ---
@@ -358,5 +358,6 @@ index.delete(delete_all=True)
 - **Docs**: https://docs.pinecone.io
 - **Console**: https://app.pinecone.io
 - **Pricing**: https://www.pinecone.io/pricing
+
 
 

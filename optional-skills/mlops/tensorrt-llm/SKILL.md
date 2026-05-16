@@ -7,7 +7,7 @@ license: MIT
 dependencies: [tensorrt-llm, torch]
 platforms: [linux, macos]
 metadata:
-  hermes:
+  Titan:
     tags: [Inference Serving, TensorRT-LLM, NVIDIA, Inference Optimization, High Throughput, Low Latency, Production, FP8, INT4, In-Flight Batching, Multi-GPU]
 
 ---
@@ -187,5 +187,6 @@ outputs = llm.generate(
 - **Docs**: https://nvidia.github.io/TensorRT-LLM/
 - **GitHub**: https://github.com/NVIDIA/TensorRT-LLM
 - **Models**: https://huggingface.co/models?library=tensorrt_llm
+
 
 

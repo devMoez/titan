@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@hermes/ink": ["src/types/hermes-ink.d.ts"]
+      "@Titan/ink": ["src/types/Titan-ink.d.ts"]
     }
   }
 }
+

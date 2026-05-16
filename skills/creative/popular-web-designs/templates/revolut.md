@@ -1,7 +1,7 @@
 # Design System: Revolut
 
 
-> **Hermes Agent — Implementation Notes**
+> **Titan Agent — Implementation Notes**
 >
 > The original site uses proprietary fonts. For self-contained HTML output, use these CDN substitutes:
 > - **Primary:** `Inter` | **Mono:** `system monospace stack`
@@ -196,3 +196,4 @@ What distinguishes Revolut is its pill-everything button system. Every button us
 2. All buttons are pills (9999px) with generous padding
 3. Zero shadows — flat is the Revolut identity
 4. Near-black + white for marketing, semantic colors for product
+

@@ -185,7 +185,7 @@ class TestMCPReloadTimeout:
         """If _reload_mcp hangs, the config watcher times out and returns."""
         import time
 
-        # Create a mock HermesCLI-like object with the needed attributes
+        # Create a mock TitanCLI-like object with the needed attributes
         class FakeCLI:
             _config_mtime = 0.0
             _config_mcp_servers = {}
@@ -205,8 +205,8 @@ class TestMCPReloadTimeout:
         # by checking that _check_config_mcp_changes doesn't call
         # _reload_mcp directly (it uses a thread now)
         import inspect
-        from cli import HermesCLI
-        source = inspect.getsource(HermesCLI._check_config_mcp_changes)
+        from cli import TitanCLI
+        source = inspect.getsource(TitanCLI._check_config_mcp_changes)
         # The fix adds threading.Thread for _reload_mcp
         assert "Thread" in source or "thread" in source.lower(), \
             "_check_config_mcp_changes should use a thread for _reload_mcp"
@@ -320,3 +320,4 @@ class TestMCPInitialConnectionRetry:
                 await task
 
         asyncio.get_event_loop().run_until_complete(_run())
+

@@ -27,7 +27,7 @@ Space. Works with any tool-capable model. Load this skill whenever the
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # macOS Computer Use (universal, any-model)
@@ -192,7 +192,7 @@ your conversation context.
 
 ## Failure modes
 
-- **"cua-driver not installed"** — Run `hermes tools` and enable Computer
+- **"cua-driver not installed"** — Run `Titan tools` and enable Computer
   Use; the setup will install cua-driver via its upstream script. Requires
   macOS + Accessibility + Screen Recording permissions.
 - **Element index stale** — SOM indices come from the last `capture` call.
@@ -215,3 +215,4 @@ your conversation context.
 - File edits — use `read_file` / `write_file` / `patch`, not `type` into
   an editor window.
 - Shell commands — use `terminal`, not `type` into Terminal.app.
+

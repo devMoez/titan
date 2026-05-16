@@ -1,10 +1,10 @@
-"""Native Spotify tools for Hermes (registered via plugins/spotify)."""
+"""Native Spotify tools for Titan (registered via plugins/spotify)."""
 
 from __future__ import annotations
 
 from typing import Any, Dict, List
 
-from hermes_cli.auth import get_auth_status
+from Titan_cli.auth import get_auth_status
 from plugins.spotify.client import (
     SpotifyAPIError,
     SpotifyAuthRequiredError,
@@ -452,3 +452,4 @@ SPOTIFY_LIBRARY_SCHEMA = {
         "required": ["kind", "action"],
     },
 }
+

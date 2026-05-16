@@ -17,11 +17,11 @@ plugins/model-providers/
 ## How discovery works
 
 `providers/__init__.py._discover_providers()` scans this directory (and
-`$HERMES_HOME/plugins/model-providers/`) the first time anything calls
+`$Titan_HOME/plugins/model-providers/`) the first time anything calls
 `get_provider_profile()` or `list_providers()`. Each `__init__.py` is
 imported and expected to call `providers.register_provider(profile)`.
 
-User plugins at `$HERMES_HOME/plugins/model-providers/<name>/` override
+User plugins at `$Titan_HOME/plugins/model-providers/<name>/` override
 bundled plugins of the same name — last-writer-wins in
 `register_provider()`. Drop a file there to replace a built-in.
 
@@ -68,3 +68,4 @@ quirks — see `plugins/model-providers/openrouter/__init__.py` for
 `build_extra_body` and `build_api_kwargs_extras` examples, and
 `plugins/model-providers/gemini/__init__.py` for `thinking_config`
 translation.
+

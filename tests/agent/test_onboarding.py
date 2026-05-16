@@ -208,12 +208,12 @@ class TestOpenclawResidueHint:
     def test_hint_mentions_migrate_command(self):
         # `migrate` is the non-destructive path — should lead the banner.
         msg = openclaw_residue_hint_cli()
-        assert "hermes claw migrate" in msg
+        assert "Titan claw migrate" in msg
         assert "~/.openclaw" in msg
 
     def test_hint_mentions_cleanup_command(self):
         # `cleanup` is mentioned as the follow-up archive step.
-        assert "hermes claw cleanup" in openclaw_residue_hint_cli()
+        assert "Titan claw cleanup" in openclaw_residue_hint_cli()
 
     def test_hint_warns_cleanup_breaks_openclaw(self):
         # Archiving the directory breaks OpenClaw for users still running it —
@@ -237,3 +237,4 @@ class TestOpenclawResidueSeenFlag:
         assert mark_seen(cfg_path, OPENCLAW_RESIDUE_FLAG) is True
         loaded = yaml.safe_load(cfg_path.read_text())
         assert is_seen(loaded, OPENCLAW_RESIDUE_FLAG) is True
+

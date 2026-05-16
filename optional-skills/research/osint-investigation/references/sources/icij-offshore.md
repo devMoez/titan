@@ -15,7 +15,7 @@ with their officers, intermediaries, and addresses.
 - **Note:** The previous Open Refine reconciliation endpoint at
   `/reconcile` now returns 404. ICIJ has removed it. The bulk ZIP is the
   remaining stable access path. The skill's `fetch_icij_offshore.py` caches
-  the ZIP locally (default `~/.cache/hermes-osint/icij/`, refreshes after
+  the ZIP locally (default `~/.cache/Titan-osint/icij/`, refreshes after
   30 days) and searches it offline.
 
 ## 3. Data Schema
@@ -84,8 +84,8 @@ python3 SKILL_DIR/scripts/fetch_icij_offshore.py --entity "EXAMPLE CORP" \
     --force-refresh --out data/icij.csv
 ```
 
-First call downloads the ~70 MB ZIP under `~/.cache/hermes-osint/icij/`
-(or `$HERMES_OSINT_CACHE/icij/`). Subsequent calls reuse the cache for 30 days.
+First call downloads the ~70 MB ZIP under `~/.cache/Titan-osint/icij/`
+(or `$Titan_OSINT_CACHE/icij/`). Subsequent calls reuse the cache for 30 days.
 
 ## 8. Legal & Licensing
 
@@ -102,3 +102,4 @@ First call downloads the ~70 MB ZIP under `~/.cache/hermes-osint/icij/`
 - About the data: https://offshoreleaks.icij.org/pages/about
 - Methodology: https://www.icij.org/investigations/panama-papers/
 - API hints: Open Refine reconciliation endpoint at `https://offshoreleaks.icij.org/reconcile`
+

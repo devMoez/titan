@@ -7,7 +7,7 @@ license: MIT
 dependencies: [lm-eval, transformers, vllm]
 platforms: [linux, macos]
 metadata:
-  hermes:
+  Titan:
     tags: [Evaluation, LM Evaluation Harness, Benchmarking, MMLU, HumanEval, GSM8K, EleutherAI, Model Quality, Academic Benchmarks, Industry Standard]
 
 ---
@@ -493,6 +493,7 @@ lm_eval --model hf \
 - Docs: https://github.com/EleutherAI/lm-evaluation-harness/tree/main/docs
 - Task library: 60+ tasks including MMLU, GSM8K, HumanEval, TruthfulQA, HellaSwag, ARC, WinoGrande, etc.
 - Leaderboard: https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard (uses this harness)
+
 
 
 

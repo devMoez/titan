@@ -14,7 +14,7 @@ Web scraping with Scrapling - HTTP fetching, stealth browser automation, Cloudfl
 
 | | |
 |---|---|
-| Source | Optional — install with `hermes skills install official/research/scrapling` |
+| Source | Optional — install with `Titan skills install official/research/scrapling` |
 | Path | `optional-skills/research/scrapling` |
 | Version | `1.0.0` |
 | Author | FEUAZUR |
@@ -26,7 +26,7 @@ Web scraping with Scrapling - HTTP fetching, stealth browser automation, Cloudfl
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # Scrapling
@@ -349,3 +349,4 @@ spider.start()  # Ctrl+C to pause, re-run to resume from checkpoint
 - **Resource usage**: StealthyFetcher runs a real browser -- limit concurrent usage
 - **Legal**: always check robots.txt and website ToS before scraping. This library is for educational and research purposes
 - **Python version**: requires Python 3.10+
+

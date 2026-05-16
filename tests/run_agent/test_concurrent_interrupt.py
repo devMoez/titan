@@ -9,15 +9,15 @@ import pytest
 
 
 @pytest.fixture(autouse=True)
-def _isolate_hermes(tmp_path, monkeypatch):
-    monkeypatch.setenv("HERMES_HOME", str(tmp_path / ".hermes"))
-    (tmp_path / ".hermes").mkdir(exist_ok=True)
+def _isolate_Titan(tmp_path, monkeypatch):
+    monkeypatch.setenv("Titan_HOME", str(tmp_path / ".Titan"))
+    (tmp_path / ".Titan").mkdir(exist_ok=True)
 
 
 def _make_agent(monkeypatch):
     """Create a minimal AIAgent-like object with just the methods under test."""
     monkeypatch.setenv("OPENROUTER_API_KEY", "")
-    monkeypatch.setenv("HERMES_INFERENCE_PROVIDER", "")
+    monkeypatch.setenv("Titan_INFERENCE_PROVIDER", "")
     # Avoid full AIAgent init — just import the class and build a stub
     import run_agent as _ra
 
@@ -143,4 +143,5 @@ def test_clear_interrupt_clears_worker_tids(monkeypatch):
         "clear_interrupt() did not clear the interrupt bit for a tracked "
         "worker tid — stale interrupt can leak into the next turn"
     )
+
 

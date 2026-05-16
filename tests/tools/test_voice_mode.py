@@ -33,7 +33,7 @@ def sample_wav(tmp_path):
 @pytest.fixture
 def temp_voice_dir(tmp_path, monkeypatch):
     """Redirect _TEMP_DIR to a temporary path."""
-    voice_dir = tmp_path / "hermes_voice"
+    voice_dir = tmp_path / "Titan_voice"
     voice_dir.mkdir()
     monkeypatch.setattr("tools.voice_mode._TEMP_DIR", str(voice_dir))
     return voice_dir
@@ -1206,3 +1206,4 @@ class TestSilenceCallbackLock:
         recorder.cancel()
         with recorder._lock:
             assert recorder._on_silence_stop is None
+

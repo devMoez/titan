@@ -3,9 +3,9 @@ from unittest.mock import MagicMock, patch
 
 def test_gquota_uses_chat_console_when_tui_is_live():
     from agent.google_oauth import GoogleOAuthError
-    from cli import HermesCLI
+    from cli import TitanCLI
 
-    cli = HermesCLI.__new__(HermesCLI)
+    cli = TitanCLI.__new__(TitanCLI)
     cli.console = MagicMock()
     cli._app = object()
 
@@ -19,3 +19,4 @@ def test_gquota_uses_chat_console_when_tui_is_live():
 
     assert live_console.print.call_count == 2
     cli.console.print.assert_not_called()
+

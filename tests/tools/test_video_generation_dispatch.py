@@ -62,7 +62,7 @@ class _RaisingProvider(VideoGenProvider):
 class TestUnifiedDispatch:
     def _run(self, args: Dict[str, Any], *, configured: Optional[str] = None) -> Dict[str, Any]:
         from tools import video_generation_tool
-        import hermes_cli.plugins as plugins_module
+        import Titan_cli.plugins as plugins_module
 
         saved = video_generation_tool._read_configured_video_provider
         video_generation_tool._read_configured_video_provider = lambda: configured  # type: ignore
@@ -124,3 +124,4 @@ class TestUnifiedDispatch:
         from tools.video_generation_tool import VIDEO_GENERATE_SCHEMA
         assert "operation" not in VIDEO_GENERATE_SCHEMA["parameters"]["properties"]
         assert "video_url" not in VIDEO_GENERATE_SCHEMA["parameters"]["properties"]
+

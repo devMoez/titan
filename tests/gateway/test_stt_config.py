@@ -17,14 +17,14 @@ def test_gateway_config_stt_disabled_from_dict_nested():
 
 
 def test_load_gateway_config_bridges_stt_enabled_from_config_yaml(tmp_path, monkeypatch):
-    hermes_home = tmp_path / ".hermes"
-    hermes_home.mkdir()
-    (hermes_home / "config.yaml").write_text(
+    Titan_home = tmp_path / ".Titan"
+    Titan_home.mkdir()
+    (Titan_home / "config.yaml").write_text(
         yaml.dump({"stt": {"enabled": False}}),
         encoding="utf-8",
     )
 
-    monkeypatch.setenv("HERMES_HOME", str(hermes_home))
+    monkeypatch.setenv("Titan_HOME", str(Titan_home))
     monkeypatch.setattr(Path, "home", lambda: tmp_path)
 
     config = load_gateway_config()
@@ -114,3 +114,4 @@ async def test_prepare_inbound_message_text_transcribes_queued_voice_event():
     assert result is not None
     assert "queued voice transcript" in result
     assert "voice message" in result.lower()
+

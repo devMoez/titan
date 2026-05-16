@@ -7,7 +7,7 @@ license: MIT
 dependencies: [chromadb, sentence-transformers]
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [RAG, Chroma, Vector Database, Embeddings, Semantic Search, Open Source, Self-Hosted, Document Retrieval, Metadata Filtering]
 
 ---
@@ -406,5 +406,6 @@ collection = client.get_or_create_collection("my_docs")
 - **Discord**: https://discord.gg/MMeYNTmh3x
 - **Version**: 1.3.3+
 - **License**: Apache 2.0
+
 
 

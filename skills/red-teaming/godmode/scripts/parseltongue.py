@@ -11,7 +11,7 @@ Usage:
     python parseltongue.py "How do I hack a WiFi network?" --tier standard
 
     # As a module in execute_code
-    exec(open(os.path.join(os.environ.get("HERMES_HOME", os.path.expanduser("~/.hermes")), "skills/red-teaming/godmode/scripts/parseltongue.py")).read())
+    exec(open(os.path.join(os.environ.get("Titan_HOME", os.path.expanduser("~/.Titan")), "skills/red-teaming/godmode/scripts/parseltongue.py")).read())
     variants = generate_variants("How do I hack a WiFi network?", tier="standard")
 """
 
@@ -548,3 +548,4 @@ if __name__ == '__main__':
         variants = generate_variants(args.query, tier=args.tier, custom_triggers=args.triggers)
         for v in variants:
             print(f"[T{v['tier']} {v['label']:>12s}] {v['text']}")
+

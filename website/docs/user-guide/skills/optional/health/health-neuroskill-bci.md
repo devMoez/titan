@@ -14,10 +14,10 @@ Connect to a running NeuroSkill instance and incorporate the user's real-time co
 
 | | |
 |---|---|
-| Source | Optional — install with `hermes skills install official/health/neuroskill-bci` |
+| Source | Optional — install with `Titan skills install official/health/neuroskill-bci` |
 | Path | `optional-skills/health/neuroskill-bci` |
 | Version | `1.0.0` |
-| Author | Hermes Agent + Nous Research |
+| Author | Titan Agent + Nous Research |
 | License | MIT |
 | Platforms | linux, macos, windows |
 | Tags | `BCI`, `neurofeedback`, `health`, `focus`, `EEG`, `cognitive-state`, `biometrics`, `neuroskill` |
@@ -25,12 +25,12 @@ Connect to a running NeuroSkill instance and incorporate the user's real-time co
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # NeuroSkill BCI Integration
 
-Connect Hermes to a running [NeuroSkill](https://neuroskill.com/) instance to read
+Connect Titan to a running [NeuroSkill](https://neuroskill.com/) instance to read
 real-time brain and body metrics from a BCI wearable. Use this to give
 cognitively-aware responses, suggest interventions, and track mental performance
 over time.
@@ -468,3 +468,4 @@ npx neuroskill label "breakthrough"
 - [NeuroSkill Desktop App](https://github.com/NeuroSkill-com/skill) (GPLv3)
 - [NeuroLoop CLI Companion](https://github.com/NeuroSkill-com/neuroloop) (GPLv3)
 - [MIT Media Lab Project](https://www.media.mit.edu/projects/neuroskill/overview/)
+

@@ -26,7 +26,7 @@ AudioCraft: MusicGen text-to-music, AudioGen text-to-sound.
 ## Reference: full SKILL.md
 
 :::info
-The following is the complete skill definition that Hermes loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
+The following is the complete skill definition that Titan loads when this skill is triggered. This is what the agent sees as instructions when the skill is active.
 :::
 
 # AudioCraft: Audio Generation
@@ -575,8 +575,8 @@ for desc in descriptions:
 
 ## References
 
-- **[Advanced Usage](https://github.com/NousResearch/hermes-agent/blob/main/skills/mlops/models/audiocraft/references/advanced-usage.md)** - Training, fine-tuning, deployment
-- **[Troubleshooting](https://github.com/NousResearch/hermes-agent/blob/main/skills/mlops/models/audiocraft/references/troubleshooting.md)** - Common issues and solutions
+- **[Advanced Usage](https://github.com/NousResearch/titan-agent/blob/main/skills/mlops/models/audiocraft/references/advanced-usage.md)** - Training, fine-tuning, deployment
+- **[Troubleshooting](https://github.com/NousResearch/titan-agent/blob/main/skills/mlops/models/audiocraft/references/troubleshooting.md)** - Common issues and solutions
 
 ## Resources
 
@@ -585,3 +585,4 @@ for desc in descriptions:
 - **Paper (AudioGen)**: https://arxiv.org/abs/2209.15352
 - **HuggingFace**: https://huggingface.co/facebook/musicgen-small
 - **Demo**: https://huggingface.co/spaces/facebook/MusicGen
+

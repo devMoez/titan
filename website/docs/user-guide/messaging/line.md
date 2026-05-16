@@ -1,12 +1,12 @@
 ---
 sidebar_position: 17
 title: "LINE"
-description: "Set up Hermes Agent as a LINE Messaging API bot"
+description: "Set up Titan Agent as a LINE Messaging API bot"
 ---
 
 # LINE Setup
 
-Run Hermes Agent as a [LINE](https://line.me/) bot via the official LINE Messaging API. The adapter lives as a bundled platform plugin under `plugins/platforms/line/` — no core edits, just enable it like any other platform.
+Run Titan Agent as a [LINE](https://line.me/) bot via the official LINE Messaging API. The adapter lives as a bundled platform plugin under `plugins/platforms/line/` — no core edits, just enable it like any other platform.
 
 LINE is the dominant messaging app in Japan, Taiwan, and Thailand. If your users live there, this is how they reach you.
 
@@ -44,18 +44,18 @@ cloudflared tunnel --url http://localhost:8646
 ngrok http 8646
 
 # devtunnel
-devtunnel create hermes-line --allow-anonymous
-devtunnel port create hermes-line -p 8646 --protocol https
-devtunnel host hermes-line
+devtunnel create Titan-line --allow-anonymous
+devtunnel port create Titan-line -p 8646 --protocol https
+devtunnel host Titan-line
 ```
 
 Copy the `https://...` URL — you'll set it as the webhook URL below. **Leave the tunnel running** while testing. For production, set up a fixed Cloudflare named tunnel so the webhook URL doesn't change on restart.
 
 ---
 
-## Step 3: Configure Hermes
+## Step 3: Configure Titan
 
-Add to `~/.hermes/.env`:
+Add to `~/.Titan/.env`:
 
 ```env
 LINE_CHANNEL_ACCESS_TOKEN=YOUR_LONG_LIVED_TOKEN
@@ -71,7 +71,7 @@ LINE_ALLOWED_ROOMS=R1234567890abcdef...           # optional room IDs
 LINE_PUBLIC_URL=https://my-tunnel.example.com
 ```
 
-Then in `~/.hermes/config.yaml`:
+Then in `~/.Titan/config.yaml`:
 
 ```yaml
 gateway:
@@ -98,7 +98,7 @@ Back in the LINE console:
 ## Step 5: Run the gateway
 
 ```bash
-hermes gateway
+Titan gateway
 ```
 
 The agent log shows:
@@ -134,7 +134,7 @@ LINE_SLOW_RESPONSE_THRESHOLD=0
 For the postback flow to fire reliably, suppress chatter that would consume the reply token before the threshold:
 
 ```yaml
-# ~/.hermes/config.yaml
+# ~/.Titan/config.yaml
 display:
   interim_assistant_messages: false
   platforms:
@@ -180,13 +180,13 @@ Cron jobs with `deliver: line` route to `LINE_HOME_CHANNEL`. The adapter ships a
 
 **"invalid signature" on webhook verify.** The `Channel secret` was copied wrong, or your tunnel rewrote the request body. Verify with `curl -i https://<tunnel>/line/webhook/health` first — that should return `{"status":"ok","platform":"line"}`.
 
-**Bot receives nothing in groups.** Check `LINE_ALLOWED_GROUPS` includes the `C...` group ID. To find a group ID, send a test message and grep `~/.hermes/logs/gateway.log` for `LINE: rejecting unauthorized source` — the rejected source dict has the IDs.
+**Bot receives nothing in groups.** Check `LINE_ALLOWED_GROUPS` includes the `C...` group ID. To find a group ID, send a test message and grep `~/.Titan/logs/gateway.log` for `LINE: rejecting unauthorized source` — the rejected source dict has the IDs.
 
 **`send_image` fails with "LINE_PUBLIC_URL must be set".** LINE's Messaging API does not accept binary uploads — images, audio, and video must be reachable HTTPS URLs. Set `LINE_PUBLIC_URL` to the tunnel's public hostname and the adapter will serve files from `/line/media/<token>/<filename>` automatically.
 
 **Postback button never appears.** Either the LLM responded faster than `LINE_SLOW_RESPONSE_THRESHOLD`, or another bubble (tool-progress, streaming) consumed the reply token first. See the suppression block under "Slow LLM responses".
 
-**"already in use by another profile".** The same channel access token is bound to another running Hermes profile. Stop the other gateway or use a separate channel.
+**"already in use by another profile".** The same channel access token is bound to another running Titan profile. Stop the other gateway or use a separate channel.
 
 ---
 
@@ -196,3 +196,4 @@ Cron jobs with `deliver: line` route to `LINE_HOME_CHANNEL`. The adapter ships a
 * **No native message editing.** LINE has no edit-message API — streaming responses always send fresh bubbles, never edit prior ones.
 * **No Markdown rendering.** Bold (`**`), italics (`*`), code fences, and headings render as literal characters. The adapter strips them before sending; URLs are preserved (`[label](url)` becomes `label (url)`).
 * **Loading indicator is DM-only.** LINE rejects the chat/loading API for groups and rooms, so the typing indicator only shows in 1:1 chats.
+

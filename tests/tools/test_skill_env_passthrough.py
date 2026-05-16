@@ -78,7 +78,7 @@ class TestSkillViewRegistersPassthrough:
         )
         monkeypatch.setattr("tools.skills_tool.SKILLS_DIR", tmp_path)
 
-        from hermes_cli.config import save_env_value
+        from Titan_cli.config import save_env_value
 
         save_env_value("TENOR_API_KEY", "persisted-value-123")
         monkeypatch.delenv("TENOR_API_KEY", raising=False)
@@ -133,3 +133,4 @@ class TestSkillViewRegistersPassthrough:
         assert result["success"] is True
         from tools.env_passthrough import get_all_passthrough
         assert len(get_all_passthrough()) == 0
+

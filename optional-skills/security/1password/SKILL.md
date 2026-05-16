@@ -2,11 +2,11 @@
 name: 1password
 description: Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in, and reading/injecting secrets for commands.
 version: 1.0.0
-author: arceus77-7, enhanced by Hermes Agent
+author: arceus77-7, enhanced by Titan Agent
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
-  hermes:
+  Titan:
     tags: [security, secrets, 1password, op, cli]
     category: security
 setup:
@@ -27,7 +27,7 @@ Use this skill when the user wants secrets managed through 1Password instead of 
 - 1Password account
 - 1Password CLI (`op`) installed
 - One of: desktop app integration, service account token (`OP_SERVICE_ACCOUNT_TOKEN`), or Connect server
-- `tmux` available for stable authenticated sessions during Hermes terminal calls (desktop app flow only)
+- `tmux` available for stable authenticated sessions during Titan terminal calls (desktop app flow only)
 
 ## When to Use
 
@@ -39,9 +39,9 @@ Use this skill when the user wants secrets managed through 1Password instead of 
 
 ## Authentication Methods
 
-### Service Account (recommended for Hermes)
+### Service Account (recommended for Titan)
 
-Set `OP_SERVICE_ACCOUNT_TOKEN` in `~/.hermes/.env` (the skill will prompt for this on first load).
+Set `OP_SERVICE_ACCOUNT_TOKEN` in `~/.Titan/.env` (the skill will prompt for this on first load).
 No desktop app needed. Supports `op read`, `op inject`, `op run`.
 
 ```bash
@@ -85,17 +85,17 @@ op --version
 
 3. Choose an auth method above and configure it.
 
-## Hermes Execution Pattern (desktop app flow)
+## Titan Execution Pattern (desktop app flow)
 
-Hermes terminal commands are non-interactive by default and can lose auth context between calls.
+Titan terminal commands are non-interactive by default and can lose auth context between calls.
 For reliable `op` use with desktop app integration, run sign-in and secret operations inside a dedicated tmux session.
 
 Note: This is NOT needed when using `OP_SERVICE_ACCOUNT_TOKEN` — the token persists across terminal calls automatically.
 
 ```bash
-SOCKET_DIR="${TMPDIR:-/tmp}/hermes-tmux-sockets"
+SOCKET_DIR="${TMPDIR:-/tmp}/Titan-tmux-sockets"
 mkdir -p "$SOCKET_DIR"
-SOCKET="$SOCKET_DIR/hermes-op.sock"
+SOCKET="$SOCKET_DIR/Titan-op.sock"
 SESSION="op-auth-$(date +%Y%m%d-%H%M%S)"
 
 tmux -S "$SOCKET" new -d -s "$SESSION" -n shell
@@ -161,3 +161,4 @@ Service accounts require CLI v2.18.0+.
 - `references/cli-examples.md`
 - https://developer.1password.com/docs/cli/
 - https://developer.1password.com/docs/service-accounts/
+

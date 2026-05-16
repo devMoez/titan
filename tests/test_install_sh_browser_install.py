@@ -1,6 +1,6 @@
 """Regression tests for install.sh browser setup.
 
-Browser automation is optional. The installer should not leave Hermes
+Browser automation is optional. The installer should not leave Titan
 half-installed just because Playwright's managed Chromium download hangs on an
 unsupported distribution.
 """
@@ -17,7 +17,7 @@ def test_install_script_skips_playwright_download_when_system_browser_exists() -
 
     assert "find_system_browser()" in text
     assert "google-chrome google-chrome-stable chromium chromium-browser chrome" in text
-    assert "Skipping Playwright browser download; Hermes will use the system browser." in text
+    assert "Skipping Playwright browser download; Titan will use the system browser." in text
 
 
 def test_install_script_persists_system_browser_for_agent_browser() -> None:
@@ -58,3 +58,4 @@ def test_install_script_skips_with_deps_when_no_sudo() -> None:
     # service-user installs (systemd accounts, operator users, etc.).
     assert 'if [ "$(id -u)" -eq 0 ] || (command -v sudo >/dev/null 2>&1 && sudo -n true 2>/dev/null); then' in text
     assert "sudo npx playwright install-deps chromium" in text
+

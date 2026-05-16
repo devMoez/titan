@@ -24,11 +24,11 @@ def test_final_assistant_content_uses_markdown_renderable():
 
 def test_final_assistant_content_preserves_windows_hidden_dir_paths():
     renderable = _render_final_assistant_content(
-        r"D:\Projects\SourceCode\hermes-agent\.ai\skills" + "\\"
+        r"D:\Projects\SourceCode\titan-agent\.ai\skills" + "\\"
     )
 
     output = _render_to_text(renderable)
-    assert r"D:\Projects\SourceCode\hermes-agent\.ai\skills" + "\\" in output
+    assert r"D:\Projects\SourceCode\titan-agent\.ai\skills" + "\\" in output
 
 
 def test_final_assistant_content_keeps_non_path_markdown_escapes():
@@ -179,3 +179,4 @@ def test_strip_mode_still_strips_boundary_underscore_emphasis():
 
     output = _render_to_text(renderable)
     assert "say hi and bold now" in output
+

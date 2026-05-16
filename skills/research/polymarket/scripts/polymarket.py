@@ -25,7 +25,7 @@ DATA = "https://data-api.polymarket.com"
 
 def _get(url: str) -> dict | list:
     """GET request, return parsed JSON."""
-    req = urllib.request.Request(url, headers={"User-Agent": "hermes-agent/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "titan-agent/1.0"})
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             return json.loads(resp.read().decode())
@@ -282,3 +282,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
