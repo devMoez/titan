@@ -8194,7 +8194,7 @@ class TitanCLI:
 
                     _chat_console = ChatConsole()
                     print()
-                    _cprint(_render_final_assistant_content(response, mode=self.final_response_markdown))
+                    ChatConsole().print(_render_final_assistant_content(response, mode=self.final_response_markdown))
                 else:
                     _cprint("  (No response generated)")
 
@@ -11179,7 +11179,7 @@ class TitanCLI:
                 else:
                     _chat_console = ChatConsole()
                     print()
-                    _cprint(_render_final_assistant_content(response, mode=self.final_response_markdown))
+                    ChatConsole().print(_render_final_assistant_content(response, mode=self.final_response_markdown))
 
 
             # Play terminal bell when agent finishes (if enabled).
