@@ -12747,9 +12747,7 @@ class TitanCLI:
             if cli_ref._clarify_state:
                 return ""
             if cli_ref._command_running:
-                frame = cli_ref._command_spinner_frame()
-                status = cli_ref._command_status or "Processing command..."
-                return f"{frame} {status}"
+                return "msg=interrupt · /queue · /bg · /steer · Ctrl+C cancel"
             if cli_ref._agent_running:
                 return "msg=interrupt · /queue · /bg · /steer · Ctrl+C cancel"
             if cli_ref._voice_mode:

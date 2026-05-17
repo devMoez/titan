@@ -12841,7 +12841,7 @@ class AIAgent:
                 if self.thinking_callback:
                     # CLI TUI mode: use prompt_toolkit widget instead of raw spinner
                     # (works in both streaming and non-streaming modes)
-                    self.thinking_callback(f"{face} {verb}...")
+                    self.thinking_callback("thinking")
                 elif not self._has_stream_consumers() and self._should_start_quiet_spinner():
                     # Raw KawaiiSpinner only when no streaming consumers and the
                     # spinner output has a safe sink.
@@ -13121,7 +13121,7 @@ class AIAgent:
                     if response_invalid:
                         # Stop spinner before printing error messages
                         if thinking_spinner:
-                            thinking_spinner.stop("(´;ω;`) oops, retrying...")
+                            thinking_spinner.stop("thinking")
                             thinking_spinner = None
                         if self.thinking_callback:
                             self.thinking_callback("")
