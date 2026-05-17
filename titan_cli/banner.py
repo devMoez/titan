@@ -505,7 +505,7 @@ def build_welcome_banner(console: Console, model: str, cwd: str,
     except Exception:
         _bskin = None
         _hero = Titan_CADUCEUS
-    left_lines = ["", _hero, ""]
+    left_lines = []  # caduceus art removed
     model_short = model.split("/")[-1] if "/" in model else model
     if model_short.endswith(".gguf"):
         model_short = model_short[:-5]

@@ -11526,11 +11526,11 @@ class TitanCLI:
                 spinner_widget,
                 spacer,
                 *self._get_extra_tui_widgets(),
-                status_bar,
                 input_rule_top,
                 image_bar,
                 input_area,
                 input_rule_bot,
+                status_bar,
                 voice_status_bar,
                 completions_menu,
             ] if item is not None
