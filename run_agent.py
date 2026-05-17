@@ -1872,11 +1872,11 @@ class AIAgent:
         if self.tools:
             self.valid_tool_names = {tool["function"]["name"] for tool in self.tools}
             tool_names = sorted(self.valid_tool_names)
-            if False:  # suppressed
+            if not self.quiet_mode:
                 print(f"🛠️  Loaded {len(self.tools)} tools: {', '.join(tool_names)}")
                 
                 # Show filtering info if applied
-                if False:  # suppressed
+                if enabled_toolsets:
                     print(f"   ✅ Enabled toolsets: {', '.join(enabled_toolsets)}")
                 if disabled_toolsets:
                     print(f"   ❌ Disabled toolsets: {', '.join(disabled_toolsets)}")

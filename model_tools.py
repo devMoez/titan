@@ -452,8 +452,7 @@ def _compute_tool_definitions(
     if not quiet_mode:
         if filtered_tools:
             tool_names = [t["function"]["name"] for t in filtered_tools]
-            if not quiet_mode:
-                print(f"🛠️  Final tool selection ({len(filtered_tools)} tools): {', '.join(tool_names)}")
+            print(f"🛠️  Final tool selection ({len(filtered_tools)} tools): {', '.join(tool_names)}")
         else:
             print("🛠️  No tools selected (all filtered out or unavailable)")
 
