@@ -3609,7 +3609,7 @@ class TitanCLI:
             return
 
         if self.verbose:
-            _cprint(f"  {_DIM}[thinking] {preview_text}{_RST}")
+            _cprint(f"{_DIM}[thinking] {preview_text}{_RST}")
             return
 
         lines = preview_text.splitlines()
@@ -3618,7 +3618,7 @@ class TitanCLI:
             preview += f"\n  ... ({len(lines) - 5} more lines)"
         else:
             preview = preview_text
-        _cprint(f"  {_DIM}[thinking] {preview}{_RST}")
+        _cprint(f"{_DIM}[thinking] {preview}{_RST}")
 
     def _flush_reasoning_preview(self, *, force: bool = False) -> None:
         """Flush buffered reasoning text at natural boundaries.
