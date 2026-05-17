@@ -3312,8 +3312,8 @@ class TitanCLI:
         label = self._voice_record_key_label()
         if self._voice_recording:
             if compact:
-                return [("class:voice-status-recording", " ● REC ")]
-            return [("class:voice-status-recording", f" ● REC  {label} to stop ")]
+                return [("class:voice-status-recording", " ❯ REC ")]
+            return [("class:voice-status-recording", f" ❯ REC  {label} to stop ")]
         if self._voice_processing:
             if compact:
                 return [("class:voice-status", " ◉ STT ")]
@@ -3677,7 +3677,7 @@ class TitanCLI:
         )
         lines = user_input.split("\n")
         if len(lines) <= 1:
-            return f"[bold {_accent_hex()}]●[/] [bold]{_escape(user_input)}[/]{ts_suffix}"
+            return f"[bold {_accent_hex()}]❯[/] [bold]{_escape(user_input)}[/]{ts_suffix}"
 
         first_lines = int(getattr(self, "user_message_preview_first_lines", 2))
         last_lines = int(getattr(self, "user_message_preview_last_lines", 2))
@@ -3694,7 +3694,7 @@ class TitanCLI:
             tail = []
 
         preview_lines = [
-            f"[bold {_accent_hex()}]●[/] [bold]{_escape(head[0])}[/]{ts_suffix}"
+            f"[bold {_accent_hex()}]❯[/] [bold]{_escape(head[0])}[/]{ts_suffix}"
         ]
         preview_lines.extend(f"[bold]{_escape(line)}[/]" for line in head[1:])
 
@@ -3726,12 +3726,12 @@ class TitanCLI:
 
     def _print_user_message_preview(self, user_input: str) -> None:
         """Render a user message using the normal chat scrollback style."""
-        ChatConsole().print(f"[{_accent_hex()}]{'─' * 40}[/]")
+        print()  # separator removed
         text = str(user_input or "")
         if "\n" in text:
             ChatConsole().print(self._format_submitted_user_message_preview(text))
         else:
-            ChatConsole().print(f"[bold {_accent_hex()}]●[/] [bold]{_escape(text)}[/]")
+            ChatConsole().print(f"[bold {_accent_hex()}]❯[/] [bold]{_escape(text)}[/]")
 
     def _stream_reasoning_delta(self, text: str) -> None:
         """Stream reasoning/thinking tokens into a dim box above the response.
@@ -4823,7 +4823,7 @@ class TitanCLI:
 
         for i, (role, text) in enumerate(entries):
             if role == "user":
-                lines.append("  ● You: ", style=f"dim bold {_session_label_c}")
+                lines.append("  ❯ You: ", style=f"dim bold {_session_label_c}")
                 # Show first line inline, indent rest
                 msg_lines = text.splitlines()
                 lines.append(msg_lines[0] + "\n", style="dim")
@@ -5361,9 +5361,9 @@ class TitanCLI:
 
         # Get API status indicator
         if self.api_key:
-            api_indicator = "[green bold]●[/]"
+            api_indicator = "[green bold]❯[/]"
         else:
-            api_indicator = "[red bold]●[/]"
+            api_indicator = "[red bold]❯[/]"
 
         # Build status line with proper markup — skin-aware colors
         try:
@@ -8176,10 +8176,10 @@ class TitanCLI:
                     self._app.invalidate()
                     time.sleep(0.05)  # brief pause for refresh
                 print()
-                ChatConsole().print(f"[{_accent_hex()}]{'─' * 40}[/]")
+                print()  # separator removed
                 _cprint(f"  ✅ Background task #{task_num} complete")
                 _cprint(f"  Prompt: \"{prompt[:60]}{'...' if len(prompt) > 60 else ''}\"")
-                ChatConsole().print(f"[{_accent_hex()}]{'─' * 40}[/]")
+                print()  # separator removed
                 if response:
                     try:
                         from Titan_cli.skin_engine import get_active_skin
@@ -8193,16 +8193,8 @@ class TitanCLI:
                         _resp_text = "#FFF8DC"
 
                     _chat_console = ChatConsole()
-                    _chat_console.print(Panel(
-                        _render_final_assistant_content(response, mode=self.final_response_markdown),
-                        title=f"[{_resp_color} bold]{label} (background #{task_num})[/]",
-                        title_align="left",
-                        border_style=_resp_color,
-                        style=_resp_text,
-                        box=rich_box.HORIZONTALS,
-                        padding=(1, 4),
-                        width=self._scrollback_box_width(),
-                    ))
+                    print()
+                    _cprint(_render_final_assistant_content(response, mode=self.final_response_markdown))
                 else:
                     _cprint("  (No response generated)")
 
@@ -8771,7 +8763,7 @@ class TitanCLI:
             print(f"\n  Current skin: {current}")
             print("  Available skins:")
             for s in skins:
-                marker = " ●" if s["name"] == current else "  "
+                marker = " ❯" if s["name"] == current else "  "
                 source = f" ({s['source']})" if s["source"] == "user" else ""
                 print(f"   {marker} {s['name']}{source} — {s['description']}")
             print("\n  Usage: /skin <name>")
@@ -9898,7 +9890,7 @@ class TitanCLI:
             _recording_hint = f"Termux:API capture | {_label} to stop"
         else:
             _recording_hint = f"{_label} to stop"
-        _cprint(f"\n{_ACCENT}● Recording...{_RST} {_DIM}({_recording_hint}){_RST}")
+        _cprint(f"\n{_ACCENT}❯ Recording...{_RST} {_DIM}({_recording_hint}){_RST}")
 
         # Periodically refresh prompt to update audio level indicator
         def _refresh_level():
@@ -10808,7 +10800,7 @@ class TitanCLI:
         # Add user message to history
         self.conversation_history.append({"role": "user", "content": message})
 
-        ChatConsole().print(f"[{_accent_hex()}]{'─' * 40}[/]")
+        print()  # separator removed
         print(flush=True)
         
         try:
@@ -11186,16 +11178,8 @@ class TitanCLI:
                     pass
                 else:
                     _chat_console = ChatConsole()
-                    _chat_console.print(Panel(
-                        _render_final_assistant_content(response, mode=self.final_response_markdown),
-                        title=f"[{_resp_color} bold]{label}[/]",
-                        title_align="left",
-                        border_style=_resp_color,
-                        style=_resp_text,
-                        box=rich_box.HORIZONTALS,
-                        padding=(1, 4),
-                        width=self._scrollback_box_width(),
-                    ))
+                    print()
+                    _cprint(_render_final_assistant_content(response, mode=self.final_response_markdown))
 
 
             # Play terminal bell when agent finishes (if enabled).
@@ -11383,7 +11367,7 @@ class TitanCLI:
 
         if self._voice_recording:
             bar = self._audio_level_bar()
-            return _state_fragment("class:voice-recording", "●", bar)
+            return _state_fragment("class:voice-recording", "❯", bar)
         if self._voice_processing:
             return _state_fragment("class:voice-processing", "◉")
         if self._sudo_state:
