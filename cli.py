@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Titan Agent CLI - Interactive Terminal Interface
 
@@ -1238,7 +1238,7 @@ def _prune_orphaned_branches(repo_root: str) -> None:
 _ACCENT_ANSI_DEFAULT = "\033[1;38;2;255;215;0m"  # True-color #FFD700 bold — fallback
 _BOLD = "\033[1m"
 _RST = "\033[0m"
-_STREAM_PAD = "    "  # 4-space indent for streamed response text (matches Panel padding)
+_STREAM_PAD = "" # 4-space indent for streamed response text (matches Panel padding)
 
 
 def _hex_to_ansi(hex_color: str, *, bold: bool = False) -> str:
@@ -2354,8 +2354,8 @@ def _build_compact_banner() -> str:
     dim_color = _skin.get_color("banner_dim", "#B8860B") if _skin else "#B8860B"
 
     if skin_name == "default":
-        line1 = "⚕ NOUS Titan - AI Agent Framework"
-        tiny_line = "⚕ NOUS Titan"
+        line1 = " NOUS Titan - AI Agent Framework"
+        tiny_line = " NOUS Titan"
     else:
         agent_name = _skin.get_branding("agent_name", "Titan Agent") if _skin else "Titan Agent"
         line1 = f"{agent_name} - AI Agent Framework"
@@ -3336,12 +3336,12 @@ class TitanCLI:
 
             yolo_active = bool(os.getenv("Titan_YOLO_MODE"))
             if width < 52:
-                text = f"⚕ {snapshot['model_short']} · {duration_label}"
+                text = f" {snapshot['model_short']} · {duration_label}"
                 if yolo_active:
                     text += " · ⚠ YOLO"
                 return self._trim_status_bar_text(text, width)
             if width < 76:
-                parts = [f"⚕ {snapshot['model_short']}", percent_label]
+                parts = [f" {snapshot['model_short']}", percent_label]
                 compressions = snapshot.get("compressions", 0)
                 if compressions:
                     parts.append(f"🗜️ {compressions}")
@@ -3358,7 +3358,7 @@ class TitanCLI:
                 context_label = "ctx --"
 
             compressions = snapshot.get("compressions", 0)
-            parts = [f"⚕ {snapshot['model_short']}", context_label, percent_label]
+            parts = [f" {snapshot['model_short']}", context_label, percent_label]
             if compressions:
                 parts.append(f"🗜️ {compressions}")
             parts.append(duration_label)
@@ -3369,7 +3369,7 @@ class TitanCLI:
                 parts.append("⚠ YOLO")
             return self._trim_status_bar_text(" │ ".join(parts), width)
         except Exception:
-            return f"⚕ {self.model if getattr(self, 'model', None) else 'Titan'}"
+            return f" {self.model if getattr(self, 'model', None) else 'Titan'}"
 
     def _get_status_bar_fragments(self):
         if not self._status_bar_visible or getattr(self, '_model_picker_state', None):
@@ -3387,7 +3387,7 @@ class TitanCLI:
 
             if width < 52:
                 frags = [
-                    ("class:status-bar", " ⚕ "),
+                    ("class:status-bar", "  "),
                     ("class:status-bar-strong", snapshot["model_short"]),
                     ("class:status-bar-dim", " · "),
                     ("class:status-bar-dim", duration_label),
@@ -3402,7 +3402,7 @@ class TitanCLI:
                 if width < 76:
                     compressions = snapshot.get("compressions", 0)
                     frags = [
-                        ("class:status-bar", " ⚕ "),
+                        ("class:status-bar", "  "),
                         ("class:status-bar-strong", snapshot["model_short"]),
                         ("class:status-bar-dim", " · "),
                         (self._status_bar_context_style(percent), percent_label),
@@ -3429,7 +3429,7 @@ class TitanCLI:
                     bar_style = self._status_bar_context_style(percent)
                     compressions = snapshot.get("compressions", 0)
                     frags = [
-                        ("class:status-bar", " ⚕ "),
+                        ("class:status-bar", "  "),
                         ("class:status-bar-strong", snapshot["model_short"]),
                         ("class:status-bar-dim", " │ "),
                         ("class:status-bar-dim", context_label),
@@ -3952,10 +3952,10 @@ class TitanCLI:
             try:
                 from Titan_cli.skin_engine import get_active_skin
                 _skin = get_active_skin()
-                label = _skin.get_branding("response_label", "⚕ Titan")
+                label = _skin.get_branding("response_label", " Titan")
                 _text_hex = _skin.get_color("banner_text", "#FFF8DC")
             except Exception:
-                label = "⚕ Titan"
+                label = " Titan"
                 _text_hex = "#FFF8DC"
             # Build a true-color ANSI escape for the response text color
             # so streamed content matches the Rich Panel appearance.
@@ -4403,7 +4403,7 @@ class TitanCLI:
                 msg_count = len([m for m in restored if m.get("role") == "user"])
                 title_part = ""
                 if session_meta.get("title"):
-                    title_part = f" \"{session_meta['title']}\""
+                    title_part = f" {session_meta['title']}"
                 ChatConsole().print(
                     f"[bold {_accent_hex()}]↻ Resumed session[/] "
                     f"[bold]{_escape(self.session_id)}[/]"
@@ -4823,7 +4823,7 @@ class TitanCLI:
 
         for i, (role, text) in enumerate(entries):
             if role == "user":
-                lines.append("  ❯ You: ", style=f"dim bold {_session_label_c}")
+                lines.append("❯ You: ", style=f"dim bold {_session_label_c}")
                 # Show first line inline, indent rest
                 msg_lines = text.splitlines()
                 lines.append(msg_lines[0] + "\n", style="dim")
@@ -4831,13 +4831,13 @@ class TitanCLI:
                     lines.append(f"         {ml}\n", style="dim")
             elif role == "assistant_last":
                 # Last assistant response shown in full, non-dim
-                lines.append("  ◆ Titan: ", style=f"bold {_assistant_label_c}")
+                lines.append("Titan: ", style=f"bold {_assistant_label_c}")
                 msg_lines = text.splitlines()
                 lines.append(msg_lines[0] + "\n", style="")
                 for ml in msg_lines[1:]:
                     lines.append(f"            {ml}\n", style="")
             else:
-                lines.append("  ◆ Titan: ", style=f"dim bold {_assistant_label_c}")
+                lines.append("Titan: ", style=f"dim bold {_assistant_label_c}")
                 msg_lines = text.splitlines()
                 lines.append(msg_lines[0] + "\n", style="dim")
                 for ml in msg_lines[1:]:
@@ -5258,7 +5258,7 @@ class TitanCLI:
         if _remainder:
             _cprint(f"  {_DIM}Now type your prompt (or use --image in single-query mode): {_remainder}{_RST}")
         elif _is_termux_environment():
-            _cprint(f"  {_DIM}Tip: type your next message, or run Titan chat -q --image {_termux_example_image_path(image_path.name)} \"What do you see?\"{_RST}")
+            _cprint(f"  {_DIM}Tip: type your next message, or run Titan chat -q --image {_termux_example_image_path(image_path.name)} What do you see?{_RST}")
 
     def _preprocess_images_with_vision(self, text: str, images: list, *, announce: bool = True) -> str:
         """Analyze attached images via the vision tool and return enriched text.
@@ -6188,7 +6188,7 @@ class TitanCLI:
             except Exception:
                 pass
 
-        title_part = f" \"{session_meta['title']}\"" if session_meta.get("title") else ""
+        title_part = f" {session_meta['title']}" if session_meta.get("title") else ""
         msg_count = len([m for m in self.conversation_history if m.get("role") == "user"])
         if self.conversation_history:
             _cprint(
@@ -6359,7 +6359,7 @@ class TitanCLI:
 
         msg_count = len([m for m in self.conversation_history if m.get("role") == "user"])
         _cprint(
-            f"  ⑂ Branched session \"{branch_title}\""
+            f"  ⑂ Branched session {branch_title}"
             f" ({msg_count} user message{'s' if msg_count != 1 else ''})"
         )
         _cprint(f"  Original session: {parent_session_id}")
@@ -6426,7 +6426,7 @@ class TitanCLI:
         last_message = self.conversation_history[last_user_idx].get("content", "")
         self.conversation_history = self.conversation_history[:last_user_idx]
         
-        print(f"(^_^)b Retrying: \"{last_message[:60]}{'...' if len(last_message) > 60 else ''}\"")
+        print(f"(^_^)b Retrying: {last_message[:60]}{'...' if len(last_message) > 60 else ''}")
         return last_message
     
     def undo_last(self):
@@ -6457,7 +6457,7 @@ class TitanCLI:
         # Truncate history to before the last user message
         self.conversation_history = self.conversation_history[:last_user_idx]
         
-        print(f"(^_^)b Undid {removed_count} message(s). Removed: \"{removed_msg[:60]}{'...' if len(removed_msg) > 60 else ''}\"")
+        print(f"(^_^)b Undid {removed_count} message(s). Removed: {removed_msg[:60]}{'...' if len(removed_msg) > 60 else ''}")
         remaining = len(self.conversation_history)
         print(f"  {remaining} message(s) remaining in history.")
     
@@ -7259,7 +7259,7 @@ class TitanCLI:
                     print(f"(^_^)b Personality set to '{personality_name}' (saved to config)")
                 else:
                     print(f"(^_^) Personality set to '{personality_name}' (session only)")
-                print(f"  \"{self.system_prompt[:60]}{'...' if len(self.system_prompt) > 60 else ''}\"")
+                print(f"  {self.system_prompt[:60]}{'...' if len(self.system_prompt) > 60 else ''}")
             else:
                 print(f"(._.) Unknown personality: {personality_name}")
                 print(f"  Available: none, {', '.join(self.personalities.keys())}")
@@ -8107,7 +8107,7 @@ class TitanCLI:
             _cprint("  (>_<) Cannot start background task: no valid credentials.")
             return
 
-        _cprint(f"  🔄 Background task #{task_num} started: \"{prompt[:60]}{'...' if len(prompt) > 60 else ''}\"")
+        _cprint(f"  🔄 Background task #{task_num} started: {prompt[:60]}{'...' if len(prompt) > 60 else ''}")
         _cprint(f"  Task ID: {task_id}")
         _cprint("  You can continue chatting — results will appear when done.\n")
 
@@ -8178,17 +8178,17 @@ class TitanCLI:
                 print()
                 print()  # separator removed
                 _cprint(f"  ✅ Background task #{task_num} complete")
-                _cprint(f"  Prompt: \"{prompt[:60]}{'...' if len(prompt) > 60 else ''}\"")
+                _cprint(f"  Prompt: {prompt[:60]}{'...' if len(prompt) > 60 else ''}")
                 print()  # separator removed
                 if response:
                     try:
                         from Titan_cli.skin_engine import get_active_skin
                         _skin = get_active_skin()
-                        label = _skin.get_branding("response_label", "⚕ Titan")
+                        label = _skin.get_branding("response_label", " Titan")
                         _resp_color = _maybe_remap_for_light_mode(_skin.get_color("response_border", "#CD7F32"))
                         _resp_text = _maybe_remap_for_light_mode(_skin.get_color("banner_text", "#FFF8DC"))
                     except Exception:
-                        label = "⚕ Titan"
+                        label = " Titan"
                         _resp_color = "#CD7F32"
                         _resp_text = "#FFF8DC"
 
@@ -9087,7 +9087,7 @@ class TitanCLI:
                 )
                 if focus_topic:
                     print(f"🗜️  Compressing {original_count} messages (~{approx_tokens:,} tokens), "
-                          f"focus: \"{focus_topic}\"...")
+                          f"focus: {focus_topic}...")
                 else:
                     print(f"🗜️  Compressing {original_count} messages (~{approx_tokens:,} tokens)...")
 
@@ -10855,7 +10855,7 @@ class TitanCLI:
                     if not _streaming_box_opened:
                         _streaming_box_opened = True
                         w = self._scrollback_box_width(getattr(self.console, "width", 80))
-                        label = " ⚕ Titan "
+                        label = "  Titan "
                         if self.show_timestamps:
                             label = f"{label}{datetime.now().strftime('%H:%M')} "
                         fill = w - 2 - TitanCLI._status_bar_display_width(label)
@@ -11158,11 +11158,11 @@ class TitanCLI:
                 try:
                     from Titan_cli.skin_engine import get_active_skin
                     _skin = get_active_skin()
-                    label = _skin.get_branding("response_label", "⚕ Titan")
+                    label = _skin.get_branding("response_label", " Titan")
                     _resp_color = _maybe_remap_for_light_mode(_skin.get_color("response_border", "#CD7F32"))
                     _resp_text = _maybe_remap_for_light_mode(_skin.get_color("banner_text", "#FFF8DC"))
                 except Exception:
-                    label = "⚕ Titan"
+                    label = " Titan"
                     _resp_color = _maybe_remap_for_light_mode("#CD7F32")
                     _resp_text = _maybe_remap_for_light_mode("#FFF8DC")
 
@@ -11284,7 +11284,7 @@ class TitanCLI:
             print("Resume this session with:")
             print(f"  Titan --resume {self.session_id}")
             if session_title:
-                print(f"  Titan -c \"{session_title}\"")
+                print(f"  Titan -c {session_title}")
             print()
             print(f"Session:        {self.session_id}")
             if session_title:
@@ -11294,9 +11294,9 @@ class TitanCLI:
         else:
             try:
                 from Titan_cli.skin_engine import get_active_goodbye
-                goodbye = get_active_goodbye("Goodbye! ⚕")
+                goodbye = get_active_goodbye("Goodbye! ")
             except Exception:
-                goodbye = "Goodbye! ⚕"
+                goodbye = "Goodbye! "
             print(goodbye)
 
     def _get_tui_prompt_symbols(self) -> tuple[str, str]:
@@ -11385,7 +11385,7 @@ class TitanCLI:
         if self._command_running:
             return _state_fragment("class:prompt-working", self._command_spinner_frame())
         if self._agent_running:
-            return _state_fragment("class:prompt-working", "⚕")
+            return _state_fragment("class:prompt-working", "")
         if self._voice_mode:
             return _state_fragment("class:voice-prompt", "🎤")
         return [("class:prompt", symbol)]
@@ -12724,8 +12724,13 @@ class TitanCLI:
                 if not ti.document.text and ti.lineno == 0:
                     text = self._get_text()
                     if text:
-                        # Append after existing fragments (preserves the ❯ prompt)
-                        return Transformation(fragments=ti.fragments + [('class:placeholder', text)])
+                        # Support both string and styled list returns
+                        if isinstance(text, list):
+                            # text is already styled [(class, content), ...]
+                            return Transformation(fragments=ti.fragments + text)
+                        else:
+                            # text is a plain string, wrap with placeholder style
+                            return Transformation(fragments=ti.fragments + [('class:placeholder', text)])
                 return Transformation(fragments=ti.fragments)
 
         def _get_placeholder():
@@ -12747,9 +12752,9 @@ class TitanCLI:
             if cli_ref._clarify_state:
                 return ""
             if cli_ref._command_running:
-                return "msg=interrupt · /queue · /bg · /steer · Ctrl+C cancel"
+                return [('class:status-bar-dim', 'msg=interrupt · /queue · /bg · /steer · Ctrl+C cancel')]
             if cli_ref._agent_running:
-                return "msg=interrupt · /queue · /bg · /steer · Ctrl+C cancel"
+                return [('class:status-bar-dim', 'msg=interrupt · /queue · /bg · /steer · Ctrl+C cancel')]
             if cli_ref._voice_mode:
                 _label = cli_ref._voice_record_key_label()
                 return f"type or {_label} to record"
