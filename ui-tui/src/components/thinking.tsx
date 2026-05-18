@@ -643,6 +643,9 @@ export const Thinking = memo(function Thinking({
 
   const lines = useMemo(() => preview.split('\n').map(line => line.replace(/\t/g, '  ')), [preview])
 
+  // Disable thinking display panel
+  return null
+
   if (!preview && !active) {
     return null
   }
