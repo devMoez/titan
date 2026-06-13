@@ -305,6 +305,12 @@ ALIASES: Dict[str, str] = {
     # deepseek
     "deep-seek": "deepseek",
 
+    # evolink
+    "evolink-ai": "evolink",
+    "evolinkai": "evolink",
+    "evo-link": "evolink",
+    "evo_link": "evolink",
+
     # alibaba
     "dashscope": "alibaba",
     "aliyun": "alibaba",
@@ -718,4 +724,3 @@ def resolve_provider_full(
         pass
 
     return None
-

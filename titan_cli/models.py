@@ -1025,6 +1025,10 @@ _PROVIDER_ALIASES = {
     "kilo": "kilocode",
     "kilo-code": "kilocode",
     "kilo-gateway": "kilocode",
+    "evolink-ai": "evolink",
+    "evolinkai": "evolink",
+    "evo-link": "evolink",
+    "evo_link": "evolink",
     "dashscope": "alibaba",
     "aliyun": "alibaba",
     "qwen": "alibaba",
@@ -3786,4 +3790,3 @@ def validate_requested_model(
             f"If the service isn't down, this model may not be valid."
         ),
     }
-
